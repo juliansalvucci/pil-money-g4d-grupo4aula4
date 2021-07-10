@@ -13,13 +13,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import {MatIconModule} from '@angular/material/icon';
-<<<<<<< HEAD
 import { DepositoComponent } from './src/app/deposito/deposito.component';
 import { ExtraccionComponent } from './src/app/extraccion/extraccion.component';
-=======
-import { NombrecomponenteComponent } from './src/app/nombrecomponente/nombrecomponente.component';
 import { TransferenciaComponent } from './src/app/transferencia/transferencia.component';
->>>>>>> 5d8b471c60f234b5a785bae5465f30af057b2b13
 
 
 @NgModule({
@@ -31,13 +27,9 @@ import { TransferenciaComponent } from './src/app/transferencia/transferencia.co
     LoginComponent,
     RegisterComponent,
     SidebarComponent,
-<<<<<<< HEAD
     DepositoComponent,
     ExtraccionComponent,
-=======
-    NombrecomponenteComponent,
     TransferenciaComponent,
->>>>>>> 5d8b471c60f234b5a785bae5465f30af057b2b13
 
   ],
   imports: [
