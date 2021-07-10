@@ -13,6 +13,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import {MatIconModule} from '@angular/material/icon';
+import { NombrecomponenteComponent } from './src/app/nombrecomponente/nombrecomponente.component';
+import { TransferenciaComponent } from './src/app/transferencia/transferencia.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import {MatIconModule} from '@angular/material/icon';
     LoginComponent,
     RegisterComponent,
     SidebarComponent,
+    NombrecomponenteComponent,
+    TransferenciaComponent,
 
   ],
   imports: [
