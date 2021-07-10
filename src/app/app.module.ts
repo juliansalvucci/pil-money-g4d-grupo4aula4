@@ -13,6 +13,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import {MatIconModule} from '@angular/material/icon';
+import { DepositoComponent } from './src/app/deposito/deposito.component';
+import { ExtraccionComponent } from './src/app/extraccion/extraccion.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import {MatIconModule} from '@angular/material/icon';
     LoginComponent,
     RegisterComponent,
     SidebarComponent,
+    DepositoComponent,
+    ExtraccionComponent,
 
   ],
   imports: [
