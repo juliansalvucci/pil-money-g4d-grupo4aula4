@@ -9,13 +9,15 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatFormFieldModule} from '@angular/material/form-field';
+
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import {MatIconModule} from '@angular/material/icon';
 import { DepositoComponent } from './src/app/deposito/deposito.component';
 import { ExtraccionComponent } from './src/app/extraccion/extraccion.component';
 import { TransferenciaComponent } from './src/app/transferencia/transferencia.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 
 @NgModule({
@@ -36,8 +38,8 @@ import { TransferenciaComponent } from './src/app/transferencia/transferencia.co
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule
     
   ],
   providers: [],
