@@ -17,6 +17,7 @@ import { DepositoComponent } from './src/app/deposito/deposito.component';
 import { ExtraccionComponent } from './src/app/extraccion/extraccion.component';
 import { TransferenciaComponent } from './src/app/transferencia/transferencia.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { HomeComponent } from './src/app/home/home.component';
 
 
 
@@ -32,6 +33,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     DepositoComponent,
     ExtraccionComponent,
     TransferenciaComponent,
+    HomeComponent,
 
   ],
   imports: [
