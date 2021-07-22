@@ -9,14 +9,32 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 export class LoginComponent {
   hide = true;
 
-  //loginForm: FormGroup;
   
   /*
+  loginForm: FormGroup;
+
+  error: boolean = false;
+  mensajeError: string = "";
+  
+  
+  
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
-      'username': ['', Validators.required],
-      'password': ['', Validators.required]
+      'usuario': ['', Validators.required],
+      'contraseña': ['', Validators.required]
     });
+  }
+
+  login():void {
+    if (this.loginForm.invalid) {
+      this.error = true;
+      this.mensajeError = "Campo requerido"
+    }else{
+      this.error = false;
+      
+    }
+
+
   }
   */
   
