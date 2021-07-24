@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  hide = true;
+  
+
 }
