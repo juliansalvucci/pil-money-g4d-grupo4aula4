@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,14 +11,9 @@ export class LoginComponent {
   hide = true;
 
   
-  /*
-  loginForm: FormGroup;
+  
+  loginForm: FormGroup; //contiene reglas del formulario
 
-  error: boolean = false;
-  mensajeError: string = "";
-  
-  
-  
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
       'usuario': ['', Validators.required],
@@ -25,20 +21,8 @@ export class LoginComponent {
     });
   }
 
-  login():void {
-    if (this.loginForm.invalid) {
-      this.error = true;
-      this.mensajeError = "Campo requerido"
-    }else{
-      this.error = false;
-      
-    }
-
-
+  enviar(value:any){
+    console.log(value)
   }
-  */
   
-
-  
-
 }
