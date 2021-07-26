@@ -15,13 +15,14 @@
     top: 30px;
     left: 40px;
     font-family: "ARIAL", serif;
+    text-shadow: 1px 1px 1px black;
     font-size: 190%;
-    color: white   
+    color: white;   
 }
 .centrado{
     position: absolute;
     top: 50%;
-    left: 35%;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-family: "ARIAL", serif;
     font-size: 250%;
