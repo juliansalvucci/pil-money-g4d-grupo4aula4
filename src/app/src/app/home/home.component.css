@@ -20,9 +20,9 @@
 }
 .texto-encima img{
   width: 30px;
-  float: left; 
+  float: left;
 }
-h1 {font-family: 'Merriweather Sans', sans-serif; font-weight: bold;  font-size: 50% ; color: white; 
+h1 {font-family: 'Merriweather Sans', sans-serif; font-weight: bold;  font-size: 50% ; color: white; float: right;
 } 
 .centrado{
     position: absolute;
