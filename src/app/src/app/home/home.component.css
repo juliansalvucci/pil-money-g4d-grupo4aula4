@@ -34,6 +34,7 @@ h1 {font-family: 'Merriweather Sans', sans-serif; font-weight: bold;  font-size:
     font-family: "Format", serif;
     font-size: 350px;
     color: white;
+    align: center;
 }
 .otroestilo{ 
     color: rgb(216, 123, 10) ;
