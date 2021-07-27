@@ -17,6 +17,8 @@
     font-family: 'Merriweather Sans', sans-serif;
     font-size: 250%;
     color: white; 
+    align-items: center;
+    display: flex;
 }
 .texto-encima img{
   width: 30px;
@@ -34,13 +36,14 @@ h1 {font-family: 'Merriweather Sans', sans-serif; font-weight: bold;  font-size:
     font-family: "Format", serif;
     font-size: 350px;
     color: white;
-    align: center;
+    align-items: center;
+    display: flex;
 }
 .otroestilo{ 
     color: rgb(216, 123, 10) ;
 }
 p { font-size: 15px; font-weight:normal; font-family: 'Arial', sans-serif; } 
-h2 { font-size: 15%; font-family: 'Merriweather Sans', sans-serif; font-weight: bold
+h2 { font-size: 15%; font-family: 'Merriweather Sans', sans-serif; font-weight: bold; 
 }
 a { color: white; 
     border-color: rgb(216, 123, 10);  
