@@ -38,7 +38,7 @@ h1 {font-family: 'Merriweather Sans', sans-serif; font-weight: bold;  font-size:
 .otroestilo{ 
     color: rgb(216, 123, 10) ;
 }
-p { font-size: 15px; font-weight:normal } 
+p { font-size: 15px; font-weight:normal; font-family: 'Arial', sans-serif; } 
 h2 { font-size: 15%; font-family: 'Merriweather Sans', sans-serif; font-weight: bold
 }
 a { color: white; 
