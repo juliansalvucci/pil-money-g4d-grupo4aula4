@@ -21,8 +21,7 @@ export class LoginComponent {
     });
   }
 
-  enviar(value:any){
-    console.log(value)
-  }
-  
+  enviar(loginForm:any){
+    console.log(loginForm.value)
+  } 
 }
