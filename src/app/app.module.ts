@@ -1,10 +1,11 @@
-
 //MÓDULOS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DepositoModule } from './src/app/deposito/deposito.module';
+
 
 
 //COMPONENTES
@@ -15,10 +16,10 @@ import { RegisterComponent } from './auth/register/register.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { DepositoComponent } from './src/app/deposito/deposito.component';
 import { ExtraccionComponent } from './src/app/extraccion/extraccion.component';
 import { TransferenciaComponent } from './src/app/transferencia/transferencia.component';
 import { HomeComponent } from './src/app/home/home.component';
+
 
 
 
@@ -33,7 +34,6 @@ import { HomeComponent } from './src/app/home/home.component';
     LoginComponent,
     RegisterComponent,
     SidebarComponent,
-    DepositoComponent,
     ExtraccionComponent,
     TransferenciaComponent,
     HomeComponent,
@@ -43,7 +43,8 @@ import { HomeComponent } from './src/app/home/home.component';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DepositoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

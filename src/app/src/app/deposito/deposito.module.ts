@@ -16,6 +16,11 @@ import { PagoTarjetaDebitoComponent } from './pago-tarjeta-debito/pago-tarjeta-d
   imports: [
     CommonModule,
     DepositoRoutingModule
+  ],
+  exports: [
+    SeleccionComponent,
+    PagoEfectivoComponent,
+    PagoTarjetaDebitoComponent
   ]
 })
 export class DepositoModule { }
