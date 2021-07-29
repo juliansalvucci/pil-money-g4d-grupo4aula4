@@ -1,1 +1,97 @@
-<p>register works!</p>
+<div class="register">
+  <mat-card>
+    <!--TÍTULO-->
+    <h1 align="center">Formulario de registro</h1>
+    <mat-stepper #stepper>
+      <!--PRIMER PASO-->
+      <mat-step [stepControl]="firstFormGroup" errorMessage="Paso incompleto.">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Datos personales</ng-template>
+          <div class="container">
+            <mat-form-field appearance="fill">
+              <mat-label>Apellido/s</mat-label>
+              <input matInput placeholder="" formControlName="firstCtrl" required>
+            </mat-form-field>
+          </div>
+          <div class="container">
+            <mat-form-field appearance="fill">
+              <mat-label>Nombre/s</mat-label>
+              <input matInput placeholder="" formControlName="firstCtrl" required>
+            </mat-form-field>
+          </div>
+          <div class="container">
+            <mat-form-field appearance="fill">
+              <mat-label>N° DNI</mat-label>
+              <input matInput placeholder="" formControlName="firstCtrl" required>
+            </mat-form-field>
+          </div>
+          <div class="container">
+            <mat-form-field appearance="fill">
+              <mat-label>Correo</mat-label>
+              <input matInput placeholder="" [formControl]="email" required>
+              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+          </div>
+          
+          <div>
+            <button mat-button matStepperNext>Siguiente</button>
+          </div>
+        </form>
+      </mat-step>
+      <!--SEGUNDO PASO-->
+      <mat-step [stepControl]="secondFormGroup" errorMessage="Paso incompleto.">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Cree su contraseña</ng-template>
+          <div class="container">
+            <mat-form-field appearance="fill">
+              <mat-label>Contraseña</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'"/>
+                <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+                >
+                <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+                </button>
+            </mat-form-field>
+          </div>
+          <div class="container">
+            <mat-form-field appearance="fill">
+              <mat-label>Repita su contraseña</mat-label>
+              <input matInput [type]="hide1 ? 'password' : 'text'"/>
+                <button
+                mat-icon-button
+                matSuffix
+                (click)="hide1 = !hide1"
+                [attr.aria-label]="'Hide1 password'"
+                [attr.aria-pressed]="hide1"
+                >
+                <mat-icon>{{ hide1 ? "visibility_off" : "visibility" }}</mat-icon>
+                </button>
+            </mat-form-field>
+           
+          </div>
+          
+          <div>
+            <button mat-button matStepperPrevious>Atrás</button>
+            <button mat-button matStepperNext>Siguiente</button>
+          </div>
+        </form>
+      </mat-step>
+      <!--TERCER PASO-->
+      <mat-step>
+        <ng-template matStepLabel>Finalizar</ng-template>
+        <p>Seguro no lo va a leer pero ¿Acepta términos y condiciones?</p>
+        <div>
+          <button mat-button matStepperPrevious>Atrás</button>
+          <button mat-button>Registrar</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+   <!--Formulario wizard-->
+  </mat-card>
+  <!--contenedor de mat card-->
+</div>
+
