@@ -1,28 +1,6 @@
-.example-container .mat-form-field + .mat-form-field {
-  margin-left: 50px;
-}
 
-.example-right-align {
-  text-align: right;
-}
 
-.centrado-center-align {
-  text-align: center;
-}
 
-input.example-right-align::-webkit-outer-spin-button,
-input.example-right-align::-webkit-inner-spin-button {
-  display: none;
-}
 
-input.example-right-align {
-  -moz-appearance: textfield;
-}
 
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -25px 0 0 -25px; /* aplicar a top y al margen izquierdo un valor negativo para completar el centrado del elemento hijo */
-}
 
