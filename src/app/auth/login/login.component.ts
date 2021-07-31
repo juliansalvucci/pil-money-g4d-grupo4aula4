@@ -10,8 +10,6 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 export class LoginComponent {
   hide = true;
 
-  
-  
   loginForm: FormGroup; //contiene reglas del formulario
 
   constructor(private fb: FormBuilder) {
@@ -24,4 +22,5 @@ export class LoginComponent {
   enviar(loginForm:any){
     console.log(loginForm.value)
   } 
+  /*nota*/
 }
