@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 
 @Component({
@@ -8,20 +8,6 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  hide = true;
-
   
-  
-  loginForm: FormGroup; //contiene reglas del formulario
 
-  constructor(private fb: FormBuilder) {
-    this.loginForm = this.fb.group({
-      'usuario': ['', Validators.required],
-      'contraseña': ['', Validators.required]
-    });
-  }
-
-  enviar(loginForm:any){
-    console.log(loginForm.value)
-  } 
 }
