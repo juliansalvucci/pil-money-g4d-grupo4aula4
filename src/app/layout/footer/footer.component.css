@@ -3,7 +3,7 @@ body {
 }
 
 .card {
-    background-color: #616161;
+    background-color: #363535;
     color: white;
     margin-top: 50px;
     border: none
@@ -15,8 +15,8 @@ body {
 }
 
 .bdr {
-    border-bottom: 1.5px solid #FFB74D;
-    width: 65px;
+    border-bottom: 2.5px solid #FFB74D;
+    width: 150px;
     margin-right: auto;
     margin-left: auto
 }
