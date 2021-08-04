@@ -5,7 +5,7 @@ import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DepositoModule } from './src/app/deposito/deposito.module';
-
+import { FormsModule } from '@angular/forms';
 
 
 //COMPONENTES
@@ -44,8 +44,10 @@ import { HomeComponent } from './src/app/home/home.component';
     AppRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    DepositoModule
+    DepositoModule,
+    FormsModule
   ],
+  exports: [DepositoModule],
   providers: [],
   bootstrap: [AppComponent]
 })
