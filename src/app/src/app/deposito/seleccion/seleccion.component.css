@@ -12,8 +12,20 @@
   color:black; 
   background-color:white;
   border-color: rgb(216, 123, 10);
+  font-weight: bold;
   font-family: 'Merriweather Sans', sans-serif;
   height: 80px; 
   width: 150%;
-  
   }
+  h1 {
+    font-family: 'Merriweather Sans', sans-serif; 
+    font-weight: bold;  
+    font-size: 150%; 
+    color:black; 
+    float: right; 
+    margin: 5px;
+  } 
+ i{
+  color: rgb(216, 123, 10);
+  font-size: 150%;
+ } 
