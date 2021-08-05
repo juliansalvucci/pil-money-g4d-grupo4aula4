@@ -1,10 +1,19 @@
 .TIPODEPOSITO{
-    border: 1px;
-    border-radius: 5px;
-    width: 300px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -25px 0 0 -25px;
-    transform: translate(-50%,-50%);
+  border: 1px;
+  border-radius: 5px;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  transform: translate(-50%,-50%);
+}
+.btn{
+  color:black; 
+  background-color:white;
+  border-color: rgb(216, 123, 10);
+  font-family: 'Merriweather Sans', sans-serif;
+  height: 80px; 
+  width: 150%;
+  
   }
