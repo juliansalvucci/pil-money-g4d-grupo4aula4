@@ -19,6 +19,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { ExtraccionComponent } from './src/app/extraccion/extraccion.component';
 import { TransferenciaComponent } from './src/app/transferencia/transferencia.component';
 import { HomeComponent } from './src/app/home/home.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -45,6 +46,7 @@ import { HomeComponent } from './src/app/home/home.component';
     MaterialModule,
     ReactiveFormsModule,
     DepositoModule
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
