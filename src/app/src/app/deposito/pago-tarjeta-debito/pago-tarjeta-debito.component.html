@@ -1,15 +1,14 @@
-<ol>
-  <li>
-    <mat-form-field appearance="fill">
-      <mat-label>What's your name?</mat-label>
-      <input matInput [(ngModel)]="name">
-    </mat-form-field>
-  </li>
-  <li>
-    <button mat-raised-button (click)="openDialog()">Pick one</button>
-  </li>
-  <li *ngIf="animal">
-    You chose: <i>{{animal}}</i>
-  </li>
-</ol>
+<mat-card>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Ingrese monto</mat-label>
+          <input matInput type="number" class="example-right-align" placeholder="0">
+          <span matPrefix>$&nbsp;</span>
+        </mat-form-field>
+      </div>
+    <div>
+      <button mat-raised-button (click)="openDialog()">Agregar tarjeta</button>
+    </div>
+</mat-card>
+
 
