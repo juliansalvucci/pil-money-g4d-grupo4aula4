@@ -16,12 +16,11 @@
   width: 150%;
   }
   .btn:hover{ 
-    color:black;
+    color: white;
     font-weight: bold;
     font-family: 'Merriweather Sans', sans-serif;
     height: 80px; 
     width: 150%;
-    border-left: 40px blue !important;
   }
 
   h1 {
@@ -36,5 +35,6 @@
  i{
   color: rgb(216, 123, 10);
   font-size: 150%;
-  margin: 0.5%;
+  margin: 1%;
+  float: left;
  } 
