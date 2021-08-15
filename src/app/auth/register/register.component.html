@@ -10,25 +10,25 @@
           <div class="container">
             <mat-form-field appearance="fill">
               <mat-label>Apellido/s</mat-label>
-              <input matInput placeholder="" formControlName="firstCtrl" required>
+              <input matInput placeholder="" formControlName="apellido" required>
             </mat-form-field>
           </div>
           <div class="container">
             <mat-form-field appearance="fill">
               <mat-label>Nombre/s</mat-label>
-              <input matInput placeholder="" formControlName="firstCtrl" required>
+              <input matInput placeholder="" formControlName="nombre" required>
             </mat-form-field>
           </div>
           <div class="container">
             <mat-form-field appearance="fill">
               <mat-label>N° DNI</mat-label>
-              <input matInput placeholder="" formControlName="firstCtrl" required>
+              <input matInput placeholder="" formControlName="dni" required>
             </mat-form-field>
           </div>
           <div class="container">
             <mat-form-field appearance="fill">
               <mat-label>Correo</mat-label>
-              <input matInput placeholder="" [formControl]="email" required>
+              <input matInput placeholder="" [formControl]="email" formControlName="correo"  required>
               <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
             </mat-form-field>
           </div>
@@ -45,7 +45,7 @@
           <div class="container">
             <mat-form-field appearance="fill">
               <mat-label>Contraseña</mat-label>
-              <input matInput [type]="hide ? 'password' : 'text'" formControlName="secondCtrl" required/>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="contraseña" required/>
                 <button
                 mat-icon-button
                 matSuffix
@@ -60,7 +60,7 @@
           <div class="container">
             <mat-form-field appearance="fill">
               <mat-label>Repita su contraseña</mat-label>
-              <input matInput [type]="hide1 ? 'password' : 'text'" formControlName="secondCtrl" required/>
+              <input matInput [type]="hide1 ? 'password' : 'text'" formControlName="validador" required/>
                 <button
                 mat-icon-button
                 matSuffix
