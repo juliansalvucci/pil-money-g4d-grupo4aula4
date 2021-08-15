@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,11 +19,11 @@ namespace Monar.Models
 
     public Deposito(int cvu, string alias, int saldo, int usuario, int tipoMoneda)
     {
-      this.cvu = cvu
-      this.alias = alias
-      this.saldo = saldo
-      this.usuario = usuario
-      this.tipoMoneda = tipoMoneda
+      this.cvu = cvu;
+      this.alias = alias;
+      this.saldo = saldo;
+      this.usuario = usuario;
+      this.tipoMoneda = tipoMoneda;
     }
 
     public int Cvu
@@ -46,7 +46,7 @@ namespace Monar.Models
       get{return usuario;}
       set {usuario = value;}
     }
-    public int tipoMoneda
+    public int TipoMoneda
     {
       get{return tipoMoneda;}
       set{tipoMoneda = value;}

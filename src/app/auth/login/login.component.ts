@@ -22,5 +22,4 @@ export class LoginComponent {
   enviar(loginForm:any){
     console.log(loginForm.value)
   } 
-  /*nota*/
 }

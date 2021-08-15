@@ -32,13 +32,15 @@ export class RegisterComponent implements OnInit {
   }
 
   getErrorMessage() {
-    /*
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
-    */
-
     return this.email.hasError('email') ? 'Formato de correo inválido' : '';
+  }
+
+  enviarPaso1(firstFormGroup:any){
+    console.log(firstFormGroup.value)
+  }
+
+  enviarPaso2(secondFormGroup:any){
+    console.log(secondFormGroup.value)
   }
 
 

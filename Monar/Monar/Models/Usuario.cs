@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,13 +22,13 @@ namespace Monar.Models
 
     public Usuario(int id, string apellido, string nombre, string contraseña, string correo, int dni, int fotoFrenteDni, int fotoDorsoDNI)
     {
-      this.id = id
-      this.apellido = apellido
-      this.nombre = nombre
-      this.contraseña = contraseña
-      this.correo = correo
-      this.fotoFrenteDni = fotoFrenteDni
-      this.fotoDorsoDNI = fotoDorsoDNI
+      this.id = id;
+      this.apellido = apellido;
+      this.nombre = nombre;
+      this.contraseña = contraseña;
+      this.correo = correo;
+      this.fotoFrenteDni = fotoFrenteDni;
+      this.fotoDorsoDNI = fotoDorsoDNI;
     }
     
     public int Id
