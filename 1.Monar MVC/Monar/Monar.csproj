@@ -163,6 +163,12 @@
     </Compile>
     <Compile Include="Models\Cuenta.cs" />
     <Compile Include="Models\Deposito.cs" />
+    <Compile Include="Models\Destino.cs" />
+    <Compile Include="Models\Empresa.cs" />
+    <Compile Include="Models\Tarjeta.cs" />
+    <Compile Include="Models\TipoDeposito.cs" />
+    <Compile Include="Models\TipoMoneda.cs" />
+    <Compile Include="Models\Transferencia.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
