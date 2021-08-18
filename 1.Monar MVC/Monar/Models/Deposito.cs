@@ -58,7 +58,5 @@ namespace Monar.Models
       get { return codigoSeguridad; }
       set { codigoSeguridad = value; }
     }
-
-
   }
 }
