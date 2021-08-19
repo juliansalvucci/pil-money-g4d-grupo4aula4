@@ -8,7 +8,7 @@ namespace Monar.Models
   public class Tarjeta
   {
     private int numero;
-    private DateTime date;
+    private System.DateTime fechaVencimiento;
     private int codigoDeSeguridad;
     private string propietario;
     private int dni;
@@ -18,10 +18,10 @@ namespace Monar.Models
     {
     }
 
-    public Tarjeta(int numero, DateTime date, int codigoDeSeguridad, string propietario, int dni,int empresa)
+    public Tarjeta(int numero, System.DateTime fechaVencimiento, int codigoDeSeguridad, string propietario, int dni, int empresa)
     {
       this.numero = numero;
-      this.date = date;
+      this.fechaVencimiento = fechaVencimiento;
       this.codigoDeSeguridad = codigoDeSeguridad;
       this.propietario = propietario;
       this.dni = dni;
@@ -34,7 +34,11 @@ namespace Monar.Models
       set { numero = value; }
     }
 
-    //FALTA FECHA
+    public System.DateTime FechaVencimiento
+    {
+      get { return fechaVencimiento; }
+      set {;}
+    }
 
     public int CodigoSeguridad
     {

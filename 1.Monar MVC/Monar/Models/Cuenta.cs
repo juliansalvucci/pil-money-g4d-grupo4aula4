@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,19 +10,19 @@ namespace Monar.Models
     private int cvu;
     private string alias;
     private int saldo;
-    private int usuario;
+    private int usuarioDni;
     private int tipoMoneda;
 
     public Cuenta()
     {
     }
 
-    public Cuenta(int cvu, string alias, int saldo, int usuario, int tipoMoneda)
+    public Cuenta(int cvu, string alias, int saldo, int usuarioDni, int tipoMoneda)
     {
       this.cvu = cvu;
       this.alias = alias;
       this.saldo = saldo;
-      this.usuario = usuario;
+      this.usuarioDni = usuarioDni;
       this.tipoMoneda = tipoMoneda;
     }
 
@@ -43,16 +43,17 @@ namespace Monar.Models
     }
     public int Usuario
     {
-      get{return usuario;}
-      set {usuario = value;}
+      get{return usuarioDni;}
+      set {usuarioDni = value;}
     }
     public int TipoMoneda
     {
       get{return tipoMoneda;}
       set{tipoMoneda = value;}
     }
-
+    /*
     [ForeignKey("usuario_dni")] 
-     public virtual Usuario Usuarios { get; set; } 
+     public virtual Usuario Usuarios { get; set; }
+    */
   }
 }

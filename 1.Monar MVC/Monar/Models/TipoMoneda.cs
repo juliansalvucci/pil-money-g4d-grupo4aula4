@@ -13,13 +13,11 @@ namespace Monar.Models
     public TipoMoneda()
     {
     }
-
     public TipoMoneda(int id, string nombre)
     {
       this.id = id;
       this.nombre = nombre;
     }
-
     public int Id
     {
       get { return id; }

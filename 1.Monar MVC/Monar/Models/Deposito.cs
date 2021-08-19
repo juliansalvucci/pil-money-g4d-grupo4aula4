@@ -8,8 +8,8 @@ namespace Monar.Models
   public class Deposito
   {
     private int id;
-    private readonly DateTime date;
-    private readonly DateTime time;  //VER
+    private readonly System.DateTime fecha;
+    private readonly System.TimeSpan hora;  
     private int tipoDeposito;
     private int tarjeta;
     private int cvu;
@@ -19,11 +19,11 @@ namespace Monar.Models
     {
     }
 
-    public Deposito(int id, DateTime date, DateTime time, int tipoDeposito, int tarjeta, int cvu, int codigoSeguridad)
+    public Deposito(int id, System.DateTime fecha, System.TimeSpan hora, int tipoDeposito, int tarjeta, int cvu, int codigoSeguridad)
     {
       this.id = id;
-      this.date = date;
-      this.time = time;
+      this.fecha = fecha;
+      this.hora = hora;
       this.tipoDeposito = tipoDeposito;
       this.tarjeta = tarjeta;
       this.cvu = cvu;
@@ -36,7 +36,18 @@ namespace Monar.Models
       set { id = value; }
     }
 
-    //FALTA FECHA Y HORA
+    public System.DateTime Fecha
+    {
+      get { return fecha; }
+      set {; }
+    }
+
+
+    public System.TimeSpan Hora
+    {
+      get { return hora;}
+      set { ;}
+    }
 
     public int TipoDeposito
     {

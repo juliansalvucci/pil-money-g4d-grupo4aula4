@@ -8,8 +8,8 @@ namespace Monar.Models
   public class Transferencia
   {
     private int id;
-    private readonly DateTime date;
-    private readonly DateTime time;  //VER
+    private readonly System.DateTime fecha;
+    private readonly System.TimeSpan hora;  //VER
     private string nota;
     private int cvu;
     private int destino;
@@ -18,24 +18,30 @@ namespace Monar.Models
     {
     }
 
-    public Transferencia(int id, DateTime date, DateTime time, string nota, int cvu, int destino)
+    public Transferencia(int id, System.DateTime fecha, System.TimeSpan hora, string nota, int cvu, int destino)
     {
       this.id = id;
-      this.date = date;
-      this.time = time;
+      this.fecha = fecha;
+      this.hora = hora;
       this.nota = nota;
       this.cvu = cvu;
       this.destino = destino;
     }
-
     public int Id
     {
       get { return id; }
       set { id = value; }
     }
-
-    //FALTA FECHA Y HORA
-
+    public System.DateTime Fecha
+    {
+      get { return fecha; }
+      set {; }
+    }
+    public System.TimeSpan Hora
+    {
+      get { return hora; }
+      set {; }
+    }
     public string Nota
     {
       get { return nota; }

@@ -13,14 +13,14 @@ namespace Monar.Models
     private string contraseña;
     private string correo;
     private int dni;
-    private int fotoFrenteDni;
-    private int fotoDorsoDNI;
+    private byte[] fotoFrenteDni;
+    private byte[] fotoDorsoDNI;
 
     public Usuario()
     {
     }
 
-    public Usuario(int id, string apellido, string nombre, string contraseña, string correo, int dni, int fotoFrenteDni, int fotoDorsoDNI)
+    public Usuario(int id, string apellido, string nombre, string contraseña, string correo, int dni, byte[] fotoFrenteDni, byte[] fotoDorsoDNI)
     {
       this.id = id;
       this.apellido = apellido;
@@ -61,12 +61,12 @@ namespace Monar.Models
       get { return dni; }
       set { dni = value; }
     }
-    public int FotoFrenteDNI
+    public byte[] FotoFrenteDNI
     { 
       get { return fotoFrenteDni; }
       set { fotoFrenteDni = value; }
     }
-    public int FotoDorsoDNI
+    public byte[] FotoDorsoDNI
     { 
       get { return fotoDorsoDNI; }
       set { fotoDorsoDNI = value; }

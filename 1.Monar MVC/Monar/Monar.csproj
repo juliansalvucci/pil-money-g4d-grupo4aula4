@@ -155,7 +155,15 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CuentaController.cs" />
+    <Compile Include="Controllers\DepositoController.cs" />
+    <Compile Include="Controllers\DestinoController.cs" />
+    <Compile Include="Controllers\EmpresaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TarjetaController.cs" />
+    <Compile Include="Controllers\TipoDepositoController.cs" />
+    <Compile Include="Controllers\TipoMonedaController.cs" />
+    <Compile Include="Controllers\TransferenciaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -225,6 +233,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Cuenta\" />
+    <Folder Include="Views\Deposito\" />
+    <Folder Include="Views\Destino\" />
+    <Folder Include="Views\Empresa\" />
+    <Folder Include="Views\Tarjeta\" />
+    <Folder Include="Views\TipoDeposito\" />
+    <Folder Include="Views\TipoMoneda\" />
+    <Folder Include="Views\Transferencia\" />
     <Folder Include="Views\Usuario\" />
   </ItemGroup>
   <ItemGroup>
