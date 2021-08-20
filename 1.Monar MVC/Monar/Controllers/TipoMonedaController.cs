@@ -1,89 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 
 namespace Monar.Controllers
 {
-    public class TipoMonedaController : Controller
+    public class TipoMonedaController : ApiController
     {
-        // GET: TipoMoneda
-        public ActionResult Index()
+        // GET: api/TipoMoneda
+        public IEnumerable<string> Get()
         {
-            return View();
+            return new string[] { "value1", "value2" };
         }
 
-        // GET: TipoMoneda/Details/5
-        public ActionResult Details(int id)
+        // GET: api/TipoMoneda/5
+        public string Get(int id)
         {
-            return View();
+            return "value";
         }
 
-        // GET: TipoMoneda/Create
-        public ActionResult Create()
+        // POST: api/TipoMoneda
+        public void Post([FromBody]string value)
         {
-            return View();
         }
 
-        // POST: TipoMoneda/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        // PUT: api/TipoMoneda/5
+        public void Put(int id, [FromBody]string value)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
 
-        // GET: TipoMoneda/Edit/5
-        public ActionResult Edit(int id)
+        // DELETE: api/TipoMoneda/5
+        public void Delete(int id)
         {
-            return View();
-        }
-
-        // POST: TipoMoneda/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: TipoMoneda/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: TipoMoneda/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }

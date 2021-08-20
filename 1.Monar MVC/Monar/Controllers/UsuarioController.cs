@@ -1,89 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using Monar.Models;
 
 namespace Monar.Controllers
 {
-    public class UsuarioController : Controller
+    public class UsuarioController : ApiController
     {
-        // GET: Usuario
-        public ActionResult Index()
+        // GET: api/Usuario
+        public IEnumerable<string> Get()
         {
-            return View();
+            return new string[] { "value1", "value2" };
         }
 
-        // GET: Usuario/Details/5
-        public ActionResult Details(int id)
+        // GET: api/Usuario/5
+        public string Get(int id)
         {
-            return View();
+            return "value";
         }
 
-        // GET: Usuario/Create
-        public ActionResult Create()
+        // POST: api/Usuario
+        public HttpResponseMessage Post([FromBody]Usuario value)
         {
-            return View();
-        }
-
-        // POST: Usuario/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
+            if(ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            } else
             {
-                return View();
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
         }
 
-        // GET: Usuario/Edit/5
-        public ActionResult Edit(int id)
+        // PUT: api/Usuario/5
+        public void Put(int id, [FromBody]string value)
         {
-            return View();
         }
 
-        // POST: Usuario/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        // DELETE: api/Usuario/5
+        public void Delete(int id)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Usuario/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Usuario/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }

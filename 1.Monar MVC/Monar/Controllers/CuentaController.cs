@@ -1,89 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 
 namespace Monar.Controllers
 {
-    public class CuentaController : Controller
+    public class CuentaController : ApiController
     {
-        // GET: Cuenta
-        public ActionResult Index()
+        // GET: api/Cuenta
+        public IEnumerable<string> Get()
         {
-            return View();
+            return new string[] { "value1", "value2" };
         }
 
-        // GET: Cuenta/Details/5
-        public ActionResult Details(int id)
+        // GET: api/Cuenta/5
+        public string Get(int id)
         {
-            return View();
+            return "value";
         }
 
-        // GET: Cuenta/Create
-        public ActionResult Create()
+        // POST: api/Cuenta
+        public void Post([FromBody]string value)
         {
-            return View();
         }
 
-        // POST: Cuenta/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        // PUT: api/Cuenta/5
+        public void Put(int id, [FromBody]string value)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
 
-        // GET: Cuenta/Edit/5
-        public ActionResult Edit(int id)
+        // DELETE: api/Cuenta/5
+        public void Delete(int id)
         {
-            return View();
-        }
-
-        // POST: Cuenta/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Cuenta/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Cuenta/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }

@@ -29,16 +29,19 @@ namespace Monar.Models
       get { return aliascvu; }
       set { aliascvu = value; }
     }
+
     public string Propietario
     {
       get { return propietario; }
       set { propietario = value; }
     }
+
     public string Correo
     {
       get { return correo; }
       set { correo = value; }
     }
+    
     public int Dni
     {
       get { return dni; }

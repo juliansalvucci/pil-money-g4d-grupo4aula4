@@ -1,89 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 
 namespace Monar.Controllers
 {
-    public class DestinoController : Controller
+    public class DestinoController : ApiController
     {
-        // GET: Destino
-        public ActionResult Index()
+        // GET: api/Destino
+        public IEnumerable<string> Get()
         {
-            return View();
+            return new string[] { "value1", "value2" };
         }
 
-        // GET: Destino/Details/5
-        public ActionResult Details(int id)
+        // GET: api/Destino/5
+        public string Get(int id)
         {
-            return View();
+            return "value";
         }
 
-        // GET: Destino/Create
-        public ActionResult Create()
+        // POST: api/Destino
+        public void Post([FromBody]string value)
         {
-            return View();
         }
 
-        // POST: Destino/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        // PUT: api/Destino/5
+        public void Put(int id, [FromBody]string value)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
 
-        // GET: Destino/Edit/5
-        public ActionResult Edit(int id)
+        // DELETE: api/Destino/5
+        public void Delete(int id)
         {
-            return View();
-        }
-
-        // POST: Destino/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Destino/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Destino/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }

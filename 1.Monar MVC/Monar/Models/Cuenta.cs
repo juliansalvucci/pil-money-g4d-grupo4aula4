@@ -31,21 +31,25 @@ namespace Monar.Models
       get { return cvu; }
       set { cvu = value;}
     }
+    
     public string Alias
     {
       get {return alias;}
       set {alias = value;}
     }
+
     public int Saldo
     {
       get {return saldo;}
       set {saldo = value;}
     }
+
     public int Usuario
     {
       get{return usuarioDni;}
       set {usuarioDni = value;}
     }
+
     public int TipoMoneda
     {
       get{return tipoMoneda;}

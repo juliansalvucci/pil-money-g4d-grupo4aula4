@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -36,36 +37,45 @@ namespace Monar.Models
       get { return id; }
       set { id = value; }
     }
+    
+    //[StringLength(60, MinimumLength = 3)]
     public string Apellido
     {
       get { return apellido; }
       set { apellido = value; }
     }
+
+    [Required] 
     public string Nombre
     {
       get { return nombre; }
       set { nombre = value; }
     }
+
     public string Contraseña
     {
       get { return contraseña; }
       set { contraseña = value; }
     }
+
     public string Correo
     {
       get { return correo; }
       set { correo = value; }
     }
+
     public int Dni
     { 
       get { return dni; }
       set { dni = value; }
     }
+
     public byte[] FotoFrenteDNI
     { 
       get { return fotoFrenteDni; }
       set { fotoFrenteDni = value; }
     }
+    
     public byte[] FotoDorsoDNI
     { 
       get { return fotoDorsoDNI; }

@@ -173,6 +173,15 @@
     <Compile Include="Models\Deposito.cs" />
     <Compile Include="Models\Destino.cs" />
     <Compile Include="Models\Empresa.cs" />
+    <Compile Include="Models\GestorCuenta.cs" />
+    <Compile Include="Models\GestorDeposito.cs" />
+    <Compile Include="Models\GestorDestino.cs" />
+    <Compile Include="Models\GestorEmpresa.cs" />
+    <Compile Include="Models\GestorTarjeta.cs" />
+    <Compile Include="Models\GestorTipoDeposito.cs" />
+    <Compile Include="Models\GestorTipoMoneda.cs" />
+    <Compile Include="Models\GestorTransferencia.cs" />
+    <Compile Include="Models\GestorUsuario.cs" />
     <Compile Include="Models\Tarjeta.cs" />
     <Compile Include="Models\TipoDeposito.cs" />
     <Compile Include="Models\TipoMoneda.cs" />

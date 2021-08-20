@@ -25,6 +25,7 @@ namespace Monar.Models
       get { return id; }
       set { id = value; }
     }
+    
     public string Nombre
     {
       get { return nombre; }

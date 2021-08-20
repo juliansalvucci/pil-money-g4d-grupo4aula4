@@ -27,31 +27,37 @@ namespace Monar.Models
       this.cvu = cvu;
       this.destino = destino;
     }
+
     public int Id
     {
       get { return id; }
       set { id = value; }
     }
+
     public System.DateTime Fecha
     {
       get { return fecha; }
       set {; }
     }
+
     public System.TimeSpan Hora
     {
       get { return hora; }
       set {; }
     }
+
     public string Nota
     {
       get { return nota; }
       set { nota = value; }
     }
+
     public int Cvu
     {
       get { return cvu; }
       set { cvu = value; }
     }
+    
     public int Destino
     {
       get { return destino; }
