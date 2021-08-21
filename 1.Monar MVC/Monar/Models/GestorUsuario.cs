@@ -6,13 +6,14 @@ using System.Web;
 using System.Xml;
 
 /*  GUÍA DE REFERENCIA
-this.id = id;
-this.apellido = apellido;
-this.nombre = nombre;
-this.contraseña = contraseña;
-this.correo = correo;
-this.fotoFrenteDni = fotoFrenteDni;
-this.fotoDorsoDNI = fotoDorsoDNI;
+private int id;
+private string apellido;
+private string nombre;
+private string contraseña;
+private string correo;
+private int dni;
+private byte[] fotoFrenteDni;
+private byte[] fotoDorsoDNI;
 */
 
 namespace Monar.Models
@@ -47,7 +48,7 @@ namespace Monar.Models
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "UPDATE Personas SET apellido=@Apellido, nombre=@Nombre, contraseña=@Contraseña, correo=@cCorreo WHERE id=@Id";
+            cm.CommandText = "UPDATE Usuario SET apellido=@Apellido, nombre=@Nombre, contraseña=@Contraseña, correo=@cCorreo WHERE id=@Id";
             cm.Parameters.Add(new SqlParameter("@Id", u.Id));
             cm.Parameters.Add(new SqlParameter("@Apellido", u.Apellido));
             cm.Parameters.Add(new SqlParameter("@Nombre", u.Nombre));

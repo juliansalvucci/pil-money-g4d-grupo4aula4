@@ -9,7 +9,7 @@ namespace Monar.Models
   {
     private int cvu;
     private string alias;
-    private int saldo;
+    private decimal saldo;
     private int usuarioDni;
     private int tipoMoneda;
 
@@ -17,7 +17,7 @@ namespace Monar.Models
     {
     }
 
-    public Cuenta(int cvu, string alias, int saldo, int usuarioDni, int tipoMoneda)
+    public Cuenta(int cvu, string alias, decimal saldo, int usuarioDni, int tipoMoneda)
     {
       this.cvu = cvu;
       this.alias = alias;
@@ -38,7 +38,7 @@ namespace Monar.Models
       set {alias = value;}
     }
 
-    public int Saldo
+    public decimal Saldo
     {
       get {return saldo;}
       set {saldo = value;}

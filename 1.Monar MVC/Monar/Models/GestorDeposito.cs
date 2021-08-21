@@ -26,7 +26,7 @@ namespace Monar.Models
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "INSERT INTO Transferencia(fecha, hora, tipoDeposito, tarjeta, cvu, codigoSeguridad) VALUES (@Fecha, @Hora, @TipoDeposito, @Tarjeta, @Cvu, @CodigoSeguridad)";
+            cm.CommandText = "INSERT INTO Deposito(fecha, hora, tipoDeposito, tarjeta, cvu, codigoSeguridad) VALUES (@Fecha, @Hora, @TipoDeposito, @Tarjeta, @Cvu, @CodigoSeguridad)";
             cm.Parameters.Add(new SqlParameter("@Fecha", nuevo.Fecha));
             cm.Parameters.Add(new SqlParameter("@Hora", nuevo.Hora));
             cm.Parameters.Add(new SqlParameter("@TipoDeposito", nuevo.TipoDeposito));
@@ -78,7 +78,7 @@ namespace Monar.Models
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "SELECT * FROM Personas WHERE id=@Id";
+            cm.CommandText = "SELECT * FROM Deposito WHERE id=@Id";
             cm.Parameters.Add(new SqlParameter("@Id", id));
 
             SqlDataReader dr = cm.ExecuteReader();
@@ -91,7 +91,7 @@ namespace Monar.Models
                 int cvu = dr.GetInt32(5);
                 int codigoSeguridad = dr.GetInt32(5);
 
-                Deposito d = new Deposito(id, fecha, hora, tipoDeposito, tarjeta, cvu, codigoSeguridad);
+                d = new Deposito(id, fecha, hora, tipoDeposito, tarjeta, cvu, codigoSeguridad);
             }
 
             dr.Close();

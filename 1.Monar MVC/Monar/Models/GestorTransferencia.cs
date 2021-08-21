@@ -75,7 +75,7 @@ namespace Monar.Models
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "SELECT * FROM Personas WHERE id=@Id";
+            cm.CommandText = "SELECT * FROM Transferencia WHERE id=@Id";
             cm.Parameters.Add(new SqlParameter("@Id", id));
 
             SqlDataReader dr = cm.ExecuteReader();
