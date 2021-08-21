@@ -37,7 +37,7 @@ namespace Monar.Models
     public System.DateTime FechaVencimiento
     {
       get { return fechaVencimiento; }
-      set {;}
+      set {fechaVencimiento = value;}
     }
 
     public int CodigoSeguridad

@@ -8,8 +8,8 @@ namespace Monar.Models
   public class Transferencia
   {
     private int id;
-    private readonly System.DateTime fecha;
-    private readonly System.TimeSpan hora;  //VER
+    private System.DateTime fecha;
+    private System.TimeSpan hora;  //VER
     private string nota;
     private int cvu;
     private int destino;
