@@ -23,7 +23,8 @@ export class PagoTarjetaDebitoComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(TarjetaComponent, {
-      width: '250px',
+      width: '300px',
+      height: '600px',
       data: {name: this.name, animal: this.animal}
     });
 
