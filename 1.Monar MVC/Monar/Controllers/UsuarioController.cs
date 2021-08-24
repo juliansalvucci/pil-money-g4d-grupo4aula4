@@ -5,11 +5,15 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Monar.Models;
+using System.Web.Routing;
+using Microsoft.AspNetCore.Cors;
 
 namespace Monar.Controllers
 {
+    [RoutePrefix("api/Usuario")]
     public class UsuarioController : ApiController
     {
+        
         // GET: api/Usuario
         public IEnumerable<string> Get()
         {
@@ -28,20 +32,27 @@ namespace Monar.Controllers
             if(ModelState.IsValid)
             {
                 return new HttpResponseMessage(HttpStatusCode.OK);
-            } else
+            } 
+            else
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
         }
 
         // PUT: api/Usuario/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(Usuario usuario)
         {
+            GestorUsuario gUsuario = new GestorUsuario();
+            gUsuario.ModificarUsuario(usuario);
         }
 
         // DELETE: api/Usuario/5
         public void Delete(int id)
         {
+            GestorUsuario gUsuario= new GestorUsuario();
+            gUsuario.EliminarUsuario(id);
         }
+        
+
     }
 }
