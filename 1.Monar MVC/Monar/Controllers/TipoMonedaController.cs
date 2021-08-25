@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Monar.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -22,18 +23,32 @@ namespace Monar.Controllers
         }
 
         // POST: api/TipoMoneda
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post([FromBody]TipoMoneda value)
         {
+            if (ModelState.IsValid)
+            {
+                GestorTipoMoneda gTipoMoneda = new GestorTipoMoneda();
+                gTipoMoneda.RegistrarTipoMoneda(value);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
         }
 
         // PUT: api/TipoMoneda/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(TipoMoneda tm)
         {
+            GestorTipoMoneda gTipoMoneda = new GestorTipoMoneda();
+            gTipoMoneda.ModificarTipoMoneda(tm);
         }
 
         // DELETE: api/TipoMoneda/5
         public void Delete(int id)
         {
+            GestorTipoMoneda gTipoMoneda = new GestorTipoMoneda();
+            gTipoMoneda.EliminarTipoMoneda(id);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Monar.Models
 {
     public class GestorDeposito
     {
-        private const string StrConexion = "Server=LAPTOP-0CRE86U4\\SQLEXPRESS;Database=Personas;User Id=sa;Password=123456;";
+        private const string StrConexion = "Data Source=DESKTOP-0836GCF;Initial Catalog=Monar;Integrated Security=True";
 
         public void RegistrarDeposito(Deposito nuevo)
         {

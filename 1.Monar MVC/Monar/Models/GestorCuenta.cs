@@ -16,7 +16,7 @@ namespace Monar.Models
 {
     public class GestorCuenta
     {
-        private const string StrConexion = "Data Source=DESKTOP-0836GCF;User ID=sa;Password=qwer*1234;Initial Catalog=Monar;Integrated Security=True";
+        private const string StrConexion = "Data Source=DESKTOP-0836GCF;Initial Catalog=Monar;Integrated Security=True";
 
         public void RegistrarCuenta(Cuenta nueva)
         {

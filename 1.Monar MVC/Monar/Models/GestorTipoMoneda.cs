@@ -13,7 +13,7 @@ namespace Monar.Models
 {
     public class GestorTipoMoneda
     {
-        private const string StrConexion = "Server=LAPTOP-0CRE86U4\\SQLEXPRESS;Database=Personas;User Id=sa;Password=123456;";
+        private const string StrConexion = "Data Source=DESKTOP-0836GCF;Initial Catalog=Monar;Integrated Security=True";
 
         public void RegistrarTipoMoneda(TipoMoneda nuevo)
         {
@@ -23,7 +23,7 @@ namespace Monar.Models
             SqlCommand cm = cx.CreateCommand();
             cm.CommandText = "INSERT INTO TipoMoneda(nombre) VALUES (@Nombre)";
             cm.Parameters.Add(new SqlParameter("@Nombre", nuevo.Nombre));
-            
+
             cm.ExecuteNonQuery();
 
             cx.Close();
@@ -37,7 +37,7 @@ namespace Monar.Models
             cm.CommandText = "UPDATE TipoMoneda SET nombre=@Nombre WHERE id=@Id";
             cm.Parameters.Add(new SqlParameter("@Id", tm.Id));
             cm.Parameters.Add(new SqlParameter("@Nombre", tm.Nombre));
-          
+
             cm.ExecuteNonQuery();
 
             cx.Close();
@@ -56,5 +56,33 @@ namespace Monar.Models
             cx.Close();
 
         }
+
+        public List<TipoMoneda> ObtenerTipoMoneda()
+        {
+            List<TipoMoneda> tiposDeMonedas = new List<TipoMoneda>();
+
+            SqlConnection cx = new SqlConnection(StrConexion);
+            cx.Open();
+
+            SqlCommand cm = cx.CreateCommand();
+            cm.CommandText = "SELECT * FROM TipoMoneda";
+
+            SqlDataReader dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                int id = dr.GetInt32(0);
+                string nombre = dr.GetString(1);
+                
+                TipoMoneda tm = new  TipoMoneda(id, nombre);
+                tiposDeMonedas.Add(tm);
+            }
+
+            dr.Close();
+            cx.Close();
+
+            return tiposDeMonedas;
+        }
+
+
     }
 }
