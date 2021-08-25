@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -52,12 +53,14 @@ namespace Monar.Models
       set { nota = value; }
     }
 
+    [Required]
     public int Cvu
     {
       get { return cvu; }
       set { cvu = value; }
     }
     
+    [Required]
     public int Destino
     {
       get { return destino; }

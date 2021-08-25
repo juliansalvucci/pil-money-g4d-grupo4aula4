@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -32,6 +33,7 @@ namespace Monar.Models
       set { cvu = value;}
     }
     
+    [Required]
     public string Alias
     {
       get {return alias;}
@@ -44,12 +46,14 @@ namespace Monar.Models
       set {saldo = value;}
     }
 
+    [Required]
     public int Usuario
     {
       get{return usuarioDni;}
       set {usuarioDni = value;}
     }
 
+    [Required]
     public int TipoMoneda
     {
       get{return tipoMoneda;}

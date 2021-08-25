@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -24,24 +25,28 @@ namespace Monar.Models
       this.dni = dni;
     }
 
+    [Required]
     public string Aliascvu
     {
       get { return aliascvu; }
       set { aliascvu = value; }
     }
 
+    [Required]
     public string Propietario
     {
       get { return propietario; }
       set { propietario = value; }
     }
 
+    [Required]
     public string Correo
     {
       get { return correo; }
       set { correo = value; }
     }
     
+    [Required]
     public int Dni
     {
       get { return dni; }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -48,24 +49,28 @@ namespace Monar.Models
       set { hora = value;}
     }
 
+    [Required]
     public int TipoDeposito
     {
       get { return tipoDeposito; }
       set { tipoDeposito = value; }
     }
     
+    [Required]
     public int Tarjeta
     {
       get { return tarjeta; }
       set { tarjeta = value; }
     }
 
+    [Required]
     public int Cvu
     {
       get { return cvu; }
       set { cvu = value; }
     }
     
+    [Required]
     public int CodigoSeguridad
     {
       get { return codigoSeguridad; }

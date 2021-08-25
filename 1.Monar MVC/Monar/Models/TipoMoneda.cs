@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -26,6 +27,7 @@ namespace Monar.Models
       set { id = value; }
     }
     
+    [Required]
     public string Nombre
     {
       get { return nombre; }

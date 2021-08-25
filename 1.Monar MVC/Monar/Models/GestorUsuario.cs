@@ -20,8 +20,8 @@ namespace Monar.Models
 {
     public class GestorUsuario
     {
-        private const string StrConexion = "Server=LAPTOP-0CRE86U4\\SQLEXPRESS;Database=Personas;User Id=sa;Password=123456;";
-
+        private const string StrConexion = "Data Source=DESKTOP-0836GCF;Initial Catalog=Monar;Integrated Security=True";
+        
         public void RegistrarUsuario(Usuario nuevo)
         {
             SqlConnection cx = new SqlConnection(StrConexion);
@@ -48,7 +48,7 @@ namespace Monar.Models
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "UPDATE Usuario SET apellido=@Apellido, nombre=@Nombre, contraseña=@Contraseña, correo=@cCorreo WHERE id=@Id";
+            cm.CommandText = "UPDATE Usuario SET apellido=@Apellido, nombre=@Nombre, contraseña=@Contraseña, correo=@Correo WHERE id=@Id";
             cm.Parameters.Add(new SqlParameter("@Id", u.Id));
             cm.Parameters.Add(new SqlParameter("@Apellido", u.Apellido));
             cm.Parameters.Add(new SqlParameter("@Nombre", u.Nombre));

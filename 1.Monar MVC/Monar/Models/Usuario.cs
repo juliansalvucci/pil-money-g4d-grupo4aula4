@@ -39,6 +39,7 @@ namespace Monar.Models
     }
     
     //[StringLength(60, MinimumLength = 3)]
+    [Required]
     public string Apellido
     {
       get { return apellido; }
@@ -52,18 +53,21 @@ namespace Monar.Models
       set { nombre = value; }
     }
 
+    [Required]
     public string Contraseña
     {
       get { return contraseña; }
       set { contraseña = value; }
     }
 
+    [Required]
     public string Correo
     {
       get { return correo; }
       set { correo = value; }
     }
 
+    [Required]
     public int Dni
     { 
       get { return dni; }

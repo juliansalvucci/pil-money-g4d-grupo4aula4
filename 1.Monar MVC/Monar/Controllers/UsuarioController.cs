@@ -31,6 +31,8 @@ namespace Monar.Controllers
         {
             if(ModelState.IsValid)
             {
+                GestorUsuario gUsuario = new GestorUsuario();
+                gUsuario.RegistrarUsuario(value);
                 return new HttpResponseMessage(HttpStatusCode.OK);
             } 
             else
