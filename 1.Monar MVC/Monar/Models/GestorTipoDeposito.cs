@@ -42,7 +42,7 @@ namespace Monar.Models
 
             cx.Close();
         }
-        public void EliminarTipoMoneda(int id)
+        public void EliminarTipoDeposito(int id)
         {
             SqlConnection cx = new SqlConnection(StrConexion);
             cx.Open();

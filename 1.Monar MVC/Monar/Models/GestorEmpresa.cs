@@ -28,15 +28,15 @@ namespace Monar.Models
 
             cx.Close();
         }
-        public void ModificarEmpresa(TipoDeposito td)
+        public void ModificarEmpresa(Empresa e)
         {
             SqlConnection cx = new SqlConnection(StrConexion);
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
             cm.CommandText = "UPDATE Empresa SET nombre=@Nombre WHERE id=@Id";
-            cm.Parameters.Add(new SqlParameter("@Id", td.Id));
-            cm.Parameters.Add(new SqlParameter("@Nombre", td.Nombre));
+            cm.Parameters.Add(new SqlParameter("@Id", e.Id));
+            cm.Parameters.Add(new SqlParameter("@Nombre", e.Nombre));
 
             cm.ExecuteNonQuery();
 

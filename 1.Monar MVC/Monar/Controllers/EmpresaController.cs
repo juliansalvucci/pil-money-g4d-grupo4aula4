@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Monar.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -22,18 +23,32 @@ namespace Monar.Controllers
         }
 
         // POST: api/Empresa
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post([FromBody]Empresa value)
         {
+            if (ModelState.IsValid)
+            {
+                GestorEmpresa gEmpresa = new GestorEmpresa();
+                gEmpresa.RegistrarEmpresa(value);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
         }
 
         // PUT: api/Empresa/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(Empresa empresa)
         {
+            GestorEmpresa gEmpresa = new GestorEmpresa();
+            gEmpresa.ModificarEmpresa(empresa);
         }
 
         // DELETE: api/Empresa/5
         public void Delete(int id)
         {
+            GestorEmpresa gEmpresa = new GestorEmpresa();
+            gEmpresa.EliminarEmpresa(id);
         }
     }
 }

@@ -56,33 +56,5 @@ namespace Monar.Models
             cx.Close();
 
         }
-
-        public List<TipoMoneda> ObtenerTipoMoneda()
-        {
-            List<TipoMoneda> tiposDeMonedas = new List<TipoMoneda>();
-
-            SqlConnection cx = new SqlConnection(StrConexion);
-            cx.Open();
-
-            SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "SELECT * FROM TipoMoneda";
-
-            SqlDataReader dr = cm.ExecuteReader();
-            while (dr.Read())
-            {
-                int id = dr.GetInt32(0);
-                string nombre = dr.GetString(1);
-                
-                TipoMoneda tm = new  TipoMoneda(id, nombre);
-                tiposDeMonedas.Add(tm);
-            }
-
-            dr.Close();
-            cx.Close();
-
-            return tiposDeMonedas;
-        }
-
-
     }
 }

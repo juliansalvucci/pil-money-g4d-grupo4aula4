@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Monar.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -22,8 +23,18 @@ namespace Monar.Controllers
         }
 
         // POST: api/Tarjeta
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post([FromBody]Tarjeta value)
         {
+            if (ModelState.IsValid)
+            {
+                GestorTarjeta gTarjeta = new GestorTarjeta();
+                gTarjeta.RegistrarTarjeta(value);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
         }
 
         // PUT: api/Tarjeta/5
@@ -34,6 +45,8 @@ namespace Monar.Controllers
         // DELETE: api/Tarjeta/5
         public void Delete(int id)
         {
+            GestorTarjeta gTarjeta = new GestorTarjeta();
+            gTarjeta.EliminarTarjeta(id);
         }
     }
 }

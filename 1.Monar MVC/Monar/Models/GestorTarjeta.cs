@@ -19,7 +19,7 @@ namespace Monar.Models
     public class GestorTarjeta
     {
         private const string StrConexion = "Data Source=DESKTOP-0836GCF;Initial Catalog=Monar;Integrated Security=True";
-        public void RegistrarUsuario(Tarjeta nueva)
+        public void RegistrarTarjeta(Tarjeta nueva)
         {
             SqlConnection cx = new SqlConnection(StrConexion);
             cx.Open();

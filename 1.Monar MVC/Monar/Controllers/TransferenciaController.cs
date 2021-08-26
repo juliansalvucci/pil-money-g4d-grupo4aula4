@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Monar.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -22,8 +23,18 @@ namespace Monar.Controllers
         }
 
         // POST: api/Transferencia
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post([FromBody]Transferencia value)
         {
+            if (ModelState.IsValid)
+            {
+                GestorTransferencia gTransferencia = new GestorTransferencia ();
+                gTransferencia.RegistrarTransferencia(value);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
         }
 
         // PUT: api/Transferencia/5

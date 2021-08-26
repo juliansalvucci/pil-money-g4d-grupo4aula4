@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Monar.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -22,18 +23,32 @@ namespace Monar.Controllers
         }
 
         // POST: api/TipoDeposito
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post([FromBody]TipoDeposito value)
         {
+            if (ModelState.IsValid)
+            {
+                GestorTipoDeposito gTipoDeposito = new GestorTipoDeposito();
+                gTipoDeposito.RegistrarTipoDeposito(value);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
         }
 
         // PUT: api/TipoDeposito/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(TipoDeposito td)
         {
+            GestorTipoDeposito gTipoDeposito = new GestorTipoDeposito();
+            gTipoDeposito.ModificarTipoDeposito(td);
         }
 
         // DELETE: api/TipoDeposito/5
         public void Delete(int id)
         {
+            GestorTipoDeposito gTipoDeposito = new GestorTipoDeposito();
+            gTipoDeposito.EliminarTipoDeposito(id);
         }
     }
 }
