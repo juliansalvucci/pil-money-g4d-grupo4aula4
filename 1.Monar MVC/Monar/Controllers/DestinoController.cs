@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Monar.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -22,9 +23,20 @@ namespace Monar.Controllers
         }
 
         // POST: api/Destino
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post([FromBody] Destino value)
         {
+            if (ModelState.IsValid)
+            {
+                GestorDestino gDestino = new GestorDestino();
+                gDestino.RegistrarDestino(value);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
         }
+
 
         // PUT: api/Destino/5
         public void Put(int id, [FromBody]string value)
@@ -34,6 +46,8 @@ namespace Monar.Controllers
         // DELETE: api/Destino/5
         public void Delete(int id)
         {
+            GestorDestino gDestino = new GestorDestino();
+            gDestino.EliminarDestino(id);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Monar.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,9 +11,11 @@ namespace Monar.Controllers
     public class CuentaController : ApiController
     {
         // GET: api/Cuenta
-        public IEnumerable<string> Get()
+        public IHttpActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            GestorCuenta gCuenta = new GestorCuenta();
+            List <Cuenta> cuentas = gCuenta.ListarCuenta();
+            return Ok(cuentas);
         }
 
         // GET: api/Cuenta/5

@@ -2,16 +2,23 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Web;
 
 namespace Monar.Models
 {
+  [DataContract]
   public class Cuenta
   {
+    [DataMember]
     private int cvu;
+    [DataMember]
     private string alias;
+    [DataMember]
     private decimal saldo;
+    [DataMember]
     private int usuarioDni;
+    [DataMember]
     private int tipoMoneda;
 
     public Cuenta()
