@@ -56,5 +56,31 @@ namespace Monar.Models
             cx.Close();
 
         }
+
+        public List<TipoDeposito> ListarTiposDeposito()
+        {
+            List<TipoDeposito> listadoTipoMonedas = new List<TipoDeposito>();
+
+            SqlConnection cx = new SqlConnection(StrConexion);
+            cx.Open();
+
+            SqlCommand cm = cx.CreateCommand();
+            cm.CommandText = "SELECT * FROM TipoDeposito";
+
+            SqlDataReader dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                int id = dr.GetInt32(0);
+                string nombre = dr.GetString(1);
+
+                TipoDeposito td = new TipoDeposito(id, nombre);
+                listadoTipoMonedas.Add(td);
+            }
+
+            dr.Close();
+            cx.Close();
+
+            return listadoTipoMonedas;
+        }
     }
 }

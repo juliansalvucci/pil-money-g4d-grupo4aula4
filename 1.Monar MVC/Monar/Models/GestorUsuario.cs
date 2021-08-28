@@ -24,15 +24,17 @@ namespace Monar.Models
         
         public void RegistrarUsuario(Usuario nuevo)
         {
+        
             SqlConnection cx = new SqlConnection(StrConexion);
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "INSERT INTO Usuario(apellido, nombre, contraseña, correo, fotoFrenteDni, fotoDorsoDni) VALUES (@Apellido, @Nombre, @Contraseña, @Correo, @FotoFrenteDni, @FotoDorsoDni)";
+            cm.CommandText = "INSERT INTO Usuario(apellido, nombre, contraseña, correo, dni, fotoDNIFrente, fotoDNIDorso) VALUES (@Apellido, @Nombre, @Contraseña, @Correo, @Dni, @FotoFrenteDni, @FotoDorsoDni)";
             cm.Parameters.Add(new SqlParameter("@Apellido", nuevo.Apellido));
             cm.Parameters.Add(new SqlParameter("@Nombre", nuevo.Nombre));
             cm.Parameters.Add(new SqlParameter("@Contraseña", nuevo.Contraseña));
             cm.Parameters.Add(new SqlParameter("@Correo", nuevo.Correo));
+            cm.Parameters.Add(new SqlParameter("@Dni", nuevo.Dni));
             cm.Parameters.Add(new SqlParameter("@fotoFrenteDni", nuevo.FotoFrenteDNI));
             cm.Parameters.Add(new SqlParameter("@fotoDorsoDni", nuevo.FotoDorsoDNI));
 
@@ -73,5 +75,7 @@ namespace Monar.Models
             cx.Close();
 
         }
+
+        
     }
 }

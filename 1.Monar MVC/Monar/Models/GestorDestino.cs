@@ -48,5 +48,34 @@ namespace Monar.Models
             cx.Close();
 
         }
+
+        public List<Destino> ListarDestinos()
+        {
+            List<Destino> listadoDestinos = new List<Destino>();
+
+            SqlConnection cx = new SqlConnection(StrConexion);
+            cx.Open();
+
+            SqlCommand cm = cx.CreateCommand();
+            cm.CommandText = "SELECT * FROM Destino";
+
+            SqlDataReader dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                string aliasCvu = dr.GetString(1);
+                string propietario = dr.GetString(2);
+                string correo = dr.GetString(3);
+                int dni = dr.GetInt32(0);
+
+                Destino d = new Destino(aliasCvu, propietario, correo, dni);
+                listadoDestinos.Add(d);
+            }
+
+            dr.Close();
+            cx.Close();
+
+            return listadoDestinos;
+        }
+
     }
 }

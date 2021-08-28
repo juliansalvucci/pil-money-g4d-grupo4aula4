@@ -56,5 +56,31 @@ namespace Monar.Models
             cx.Close();
 
         }
+
+        public List<Empresa> ListarEmpresas()
+        {
+            List<Empresa> listadoEmpresas = new List<Empresa>();
+
+            SqlConnection cx = new SqlConnection(StrConexion);
+            cx.Open();
+
+            SqlCommand cm = cx.CreateCommand();
+            cm.CommandText = "SELECT * FROM Empresa";
+
+            SqlDataReader dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                int id = dr.GetInt32(0);
+                string nombre = dr.GetString(1);
+                
+                Empresa e = new Empresa(id, nombre);
+                listadoEmpresas.Add(e);
+            }
+
+            dr.Close();
+            cx.Close();
+
+            return listadoEmpresas;
+        }
     }
 }

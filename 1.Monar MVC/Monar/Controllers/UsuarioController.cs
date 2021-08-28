@@ -14,18 +14,6 @@ namespace Monar.Controllers
     public class UsuarioController : ApiController
     {
         
-        // GET: api/Usuario
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET: api/Usuario/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         // POST: api/Usuario
         public HttpResponseMessage Post([FromBody]Usuario value)
         {

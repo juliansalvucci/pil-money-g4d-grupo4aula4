@@ -11,6 +11,7 @@ namespace Monar.Controllers
     public class CuentaController : ApiController
     {
         // GET: api/Cuenta
+        [HttpGet]
         public IHttpActionResult Get()
         {
             GestorCuenta gCuenta = new GestorCuenta();
