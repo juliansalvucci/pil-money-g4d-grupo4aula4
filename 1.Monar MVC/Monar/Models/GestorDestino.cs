@@ -49,6 +49,36 @@ namespace Monar.Models
 
         }
 
+        public Destino ObtenerDestinoPorId(int id)
+        {
+            Destino d = null;
+
+            SqlConnection cx = new SqlConnection(StrConexion);
+            cx.Open();
+
+            SqlCommand cm = cx.CreateCommand();
+            cm.CommandText = "SELECT * FROM Destino WHERE id=@Id";
+            cm.Parameters.Add(new SqlParameter("@Id", id));
+
+            SqlDataReader dr = cm.ExecuteReader();
+            if (dr.Read())
+            {
+                string aliasCvu = dr.GetString(1);
+                string propietario = dr.GetString(2);
+                string correo = dr.GetString(3);
+                int dni = dr.GetInt32(0);
+
+                d = new Destino(aliasCvu, propietario, correo, dni);
+            }
+
+            dr.Close();
+            cx.Close();
+
+            return d;
+
+        }
+
+
         public List<Destino> ListarDestinos()
         {
             List<Destino> listadoDestinos = new List<Destino>();

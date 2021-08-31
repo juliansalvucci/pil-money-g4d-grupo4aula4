@@ -39,6 +39,26 @@ namespace Monar.Models
             cx.Close();
         }
 
+        public void ModificarTarjeta(Tarjeta t)
+        {
+            SqlConnection cx = new SqlConnection(StrConexion);
+            cx.Open();
+
+            SqlCommand cm = cx.CreateCommand();
+            cm.CommandText = "UPDATE Tarjeta SET numero=@Numero, fechaVencimiento=@FechaVencimiento, codigoSeguridad=@CodigoDeSeguridad, propietarioo=@Propietario, empresa=@Empresa WHERE id=@Id";
+            cm.Parameters.Add(new SqlParameter("@Numero", t.Numero));
+            cm.Parameters.Add(new SqlParameter("@FechaVencimiento", t.FechaVencimiento));
+            cm.Parameters.Add(new SqlParameter("@CodigoDeSeguridad", t.CodigoSeguridad));
+            cm.Parameters.Add(new SqlParameter("@Propietario", t.Propietario));
+            cm.Parameters.Add(new SqlParameter("@Dni", t.Dni));
+            cm.Parameters.Add(new SqlParameter("@Empresa", t.Empresa));
+
+
+            cm.ExecuteNonQuery();
+
+            cx.Close();
+        }
+
         public void EliminarTarjeta(int id)
         {
             SqlConnection cx = new SqlConnection(StrConexion);
@@ -51,7 +71,6 @@ namespace Monar.Models
             cm.ExecuteNonQuery();
 
             cx.Close();
-
         }
 
         public List<Tarjeta> ListarTarjetas()
