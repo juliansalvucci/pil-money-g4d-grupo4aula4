@@ -1,11 +1,10 @@
-﻿/*
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Configuration;
 using System.Security.Claims;
-using System.IdentityModel.Tokens;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Monar.Controllers
 {
@@ -19,7 +18,7 @@ namespace Monar.Controllers
             var issuerToken = ConfigurationManager.AppSettings["JWT_ISSUER_TOKEN"];
             var expireTime = ConfigurationManager.AppSettings["JWT_EXPIRE_MINUTES"];
 
-            var SymmetricSecurityKey securityKey = new SymmetricSecurityKey(System.Text.Encoding.Default.GetBytes(secretKey));
+            SymmetricSecurityKey securityKey = new SymmetricSecurityKey(System.Text.Encoding.Default.GetBytes(secretKey));
             var signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
 
             // create a claimsIdentity
@@ -40,6 +39,10 @@ namespace Monar.Controllers
             var jwtTokenString = tokenHandler.WriteToken(jwtSecurityToken);
             return jwtTokenString;
         }
+
+        internal static object GenerateTokenJwt(string correo)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
-*/
