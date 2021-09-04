@@ -68,4 +68,5 @@ export interface Usuario{
     dni: number;
     fotoFrenteDni: number;
     fotoDorsoDni: number;
+    token?: string;
 }
