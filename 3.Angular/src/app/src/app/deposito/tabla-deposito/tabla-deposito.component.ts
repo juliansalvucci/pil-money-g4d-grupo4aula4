@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {AfterViewInit, ViewChild} from '@angular/core';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 
 export interface PeriodicElement {
   name: string;
@@ -23,14 +22,12 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
 
-
 @Component({
-  selector: 'app-resumen',
-  templateUrl: './resumen.component.html',
-  styleUrls: ['./resumen.component.css']
+  selector: 'app-tabla-deposito',
+  templateUrl: './tabla-deposito.component.html',
+  styleUrls: ['./tabla-deposito.component.css']
 })
-export class ResumenComponent implements OnInit {
-
+export class TablaDepositoComponent implements AfterViewInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
@@ -39,10 +36,6 @@ export class ResumenComponent implements OnInit {
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
   }
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  
 
 }

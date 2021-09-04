@@ -10,6 +10,7 @@ import { SeleccionComponent } from './seleccion/seleccion.component';
 import { PagoEfectivoComponent } from './pago-efectivo/pago-efectivo.component';
 import { PagoTarjetaDebitoComponent } from './pago-tarjeta-debito/pago-tarjeta-debito.component';
 import { TarjetaComponent } from './pago-tarjeta-debito/tarjeta/tarjeta.component';
+import { TablaDepositoComponent } from './tabla-deposito/tabla-deposito.component';
 
 
 
@@ -20,6 +21,7 @@ import { TarjetaComponent } from './pago-tarjeta-debito/tarjeta/tarjeta.componen
     PagoEfectivoComponent,
     PagoTarjetaDebitoComponent,
     TarjetaComponent,
+    TablaDepositoComponent,
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { TarjetaComponent } from './pago-tarjeta-debito/tarjeta/tarjeta.componen
   exports: [
     SeleccionComponent,
     PagoEfectivoComponent,
-    PagoTarjetaDebitoComponent
+    PagoTarjetaDebitoComponent,
+    TablaDepositoComponent,
   ]
 })
 export class DepositoModule { }

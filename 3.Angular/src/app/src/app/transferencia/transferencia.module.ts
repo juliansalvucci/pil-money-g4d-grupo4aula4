@@ -6,13 +6,15 @@ import { MaterialModule } from 'src/app/material/material.module';
 //COMPONENTES
 import { TransferenciaRoutingModule } from './transferencia-routing.module';
 import { OpcionTransferenciaComponent } from './opcion-transferencia/opcion-transferencia.component';
+import { TablaTransferenciaComponent } from './tabla-transferencia/tabla-transferencia.component';
 
 
 
 
 @NgModule({
   declarations: [
-    OpcionTransferenciaComponent
+    OpcionTransferenciaComponent,
+    TablaTransferenciaComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { OpcionTransferenciaComponent } from './opcion-transferencia/opcion-tran
     MaterialModule
   ],
   exports:[
-    OpcionTransferenciaComponent
+    OpcionTransferenciaComponent,
+    TablaTransferenciaComponent
   ]
 })
 export class TransferenciaModule { }

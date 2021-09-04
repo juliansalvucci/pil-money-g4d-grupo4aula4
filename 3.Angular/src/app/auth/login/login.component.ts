@@ -14,13 +14,7 @@ export class LoginComponent {
 
   loginForm: FormGroup; //contiene reglas del formulario
 
-  error: boolean = false;
-  flip: string = 'inactive';
-  isLogin: boolean = true;
-  cargando: boolean = false;
-  mensajeError: string = "";
-
-  constructor(private fb: FormBuilder,private authService: AuthService) {
+  constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
       'usuario': ['', Validators.required],
       'contraseña': ['', Validators.required]
