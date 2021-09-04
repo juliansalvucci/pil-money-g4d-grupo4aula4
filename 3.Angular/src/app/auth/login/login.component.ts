@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/src/app/servicios/auth.service';
 import { observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { Usuario } from 'src/app/src/app/Interfaces/interfaces.interfaces';
+import { UsuarioService } from 'src/app/src/app/servicios/usuario.service';
+
 
 
 @Component({
@@ -12,57 +16,57 @@ import { observable } from 'rxjs';
 export class LoginComponent {
   hide = true;
 
-  loginForm: FormGroup; //contiene reglas del formulario
-
-  error: boolean = false;
-  flip: string = 'inactive';
-  isLogin: boolean = true;
-  cargando: boolean = false;
-  mensajeError: string = "";
-
-  constructor(private fb: FormBuilder,private authService: AuthService) {
-    this.loginForm = this.fb.group({
-      'usuario': ['', Validators.required],
-      'contraseña': ['', Validators.required]
-    });
-  }
-
-  enviar(loginForm:any){
-    console.log(loginForm.value)
-  } 
-  /*
-  login(): void {
-    if (this.loginForm.invalid) {
-      this.error = true;
-      this.mensajeError = "¡Los campos no pueden estar vacíos!";
+   
+  
+  usuario!: Usuario;
+  [x: string]: any;
+  //returnUrl: string;
+   form:FormGroup;
+   constructor(private formBuilder: FormBuilder,
+     private authService: AuthService,
+     private router: Router) {
+     this.form= this.formBuilder.group(
+       {
+        'usuario': ['', Validators.required],
+        'contraseña': ['', [Validators.required, Validators.minLength(8)]]
+       }
+     )
     }
-    else {
-      this.error = false;
-      this.cargando = true;
-      this.authService.login(this.loginForm.value).subscribe(r => {
-      this.cargando = false;
-      this.error = false;
-      //(r);
-        if (r) {
-          if (r.error) {
-            this.error = true;
-            this.mensajeError = r.msg;
-          }
-          else
-          {
-            window.location.reload();
-          }
-        }
-        else {
-          this.cargando = false;
-          this.error = true;
-          this.mensajeError = 'Se produjo un error.';
-        }
-      },
-      )
-    }
-  }
-  */
+   get Password()
+   {
+     return this.form.get("password");
+   }
+   get Mail()
+   {
+    return this.form.get("mail");
+   }
+   get PasswordValid()
+   {
+     return this.Password?.touched && !this.Password?.valid;
+   }
+   get MailValid()
+   {
+     return this.Mail?.touched && !this.Mail?.valid;
+   }   
+ 
+   ngOnInit(): void {
+     this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
+   }
+   
+   onEnviar(event: Event, usuario:Usuario): void {
+     
+     event.preventDefault;
+     this.authService.login(this.usuario)
+       .subscribe(
+         data => {
+         console.log("DATA"+ JSON.stringify( data));   
+         this.router.navigate(['/home/movimientos']);
+       },
+         error => {
+          this.error = error;
+         }
+       );
+   }
 
 
 }
