@@ -1,0 +1,22 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<div class="login">
+  <mat-card>
+    <h1 align="center">Iniciar Sesión</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="enviar(loginForm)" >
+        <mat-form-field appearance="fill">
+          <mat-label>Usuario</mat-label>
+          <input matInput formControlName="usuario"/>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="contraseña"/>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </mat-form-field>
+        <div class="example-container">
+          <button [disabled]="loginForm.invalid" type="submit" mat-raised-button>Iniciar</button><!--submit-->
+        </div>
+    </form>
+  </mat-card>
+</div>

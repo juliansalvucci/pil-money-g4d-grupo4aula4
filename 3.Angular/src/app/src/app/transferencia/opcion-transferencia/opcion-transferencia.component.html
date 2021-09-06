@@ -1,0 +1,36 @@
+<mat-card>
+    <h1>Ingrese cvu de destino</h1>
+    <mat-form-field appearance="fill">
+        <mat-label>CVU</mat-label>
+        <input matInput>
+    </mat-form-field>
+</mat-card>
+
+<mat-card>
+    <!--Mostrar datos de destino asociado al cvu ingresado-->
+    <h1>Datos de destino</h1>
+    <!--
+    <h4><strong>Alias CVU</strong> {{destino.aliasCvu}}</h4>
+    <h4><strong>Propietario</strong> {{destino.propietario}}</h4>
+    <h4><strong>Propietario</strong> {{destino.correo}}</h4>
+    <h4><strong>Propietario</strong> {{destino.dni}}</h4>
+    -->
+</mat-card>
+
+<mat-card>
+    <h1>Ingrese monto a transferir</h1>
+    <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Monto</mat-label>
+        <input matInput type="number" class="example-right-align" placeholder="0">
+        <span matPrefix>$&nbsp;</span>
+        <span matSuffix>.00</span>
+      </mat-form-field>
+</mat-card>
+
+<mat-card>
+    <h1>Ingrese nota (Opcional)</h1>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+      </mat-form-field>
+</mat-card>
