@@ -27,7 +27,9 @@ namespace Monar.Controllers
         }
 
         [HttpPost]
+        /*
         [Route("authenticate")]
+        */
         public IHttpActionResult Authenticate(LoginRequest login)
         {
             if (login == null)
@@ -41,7 +43,7 @@ namespace Monar.Controllers
 
             if (isCredentialValid)
             {
-                var token = TokenGenerator.GenerateTokenJwt(login.Correo);
+                var token = TokenGenerator.GenerateTokenJwt(login.Correo, login.Contraseña);
                 return Ok(token);
             }
             else

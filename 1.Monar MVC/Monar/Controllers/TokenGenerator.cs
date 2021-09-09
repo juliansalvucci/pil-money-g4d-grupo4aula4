@@ -40,9 +40,11 @@ namespace Monar.Controllers
             return jwtTokenString;
         }
 
-        internal static object GenerateTokenJwt(string correo)
+        internal static object GenerateTokenJwt(string correo, string contraseña)
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }

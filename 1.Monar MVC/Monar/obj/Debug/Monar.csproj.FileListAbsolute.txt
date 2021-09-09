@@ -126,3 +126,11 @@ C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\
 C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.Monar MVC\Monar\bin\System.Numerics.Vectors.xml
 C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.Monar MVC\Monar\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.Monar MVC\Monar\bin\System.Text.Encodings.Web.xml
+C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.Monar MVC\Monar\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.Monar MVC\Monar\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.Monar MVC\Monar\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.Monar MVC\Monar\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.Monar MVC\Monar\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.Monar MVC\Monar\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.Monar MVC\Monar\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.Monar MVC\Monar\bin\System.IdentityModel.Tokens.Jwt.xml
