@@ -16,9 +16,7 @@ describe('HomeComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
+    fixture.detectChanges();git 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
