@@ -39,10 +39,5 @@ namespace Monar.Controllers
             var jwtTokenString = tokenHandler.WriteToken(jwtSecurityToken);
             return jwtTokenString;
         }
-
-        internal static object GenerateTokenJwt(string correo)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
