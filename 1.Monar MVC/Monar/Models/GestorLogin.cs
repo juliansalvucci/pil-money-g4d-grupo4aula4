@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Security.Cryptography;
 
 namespace Monar.Models
 {
@@ -11,7 +12,9 @@ namespace Monar.Models
         private const string StrConexion = "Data Source=DESKTOP-0836GCF;Initial Catalog=Monar;Integrated Security=True";
         public bool ValidarLogin(LoginRequest login)
         {
+
             
+
             SqlConnection cx = new SqlConnection(StrConexion);
             cx.Open();
 
@@ -31,5 +34,7 @@ namespace Monar.Models
                 return false;
             }
         }
+
+ 
     }
 }

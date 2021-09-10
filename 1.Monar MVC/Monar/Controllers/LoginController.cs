@@ -43,7 +43,7 @@ namespace Monar.Controllers
 
             if (isCredentialValid)
             {
-                var token = TokenGenerator.GenerateTokenJwt(login.Correo, login.Contraseña);
+                var token = TokenGenerator.GenerateTokenJwt(login.Correo, 1);
                 return Ok(token);
             }
             else
