@@ -16,7 +16,7 @@ import { UsuarioService } from 'src/app/src/app/servicios/usuario.service';
 export class LoginComponent {
   hide = true;
 
-   
+   /*
   
   usuario!: Usuario;
   [x: string]: any;
@@ -67,6 +67,6 @@ export class LoginComponent {
          }
        );
    }
-
+  */
 
 }
