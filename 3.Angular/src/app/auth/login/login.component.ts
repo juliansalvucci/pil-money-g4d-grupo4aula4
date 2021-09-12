@@ -3,8 +3,7 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { AuthService } from 'src/app/src/app/servicios/auth.service';
 import { observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/src/app/Interfaces/interfaces.interfaces';
-import { UsuarioService } from 'src/app/src/app/servicios/usuario.service';
+import { Usuario, UsuarioService } from 'src/app/src/app/servicios/usuario.service';
 
 
 
@@ -16,30 +15,31 @@ import { UsuarioService } from 'src/app/src/app/servicios/usuario.service';
 export class LoginComponent {
   hide = true;
 
-   /*
+   
   
-  usuario!: Usuario;
+  usuario = new Usuario(); 
   [x: string]: any;
   //returnUrl: string;
-   form:FormGroup;
+   loginForm:FormGroup;
    constructor(private formBuilder: FormBuilder,
      private authService: AuthService,
      private router: Router) {
-     this.form= this.formBuilder.group(
+     this.loginForm= this.formBuilder.group(
        {
-        'usuario': ['', Validators.required],
+        'correo': ['', Validators.required],
         'contraseña': ['', [Validators.required, Validators.minLength(8)]]
        }
      )
     }
-   get Password()
+   get Contraseña()
    {
-     return this.form.get("password");
+     return this.loginForm.get("contraseña");
    }
-   get Mail()
+   get Correo()
    {
-    return this.form.get("mail");
+    return this.loginForm.get("correo");
    }
+   /*
    get PasswordValid()
    {
      return this.Password?.touched && !this.Password?.valid;
@@ -48,10 +48,12 @@ export class LoginComponent {
    {
      return this.Mail?.touched && !this.Mail?.valid;
    }   
+
  
    ngOnInit(): void {
      this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
    }
+   */
    
    onEnviar(event: Event, usuario:Usuario): void {
      
@@ -60,13 +62,13 @@ export class LoginComponent {
        .subscribe(
          data => {
          console.log("DATA"+ JSON.stringify( data));   
-         this.router.navigate(['/home/movimientos']);
+         this.router.navigate(['ruta']);
        },
          error => {
           this.error = error;
          }
        );
    }
-  */
+  
 
 }
