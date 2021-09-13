@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { TarjetaComponent } from './tarjeta/tarjeta.component';
 import { MatDialog } from '@angular/material/dialog';
+import { FormControl, Validators } from '@angular/forms';
 
-export interface DialogData {
-  animal: string;
+
+interface Animal {
   name: string;
+  sound: string;
 }
 
 @Component({
@@ -15,27 +17,14 @@ export interface DialogData {
 
 
 export class PagoTarjetaDebitoComponent {
-
-  animal!: string;
-  name!: string;
-
-  constructor(public dialog: MatDialog) {}
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(TarjetaComponent, {
-      width: '300px',
-      height: '600px',
-      data: {name: this.name, animal: this.animal}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
-    });
-  }
-
-  
-
+  animalControl = new FormControl('', Validators.required);
+  selectFormControl = new FormControl('', Validators.required);
+  animals: Animal[] = [
+    {name: 'Dog', sound: 'Woof!'},
+    {name: 'Cat', sound: 'Meow!'},
+    {name: 'Cow', sound: 'Moo!'},
+    {name: 'Fox', sound: 'Wa-pa-pa-pa-pa-pa-pow!'},
+  ];
 }
   
 
