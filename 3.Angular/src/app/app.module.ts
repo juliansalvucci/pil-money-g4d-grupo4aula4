@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { TransferenciaModule } from './src/app/transferencia/transferencia.module';
 import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ExtraccionModule } from './src/app/extraccion/extraccion.module';
 
 //COMPONENTES
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { HomeComponent } from './src/app/home/home.component';
 
 //SERVICIOS
 import { AuthService } from './src/app/servicios/auth.service';
+
 
 
 
@@ -44,6 +46,7 @@ import { AuthService } from './src/app/servicios/auth.service';
     MaterialModule,
     ReactiveFormsModule,
     DepositoModule,
+    ExtraccionModule,
     FormsModule,
     TransferenciaModule, 
     AuthModule,
