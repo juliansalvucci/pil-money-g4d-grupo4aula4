@@ -8,6 +8,8 @@ import { DepositoModule } from './src/app/deposito/deposito.module';
 import { FormsModule } from '@angular/forms';
 import { TransferenciaModule } from './src/app/transferencia/transferencia.module';
 import { AuthModule } from './auth/auth.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ExtraccionModule } from './src/app/extraccion/extraccion.module';
 
 //COMPONENTES
 import { AppComponent } from './app.component';
@@ -18,6 +20,11 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './src/app/home/home.component';
+
+//SERVICIOS
+import { AuthService } from './src/app/servicios/auth.service';
+
+
 
 
 
@@ -39,9 +46,11 @@ import { HomeComponent } from './src/app/home/home.component';
     MaterialModule,
     ReactiveFormsModule,
     DepositoModule,
+    ExtraccionModule,
     FormsModule,
     TransferenciaModule, 
     AuthModule,
+    HttpClientModule,
   ],
   
   exports: [
@@ -49,7 +58,9 @@ import { HomeComponent } from './src/app/home/home.component';
     TransferenciaModule,
     AuthModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

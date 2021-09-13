@@ -5,7 +5,7 @@ export interface Cuenta {
     cvu: number;
     alias: string;
     saldo: number;
-    usuarioDni: Usuario;
+    usuarioDni: number;
     tipoMoneda: TipoMoneda;
 }
 
@@ -59,14 +59,4 @@ export interface Transferencia{
     destino: Destino;
 }
 
-export interface Usuario{
-    id: number;
-    apellido: string;
-    nombre: string;
-    contraseña: string;
-    correo: string;
-    dni: number;
-    fotoFrenteDni: number;
-    fotoDorsoDni: number;
-    token?: string;
-}
+

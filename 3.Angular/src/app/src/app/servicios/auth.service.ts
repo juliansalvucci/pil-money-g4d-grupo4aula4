@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http'
 import { Observable, of, BehaviorSubject, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { catchError, map } from 'rxjs/operators';
-import { Usuario } from '../Interfaces/interfaces.interfaces';
+import {Usuario, UsuarioService } from './usuario.service';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  url="https://reqres.in/api/login";  //apunta a la api
+  url="https://localhost:44339/Api/Login";  //apunta a la api
   loggedIn= new BehaviorSubject<boolean>(false);
   currentUserSubject: BehaviorSubject<Usuario>;
   currentUser: Observable<Usuario>;

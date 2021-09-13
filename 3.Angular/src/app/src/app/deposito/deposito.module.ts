@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from 'src/app/material/material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DepositoRoutingModule } from './deposito-routing.module';
 
 //COMPONENTES
@@ -28,6 +28,7 @@ import { TablaDepositoComponent } from './tabla-deposito/tabla-deposito.componen
     DepositoRoutingModule,
     MaterialModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     SeleccionComponent,

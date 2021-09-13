@@ -7,11 +7,11 @@ interface Animal {
 }
 
 @Component({
-  selector: 'app-opcion-transferencia',
-  templateUrl: './opcion-transferencia.component.html',
-  styleUrls: ['./opcion-transferencia.component.css']
+  selector: 'app-opcion-extraccion',
+  templateUrl: './opcion-extraccion.component.html',
+  styleUrls: ['./opcion-extraccion.component.css']
 })
-export class OpcionTransferenciaComponent {
+export class OpcionExtraccionComponent {
   animalControl = new FormControl('', Validators.required);
   selectFormControl = new FormControl('', Validators.required);
   animals: Animal[] = [
@@ -19,7 +19,7 @@ export class OpcionTransferenciaComponent {
     {name: 'Cat', sound: 'Meow!'},
     {name: 'Cow', sound: 'Moo!'},
     {name: 'Fox', sound: 'Wa-pa-pa-pa-pa-pa-pow!'},
-  ];
-
+  ];OnInit(): void {
+  }
 
 }

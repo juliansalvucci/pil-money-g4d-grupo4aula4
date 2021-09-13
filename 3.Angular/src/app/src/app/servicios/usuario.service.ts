@@ -1,7 +1,19 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Usuario } from '../Interfaces/interfaces.interfaces';
+
+
+export class Usuario{
+  id: number=0;
+  apellido: string="";
+  nombre: string="";
+  contraseña: string="";
+  correo: string="";
+  dni: number=0;
+  fotoFrenteDni: number=0;
+  fotoDorsoDni: number=0;
+  token?: string;
+}
 
 @Injectable({
   providedIn: 'root'
