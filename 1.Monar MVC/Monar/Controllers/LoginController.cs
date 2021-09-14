@@ -1,4 +1,5 @@
-﻿using Monar.Models;
+﻿using System.Web.Http.Cors;
+using Monar.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,9 +28,8 @@ namespace Monar.Controllers
         }
 
         [HttpPost]
-        /*
-        [Route("authenticate")]
-        */
+        //[Route("authenticate")]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         public IHttpActionResult Authenticate(LoginRequest login)
         {
             if (login == null)
