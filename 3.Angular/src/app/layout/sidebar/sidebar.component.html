@@ -1,0 +1,49 @@
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    <img src="assets/img/logomonar1.png" alt="">
+    <h1 class="titulo">MONAR</h1> 
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+
+        <!--<img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />-->
+
+        <h3 class="name">Usuario</h3>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button">
+            <mat-icon>all_inclusive</mat-icon>
+            <span>Depósito</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>all_inclusive</mat-icon>
+            <span>Transferencia</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>all_inclusive</mat-icon>
+            <span>Extracción</span>
+        </button>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button">
+            <mat-icon>help</mat-icon>
+            <span>Ayuda</span>
+        </button>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+            
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
