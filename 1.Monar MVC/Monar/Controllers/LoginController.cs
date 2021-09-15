@@ -29,6 +29,7 @@ namespace Monar.Controllers
 
         [HttpPost]
         //[Route("authenticate")]
+        [AcceptVerbs("GET", "POST")]
         [EnableCors(origins: "*", headers: "*", methods: "*")]
         public IHttpActionResult Authenticate(LoginRequest login)
         {
