@@ -1,20 +1,20 @@
 mat-toolbar {
-    background: #ee6002;
-    color: #000000;
+    background: #FF6F00;
+    color: #ffffff;
 }
 mat-sidenav {
     margin: 16px;
     width: 200px;
     border-right: none;
-    background: #feba80;
-    color: #000000;
-    border-radius: 10px;
+    background: #FF6F00;
+    color: #ffffff;
+    border-radius: 0px;
     padding: 16px;
     text-align: center;
 }
 .content {
     height: calc(100vh - 98px);
-    border-radius: 10px;
+    border-radius: 0px;
     margin: 16px;
     margin-left: 32px;
     display: flex;
@@ -56,4 +56,10 @@ mat-divider {
     margin-top: 16px;
     margin-bottom: 16px;
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+.titulo{
+  font-style: oblique;
+  font-stretch: condensed;
+  font-weight: 500;
 }

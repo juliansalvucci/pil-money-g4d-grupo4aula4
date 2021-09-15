@@ -1,16 +1,19 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable, of, BehaviorSubject, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { catchError, map } from 'rxjs/operators';
 import {Usuario, UsuarioService } from './usuario.service';
 
+const url ="https://localhost:44339/Api/Login";
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  url="https://localhost:44339/Api/Login";  //apunta a la api
   loggedIn= new BehaviorSubject<boolean>(false);
   currentUserSubject: BehaviorSubject<Usuario>;
   currentUser: Observable<Usuario>;
@@ -20,13 +23,13 @@ export class AuthService {
     this.currentUser = this.currentUserSubject.asObservable();
    }
 
-  login(usuario: Usuario): Observable<any> {  //de inicio de sesión viene acá y general el token.
-    return this.http.post<any>(this.url, usuario)
+  login(usuario: Usuario): Observable<any> {  
+    return this.http.post<any>(url, usuario, httpOptions)
       .pipe(map(data => {
         localStorage.setItem('currentUser', JSON.stringify(data ));
         this.currentUserSubject.next(data);
         this.loggedIn.next(true);
-        console.log(data);   //
+        console.log(data);   
         
         return data;
       }));
