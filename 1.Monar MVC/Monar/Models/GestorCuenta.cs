@@ -49,9 +49,9 @@ namespace Monar.Models
             SqlDataReader dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                int cvu = dr.GetInt32(2);
+                long cvu = dr.GetInt32(2);
                 string alias = dr.GetString(3);
-                decimal saldo = dr.GetDecimal(4);
+                double saldo = dr.GetDecimal(4);
                 int usuarioDni = dr.GetInt32(5);
                 int tipoMoneda = dr.GetInt32(6);
 
@@ -79,9 +79,9 @@ namespace Monar.Models
             SqlDataReader dr = cm.ExecuteReader();
             if (dr.Read())
             {
-                int cvu = dr.GetInt32(2);
+                long cvu = dr.GetInt32(2);
                 string alias = dr.GetString(3);
-                decimal saldo = dr.GetDecimal(4);
+                double saldo = dr.GetDecimal(4);
                 int usuarioDni = dr.GetInt32(5);
                 int tipoMoneda = dr.GetInt32(6);
 

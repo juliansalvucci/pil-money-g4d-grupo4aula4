@@ -13,7 +13,9 @@ namespace Monar.Models
         public bool ValidarLogin(LoginRequest login)
         {
 
-            
+            //Hasher h = new Hasher();
+            //string encryptedPassword = h.GetSha256(login.Contraseña);
+
 
             SqlConnection cx = new SqlConnection(StrConexion);
             cx.Open();
@@ -34,7 +36,5 @@ namespace Monar.Models
                 return false;
             }
         }
-
- 
     }
 }

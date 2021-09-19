@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Xml;
 
@@ -21,10 +23,10 @@ namespace Monar.Models
     public class GestorUsuario
     {
         private const string StrConexion = "Data Source=DESKTOP-0836GCF;Initial Catalog=Monar;Integrated Security=True";
-        
+
         public void RegistrarUsuario(Usuario nuevo)
         {
-        
+
             SqlConnection cx = new SqlConnection(StrConexion);
             cx.Open();
 

@@ -177,3 +177,5 @@ C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\
 C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.Monar MVC\Monar\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.Monar MVC\Monar\bin\System.Threading.Tasks.Extensions.xml
 C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.Monar MVC\Monar\bin\System.Web.Http.Cors.xml
+C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.Monar MVC\Monar\bin\Swashbuckle.Core.dll
+C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.Monar MVC\Monar\bin\WebActivatorEx.dll

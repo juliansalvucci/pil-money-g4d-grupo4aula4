@@ -14,8 +14,8 @@ namespace Monar.Models
     private string contraseña;
     private string correo;
     private int dni;
-    private byte[] fotoFrenteDni;
-    private byte[] fotoDorsoDNI;
+    private byte[] fotoDNIFrente;
+    private byte[] fotoDNIDorso;
 
     public Usuario()
     {

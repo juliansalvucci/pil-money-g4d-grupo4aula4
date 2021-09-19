@@ -25,13 +25,13 @@ namespace Monar.Models
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "INSERT INTO Tarjeta(numero, fechaVencimiento, codigoDeSeguridad, propietario, dni, empresa) VALUES (@Numero, @FechaVencimiento, @CodigoDeSeguridad, @Propietario, @Dni, @Empresa)";
+            cm.CommandText = "INSERT INTO Tarjeta(numero, fechaVencimiento, codigoDeSeguridad, titular) VALUES (@Numero, @FechaVencimiento, @CodigoDeSeguridad, @Titular)";
             cm.Parameters.Add(new SqlParameter("@Numero", nueva.Numero));
             cm.Parameters.Add(new SqlParameter("@FechaVencimiento", nueva.FechaVencimiento));
+            cm.Parameters.Add(new SqlParameter("@Titular", nueva.Titular));
             cm.Parameters.Add(new SqlParameter("@CodigoDeSeguridad", nueva.CodigoSeguridad));
-            cm.Parameters.Add(new SqlParameter("@Propietario", nueva.Propietario));
-            cm.Parameters.Add(new SqlParameter("@Dni", nueva.Dni));
-            cm.Parameters.Add(new SqlParameter("@Empresa", nueva.Empresa));
+            
+            
 
 
             cm.ExecuteNonQuery();
@@ -45,13 +45,13 @@ namespace Monar.Models
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "UPDATE Tarjeta SET numero=@Numero, fechaVencimiento=@FechaVencimiento, codigoSeguridad=@CodigoDeSeguridad, propietarioo=@Propietario, empresa=@Empresa WHERE id=@Id";
+            cm.CommandText = "UPDATE Tarjeta SET numero=@Numero, fechaVencimiento=@FechaVencimiento, codigoSeguridad=@CodigoDeSeguridad, titular=@Titular WHERE id=@Id";
             cm.Parameters.Add(new SqlParameter("@Numero", t.Numero));
             cm.Parameters.Add(new SqlParameter("@FechaVencimiento", t.FechaVencimiento));
+            cm.Parameters.Add(new SqlParameter("@Titular", t.Titular));
             cm.Parameters.Add(new SqlParameter("@CodigoDeSeguridad", t.CodigoSeguridad));
-            cm.Parameters.Add(new SqlParameter("@Propietario", t.Propietario));
-            cm.Parameters.Add(new SqlParameter("@Dni", t.Dni));
-            cm.Parameters.Add(new SqlParameter("@Empresa", t.Empresa));
+            
+            
 
 
             cm.ExecuteNonQuery();
@@ -89,12 +89,10 @@ namespace Monar.Models
                 int id = dr.GetInt32(0);
                 int numero = dr.GetInt32(1);
                 System.DateTime fechaVencimiento = dr.GetDateTime(2);
-                int codigoDeSeguridad = dr.GetInt32(3);
-                string propietario = dr.GetString(4);
-                int dni = dr.GetInt32(5);
-                int empresa = dr.GetInt32(6);
-
-                Tarjeta t = new Tarjeta(numero, fechaVencimiento, codigoDeSeguridad, propietario, dni,empresa);
+                string titular = dr.GetString(3);
+                int codigoDeSeguridad = dr.GetInt32(4);
+                
+                Tarjeta t = new Tarjeta(numero, fechaVencimiento, titular, codigoDeSeguridad);
                 listadoTarjetas.Add(t);
             }
 

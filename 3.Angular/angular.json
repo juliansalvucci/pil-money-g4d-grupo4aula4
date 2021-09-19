@@ -76,7 +76,8 @@
               "browserTarget": "MONEY4:build:production"
             },
             "development": {
-              "browserTarget": "MONEY4:build:development"
+              "browserTarget": "MONEY4:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

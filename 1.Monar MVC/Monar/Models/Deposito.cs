@@ -11,24 +11,23 @@ namespace Monar.Models
     private int id;
     private System.DateTime fecha;
     private System.TimeSpan hora;  
-    private int tipoDeposito;
-    private int tarjeta;
-    private int cvu;
-    private int codigoSeguridad; //SE DEBE GENERAR DE FORMA ALEATORIA
+    private long cvu;
+    private long tarjeta;
+    private float monto;
+    
 
     public Deposito()
     {
     }
 
-    public Deposito(int id, System.DateTime fecha, System.TimeSpan hora, int tipoDeposito, int tarjeta, int cvu, int codigoSeguridad)
+    public Deposito(int id, System.DateTime fecha, System.TimeSpan hora,long cvu, long tarjeta, float monto)
     {
       this.id = id;
       this.fecha = fecha;
       this.hora = hora;
-      this.tipoDeposito = tipoDeposito;
-      this.tarjeta = tarjeta;
       this.cvu = cvu;
-      this.codigoSeguridad = codigoSeguridad;
+      this.tarjeta = tarjeta;
+      this.monto = monto;
     }
 
     public int Id
@@ -50,31 +49,25 @@ namespace Monar.Models
     }
 
     [Required]
-    public int TipoDeposito
-    {
-      get { return tipoDeposito; }
-      set { tipoDeposito = value; }
-    }
-    
-    [Required]
-    public int Tarjeta
-    {
-      get { return tarjeta; }
-      set { tarjeta = value; }
-    }
-
-    [Required]
     public int Cvu
     {
       get { return cvu; }
       set { cvu = value; }
     }
-    
+
+  
     [Required]
-    public int CodigoSeguridad
+    public int Tarjeta
     {
-      get { return codigoSeguridad; }
-      set { codigoSeguridad = value; }
+      get { return tarjeta; }
+      set { tarjeta = value; }
+    } 
+
+    [Required]
+    public float Monto
+    {
+      get { return monto; }
+      set { monto = value; }
     }
   }
 }

@@ -11,6 +11,7 @@ namespace Monar.Models
     private int id;
     private System.DateTime fecha;
     private System.TimeSpan hora;  //VER
+    private float monto;
     private string nota;
     private int cvu;
     private int destino;
@@ -19,11 +20,12 @@ namespace Monar.Models
     {
     }
 
-    public Transferencia(int id, System.DateTime fecha, System.TimeSpan hora, string nota, int cvu, int destino)
+    public Transferencia(int id, System.DateTime fecha, System.TimeSpan hora, float monto, string nota, int cvu, int destino)
     {
       this.id = id;
       this.fecha = fecha;
       this.hora = hora;
+      this.monto = monto;
       this.nota = nota;
       this.cvu = cvu;
       this.destino = destino;
@@ -45,6 +47,12 @@ namespace Monar.Models
     {
       get { return hora; }
       set {; }
+    }
+
+    public float Monto
+    {
+      get {return monto;}
+      set {monto = value;}
     }
 
     public string Nota
