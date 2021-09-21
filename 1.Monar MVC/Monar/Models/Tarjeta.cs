@@ -12,8 +12,7 @@ namespace Monar.Models
     private System.DateTime fechaVencimiento;
     private int codigoDeSeguridad;
     private string titular;
-    private int dni;
-    private int empresa;
+
 
     public Tarjeta()
     {

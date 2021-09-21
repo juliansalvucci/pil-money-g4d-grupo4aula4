@@ -11,12 +11,10 @@ using System.Web.Http;
 namespace Monar.Controllers
 {
     [RoutePrefix("api/login")]
-    [EnableCors(origins: "http://localhost:4200/", headers: "*", methods: "*")]
     public class LoginController : ApiController
     {
         [HttpGet]
         [Route("echoping")]
-        //[EnableCors(origins: "http://localhost:4200/", headers: "*", methods: "*")]
         public IHttpActionResult EchoPing()
         {
             return Ok(true);
@@ -24,7 +22,6 @@ namespace Monar.Controllers
 
         [HttpGet]
         [Route("echouser")]
-        //[EnableCors(origins: "http://localhost:4200/", headers: "*", methods: "*")]
         public IHttpActionResult EchoUser()
         {
             var identity = Thread.CurrentPrincipal.Identity;
@@ -33,7 +30,6 @@ namespace Monar.Controllers
 
         [HttpPost]
         [Route("authenticate")]
-        //[EnableCors(origins: "http://localhost:4200/", headers: "*", methods: "*")]
         public IHttpActionResult Authenticate(LoginRequest login)
         {
             if (login == null)

@@ -84,14 +84,14 @@ namespace Monar.Models
             SqlDataReader dr = cm.ExecuteReader();
             if (dr.Read())
             {
-                int id = dr.GetInt32(0);
+                
                 System.DateTime fecha = dr.GetDateTime(1); //CONTROLAR SI EL TIPO GET ES CORRECTO
                 System.TimeSpan hora = dr.GetTimeSpan(2);
                 long tarjeta = dr.GetInt32(3);
                 long cvu = dr.GetInt32(4);
                 float monto = dr.GetFloat(5);
             
-                Deposito d = new Deposito(id, fecha, hora, cvu, tarjeta, monto);
+                d = new Deposito(id, fecha, hora, cvu, tarjeta, monto);
             }
 
             dr.Close();

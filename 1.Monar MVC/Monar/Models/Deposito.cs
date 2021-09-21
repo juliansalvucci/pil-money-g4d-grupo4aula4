@@ -49,7 +49,7 @@ namespace Monar.Models
     }
 
     [Required]
-    public int Cvu
+    public long Cvu
     {
       get { return cvu; }
       set { cvu = value; }
@@ -57,7 +57,7 @@ namespace Monar.Models
 
   
     [Required]
-    public int Tarjeta
+    public long Tarjeta
     {
       get { return tarjeta; }
       set { tarjeta = value; }

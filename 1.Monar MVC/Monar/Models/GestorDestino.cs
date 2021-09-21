@@ -22,8 +22,8 @@ namespace Monar.Models
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "INSERT INTO Destino(aliascvu, propietario, correo, dni) VALUES (@Aliascvu, @Propietario, @Correo, @Propietario, @Dni)";
-            cm.Parameters.Add(new SqlParameter("@Aliascvu", nuevo.Aliascvu));
+            cm.CommandText = "INSERT INTO Destino(cvuAlias, propietario, correo, dni) VALUES (@CvuAlias, @Propietario, @Correo, @Propietario, @Dni)";
+            cm.Parameters.Add(new SqlParameter("@Aliascvu", nuevo.CvuAlias));
             cm.Parameters.Add(new SqlParameter("@Propietario", nuevo.Propietario));
             cm.Parameters.Add(new SqlParameter("@Correo", nuevo.Correo));
             cm.Parameters.Add(new SqlParameter("@Dni", nuevo.Dni));

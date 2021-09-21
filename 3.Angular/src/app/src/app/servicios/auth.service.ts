@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { catchError, map } from 'rxjs/operators';
 import {Usuario, UsuarioService } from './usuario.service';
 
-const url ="Api/Login";
+const url ="https://localhost:44339/api/login/authenticate";
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };

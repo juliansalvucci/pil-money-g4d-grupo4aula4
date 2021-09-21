@@ -8,8 +8,8 @@ namespace Monar.Models
 {
   public class Destino
   {
-    private string cvuAlias; //DEFINIR BIEN EL TIPO DE DATO
-    private string propietario; //PARA PENSAR
+    private string cvuAlias; 
+    private string propietario; 
     private string correo;
     private int dni;
 
@@ -26,7 +26,7 @@ namespace Monar.Models
     }
 
     [Required]
-    public string cvuAlias
+    public string CvuAlias
     {
       get { return cvuAlias; }
       set { cvuAlias = value; }

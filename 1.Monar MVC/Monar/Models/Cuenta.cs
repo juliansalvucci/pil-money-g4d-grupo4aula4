@@ -19,7 +19,7 @@ namespace Monar.Models
     {
     }
 
-    public Cuenta(int cvu, string alias, decimal saldo, int usuarioDni, int tipoMoneda)
+    public Cuenta(long cvu, string alias, double saldo, int usuarioDni, int tipoMoneda)
     {
       this.cvu = cvu;
       this.alias = alias;
@@ -28,7 +28,7 @@ namespace Monar.Models
       this.tipoMoneda = tipoMoneda;
     }
 
-    public int Cvu
+    public long Cvu
     {
       get { return cvu; }
       set { cvu = value;}
@@ -41,7 +41,7 @@ namespace Monar.Models
       set {alias = value;}
     }
 
-    public decimal Saldo
+    public double Saldo
     {
       get {return saldo;}
       set {saldo = value;}

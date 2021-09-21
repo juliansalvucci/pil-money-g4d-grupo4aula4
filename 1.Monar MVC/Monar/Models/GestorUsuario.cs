@@ -31,14 +31,14 @@ namespace Monar.Models
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "INSERT INTO Usuario(apellido, nombre, contraseña, correo, dni, fotoDNIFrente, fotoDNIDorso) VALUES (@Apellido, @Nombre, @Contraseña, @Correo, @Dni, @FotoFrenteDni, @FotoDorsoDni)";
+            cm.CommandText = "INSERT INTO Usuario(apellido, nombre, contraseña, correo, dni, fotoDNIFrente, fotoDNIDorso) VALUES (@Apellido, @Nombre, @Contraseña, @Correo, @Dni, @FotoDNIFrentei, @FotoDNIDorso)";
             cm.Parameters.Add(new SqlParameter("@Apellido", nuevo.Apellido));
             cm.Parameters.Add(new SqlParameter("@Nombre", nuevo.Nombre));
             cm.Parameters.Add(new SqlParameter("@Contraseña", nuevo.Contraseña));
             cm.Parameters.Add(new SqlParameter("@Correo", nuevo.Correo));
             cm.Parameters.Add(new SqlParameter("@Dni", nuevo.Dni));
-            cm.Parameters.Add(new SqlParameter("@fotoFrenteDni", nuevo.FotoFrenteDNI));
-            cm.Parameters.Add(new SqlParameter("@fotoDorsoDni", nuevo.FotoDorsoDNI));
+            cm.Parameters.Add(new SqlParameter("@FotoDNIFrente", nuevo.FotoDNIFrente));
+            cm.Parameters.Add(new SqlParameter("@FotoDNIDorso", nuevo.FotoDNIDorso));
 
 
             cm.ExecuteNonQuery();
