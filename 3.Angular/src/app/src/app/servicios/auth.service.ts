@@ -21,7 +21,7 @@ export class AuthService {
     console.log("Servicio de Atuenticación está corriendo");
     this.currentUserSubject = new BehaviorSubject<Usuario>(JSON.parse(localStorage.getItem('currentUser') || '{}'));
     this.currentUser = this.currentUserSubject.asObservable();
-   }
+  }
 
   login(usuario: Usuario): Observable<any> {  
     return this.http.post<any>(url, usuario, httpOptions)
@@ -48,6 +48,7 @@ export class AuthService {
   get estaAutenticado(): Observable<boolean> {
    
     return this.loggedIn.asObservable();
+    
   }
   
 }
