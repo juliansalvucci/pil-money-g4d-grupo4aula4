@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 using System.Xml;
+using BCrypt;
 
 /*  GUÍA DE REFERENCIA
 private int id;
@@ -26,15 +27,16 @@ namespace Monar.Models
 
         public void RegistrarUsuario(Usuario nuevo)
         {
+            string passwordHash = BCrypt.Net.BCrypt.HashPassword(nuevo.Contraseña);
 
             SqlConnection cx = new SqlConnection(StrConexion);
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "INSERT INTO Usuario(apellido, nombre, contraseña, correo, dni, fotoDNIFrente, fotoDNIDorso) VALUES (@Apellido, @Nombre, @Contraseña, @Correo, @Dni, @FotoDNIFrentei, @FotoDNIDorso)";
+            cm.CommandText = "INSERT INTO Usuario(apellido, nombre, contraseña, correo, dni, fotoDNIFrente, fotoDNIDorso) VALUES (@Apellido, @Nombre, @Contraseña, @Correo, @Dni, @FotoDNIFrente, @FotoDNIDorso)";
             cm.Parameters.Add(new SqlParameter("@Apellido", nuevo.Apellido));
             cm.Parameters.Add(new SqlParameter("@Nombre", nuevo.Nombre));
-            cm.Parameters.Add(new SqlParameter("@Contraseña", nuevo.Contraseña));
+            cm.Parameters.Add(new SqlParameter("@Contraseña", passwordHash));
             cm.Parameters.Add(new SqlParameter("@Correo", nuevo.Correo));
             cm.Parameters.Add(new SqlParameter("@Dni", nuevo.Dni));
             cm.Parameters.Add(new SqlParameter("@FotoDNIFrente", nuevo.FotoDNIFrente));
