@@ -7,7 +7,7 @@ export class Usuario{
   id: number=0;
   apellido: string="";
   nombre: string="";
-  contraseña: string="";
+  pass: string="";
   correo: string="";
   dni: number=0;
   fotoFrenteDni: number=0;

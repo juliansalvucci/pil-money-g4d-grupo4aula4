@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Xml;
+using BCrypt;
 
 /*  GUÍA DE REFERENCIA
 private int id;
@@ -21,22 +24,23 @@ namespace Monar.Models
     public class GestorUsuario
     {
         private const string StrConexion = "Data Source=DESKTOP-0836GCF;Initial Catalog=Monar;Integrated Security=True";
-        
+
         public void RegistrarUsuario(Usuario nuevo)
         {
-        
+            string passwordHash = BCrypt.Net.BCrypt.HashPassword(nuevo.Contraseña);
+
             SqlConnection cx = new SqlConnection(StrConexion);
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "INSERT INTO Usuario(apellido, nombre, contraseña, correo, dni, fotoDNIFrente, fotoDNIDorso) VALUES (@Apellido, @Nombre, @Contraseña, @Correo, @Dni, @FotoFrenteDni, @FotoDorsoDni)";
+            cm.CommandText = "INSERT INTO Usuario(apellido, nombre, contraseña, correo, dni, fotoDNIFrente, fotoDNIDorso) VALUES (@Apellido, @Nombre, @Contraseña, @Correo, @Dni, @FotoDNIFrente, @FotoDNIDorso)";
             cm.Parameters.Add(new SqlParameter("@Apellido", nuevo.Apellido));
             cm.Parameters.Add(new SqlParameter("@Nombre", nuevo.Nombre));
-            cm.Parameters.Add(new SqlParameter("@Contraseña", nuevo.Contraseña));
+            cm.Parameters.Add(new SqlParameter("@Contraseña", passwordHash));
             cm.Parameters.Add(new SqlParameter("@Correo", nuevo.Correo));
             cm.Parameters.Add(new SqlParameter("@Dni", nuevo.Dni));
-            cm.Parameters.Add(new SqlParameter("@fotoFrenteDni", nuevo.FotoFrenteDNI));
-            cm.Parameters.Add(new SqlParameter("@fotoDorsoDni", nuevo.FotoDorsoDNI));
+            cm.Parameters.Add(new SqlParameter("@FotoDNIFrente", nuevo.FotoDNIFrente));
+            cm.Parameters.Add(new SqlParameter("@FotoDNIDorso", nuevo.FotoDNIDorso));
 
 
             cm.ExecuteNonQuery();

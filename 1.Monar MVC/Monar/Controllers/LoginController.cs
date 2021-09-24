@@ -10,6 +10,9 @@ using System.Web.Http;
 
 namespace Monar.Controllers
 {
+
+    [RoutePrefix("api/login")]
+    [EnableCors(origins:"*", headers:"*", methods:"*")]
     public class LoginController : ApiController
     {
         [HttpGet]
@@ -28,9 +31,7 @@ namespace Monar.Controllers
         }
 
         [HttpPost]
-        //[Route("authenticate")]
-        [AcceptVerbs("GET", "POST")]
-        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        [Route("authenticate")]
         public IHttpActionResult Authenticate(LoginRequest login)
         {
             if (login == null)

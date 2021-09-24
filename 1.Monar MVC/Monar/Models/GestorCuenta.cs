@@ -49,11 +49,11 @@ namespace Monar.Models
             SqlDataReader dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                int cvu = dr.GetInt32(2);
-                string alias = dr.GetString(3);
-                decimal saldo = dr.GetDecimal(4);
-                int usuarioDni = dr.GetInt32(5);
-                int tipoMoneda = dr.GetInt32(6);
+                long cvu = dr.GetInt64(1);
+                string alias = dr.GetString(2);
+                double saldo = dr.GetDouble(3);
+                int usuarioDni = dr.GetInt32(4);
+                int tipoMoneda = dr.GetInt32(5);
 
                 Cuenta c = new Cuenta(cvu, alias, saldo, usuarioDni, tipoMoneda);
                 lista.Add(c);
@@ -79,11 +79,11 @@ namespace Monar.Models
             SqlDataReader dr = cm.ExecuteReader();
             if (dr.Read())
             {
-                int cvu = dr.GetInt32(2);
-                string alias = dr.GetString(3);
-                decimal saldo = dr.GetDecimal(4);
-                int usuarioDni = dr.GetInt32(5);
-                int tipoMoneda = dr.GetInt32(6);
+                long cvu = dr.GetInt64(1);
+                string alias = dr.GetString(2);
+                double saldo = dr.GetDouble(3);
+                int usuarioDni = dr.GetInt32(4);
+                int tipoMoneda = dr.GetInt32(5);
 
                 c = new Cuenta(cvu, alias, saldo, usuarioDni, tipoMoneda);
             }

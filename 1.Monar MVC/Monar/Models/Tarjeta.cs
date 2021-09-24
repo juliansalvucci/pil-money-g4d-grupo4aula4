@@ -8,29 +8,26 @@ namespace Monar.Models
 {
   public class Tarjeta
   {
-    private int numero;
+    private long numero;
     private System.DateTime fechaVencimiento;
     private int codigoDeSeguridad;
-    private string propietario;
-    private int dni;
-    private int empresa;
+    private string titular;
+
 
     public Tarjeta()
     {
     }
 
-    public Tarjeta(int numero, System.DateTime fechaVencimiento, int codigoDeSeguridad, string propietario, int dni, int empresa)
+    public Tarjeta(long numero, System.DateTime fechaVencimiento, string titular, int codigoDeSeguridad)
     {
       this.numero = numero;
       this.fechaVencimiento = fechaVencimiento;
-      this.codigoDeSeguridad = codigoDeSeguridad;
-      this.propietario = propietario;
-      this.dni = dni;
-      this.empresa = empresa;
+      this.titular = titular;
+      this.codigoDeSeguridad = codigoDeSeguridad; 
     }
 
     [Required]
-    public int Numero
+    public long Numero
     {
       get { return numero; }
       set { numero = value; }
@@ -44,31 +41,18 @@ namespace Monar.Models
     }
 
     [Required]
+    public string Titular
+    {
+      get { return titular; }
+      set {titular = value; }
+    }
+
+
+    [Required]
     public int CodigoSeguridad
     {
       get { return codigoDeSeguridad; }
       set { codigoDeSeguridad = value; }
-    }
-
-    [Required]
-    public string Propietario
-    {
-      get { return propietario; }
-      set { propietario = value; }
-    }
-
-    [Required]
-    public int Dni
-    {
-      get { return dni; }
-      set { dni = value; }
-    }
-
-    [Required]
-    public int Empresa
-    {
-      get { return empresa; }
-      set { empresa = value; }
     }
   }
 }

@@ -10,6 +10,7 @@ import { TransferenciaModule } from './src/app/transferencia/transferencia.modul
 import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ExtraccionModule } from './src/app/extraccion/extraccion.module';
+import { CuentaModule } from './src/app/cuenta/cuenta.module';
 
 //COMPONENTES
 import { AppComponent } from './app.component';
@@ -51,6 +52,7 @@ import { AuthService } from './src/app/servicios/auth.service';
     TransferenciaModule, 
     AuthModule,
     HttpClientModule,
+    CuentaModule
   ],
   
   exports: [

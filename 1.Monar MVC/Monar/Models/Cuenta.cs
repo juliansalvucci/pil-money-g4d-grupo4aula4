@@ -7,25 +7,19 @@ using System.Web;
 
 namespace Monar.Models
 {
-  [DataContract]
   public class Cuenta
   {
-    [DataMember]
-    private int cvu;
-    [DataMember]
+    private long cvu;
     private string alias;
-    [DataMember]
-    private decimal saldo;
-    [DataMember]
+    private double saldo;
     private int usuarioDni;
-    [DataMember]
     private int tipoMoneda;
 
     public Cuenta()
     {
     }
 
-    public Cuenta(int cvu, string alias, decimal saldo, int usuarioDni, int tipoMoneda)
+    public Cuenta(long cvu, string alias, double saldo, int usuarioDni, int tipoMoneda)
     {
       this.cvu = cvu;
       this.alias = alias;
@@ -34,7 +28,7 @@ namespace Monar.Models
       this.tipoMoneda = tipoMoneda;
     }
 
-    public int Cvu
+    public long Cvu
     {
       get { return cvu; }
       set { cvu = value;}
@@ -47,7 +41,7 @@ namespace Monar.Models
       set {alias = value;}
     }
 
-    public decimal Saldo
+    public double Saldo
     {
       get {return saldo;}
       set {saldo = value;}
@@ -66,9 +60,5 @@ namespace Monar.Models
       get{return tipoMoneda;}
       set{tipoMoneda = value;}
     }
-    /*
-    [ForeignKey("usuario_dni")] 
-     public virtual Usuario Usuarios { get; set; }
-    */
   }
 }

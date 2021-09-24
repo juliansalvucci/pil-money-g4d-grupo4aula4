@@ -26,14 +26,14 @@ namespace Monar.Models
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "INSERT INTO Deposito(fecha, hora, tipoDeposito, tarjeta, cvu, codigoSeguridad) VALUES (@Fecha, @Hora, @TipoDeposito, @Tarjeta, @Cvu, @CodigoSeguridad)";
+            cm.CommandText = "INSERT INTO Deposito(fecha, hora, cvu, tarjeta, monto) VALUES (@Fecha, @Hora,  @Cvu,  @Tarjeta, @Monto)";
             cm.Parameters.Add(new SqlParameter("@Fecha", nuevo.Fecha));
             cm.Parameters.Add(new SqlParameter("@Hora", nuevo.Hora));
-            cm.Parameters.Add(new SqlParameter("@TipoDeposito", nuevo.TipoDeposito));
-            cm.Parameters.Add(new SqlParameter("@Tarjeta", nuevo.Tarjeta));
             cm.Parameters.Add(new SqlParameter("@Cvu", nuevo.Cvu));
-            cm.Parameters.Add(new SqlParameter("@CodigoSeguridad", nuevo.CodigoSeguridad));
-
+            cm.Parameters.Add(new SqlParameter("@Tarjeta", nuevo.Tarjeta));
+            cm.Parameters.Add(new SqlParameter("@Monto", nuevo.Monto));
+            
+            
             cm.ExecuteNonQuery();
 
             cx.Close();
@@ -55,12 +55,12 @@ namespace Monar.Models
                 int id = dr.GetInt32(0);
                 System.DateTime fecha = dr.GetDateTime(1); //CONTROLAR SI EL TIPO GET ES CORRECTO
                 System.TimeSpan hora = dr.GetTimeSpan(2);
-                int tipoDeposito = dr.GetInt32(3);
-                int tarjeta = dr.GetInt32(4);
-                int cvu = dr.GetInt32(5);
-                int codigoSeguridad = dr.GetInt32(5);
+                long tarjeta = dr.GetInt32(3);
+                long cvu = dr.GetInt32(4);
+                float monto = dr.GetFloat(5);
+               
 
-                Deposito d = new Deposito(id, fecha, hora, tipoDeposito, tarjeta, cvu, codigoSeguridad);
+                Deposito d = new Deposito(id, fecha, hora, cvu, tarjeta, monto);
                 lista.Add(d);
             }
 
@@ -84,21 +84,20 @@ namespace Monar.Models
             SqlDataReader dr = cm.ExecuteReader();
             if (dr.Read())
             {
+                
                 System.DateTime fecha = dr.GetDateTime(1); //CONTROLAR SI EL TIPO GET ES CORRECTO
                 System.TimeSpan hora = dr.GetTimeSpan(2);
-                int tipoDeposito = dr.GetInt32(3);
-                int tarjeta = dr.GetInt32(4);
-                int cvu = dr.GetInt32(5);
-                int codigoSeguridad = dr.GetInt32(5);
-
-                d = new Deposito(id, fecha, hora, tipoDeposito, tarjeta, cvu, codigoSeguridad);
+                long tarjeta = dr.GetInt32(3);
+                long cvu = dr.GetInt32(4);
+                float monto = dr.GetFloat(5);
+            
+                d = new Deposito(id, fecha, hora, cvu, tarjeta, monto);
             }
 
             dr.Close();
             cx.Close();
 
             return d;
-
         }
     }
 }

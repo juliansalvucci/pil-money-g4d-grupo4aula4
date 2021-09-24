@@ -25,9 +25,10 @@ namespace Monar.Models
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "INSERT INTO Transferencia(fecha, hora, nota, cvu, destino) VALUES (@Fecha, @Hora, @Nota, @Cvu, @Destino)";
+            cm.CommandText = "INSERT INTO Transferencia(fecha, hora, monto, nota, cvu, destino) VALUES (@Fecha, @Hora, @Monto, @Nota, @Cvu, @Destino)";
             cm.Parameters.Add(new SqlParameter("@Fecha", nueva.Fecha));
             cm.Parameters.Add(new SqlParameter("@Hora", nueva.Hora));
+            cm.Parameters.Add(new SqlParameter("@Monto", nueva.Monto));
             cm.Parameters.Add(new SqlParameter("@Nota", nueva.Nota));
             cm.Parameters.Add(new SqlParameter("@Cvu", nueva.Cvu));
             cm.Parameters.Add(new SqlParameter("@Destino", nueva.Destino));
@@ -53,11 +54,12 @@ namespace Monar.Models
                 int id = dr.GetInt32(0);
                 System.DateTime fecha = dr.GetDateTime(1); //CONTROLAR SI EL TIPO GET ES CORRECTO
                 System.TimeSpan hora = dr.GetTimeSpan(2);
-                string nota = dr.GetString(3);
-                int cvu = dr.GetInt32(4);
-                int destino = dr.GetInt32(5);
+                float monto = dr.GetFloat(3);
+                string nota = dr.GetString(4);
+                int cvu = dr.GetInt32(5);
+                int destino = dr.GetInt32(6);
 
-                Transferencia t = new Transferencia(id, fecha, hora,nota,cvu,destino);
+                Transferencia t = new Transferencia(id, fecha, hora, monto, nota,cvu,destino);
                 lista.Add(t);
             }
 
@@ -83,11 +85,12 @@ namespace Monar.Models
             {
                 System.DateTime fecha = dr.GetDateTime(1); //CONTROLAR SI EL TIPO GET ES CORRECTO
                 System.TimeSpan hora = dr.GetTimeSpan(2);
-                string nota = dr.GetString(3);
-                int cvu = dr.GetInt32(4);
-                int destino = dr.GetInt32(5);
+                float monto = dr.GetFloat(3);
+                string nota = dr.GetString(4);
+                int cvu = dr.GetInt32(5);
+                int destino = dr.GetInt32(6);
 
-                t = new Transferencia(id, fecha, hora, nota, cvu, destino);
+                t = new Transferencia(id, fecha, hora, monto, nota, cvu, destino);
             }
 
             dr.Close();

@@ -2,7 +2,7 @@
   margin-top: 16px;
 }
 
-.register{
+.registro{
   border: 1px;
   border-radius: 5px;
   width: 800px;
@@ -15,4 +15,11 @@
 
 .mat-form-field{
   width: 270px;
+}
+
+h1{
+  font-style: oblique;
+  font-stretch: condensed;
+  font-weight: 500;
+  color:#FF6F00;
 }

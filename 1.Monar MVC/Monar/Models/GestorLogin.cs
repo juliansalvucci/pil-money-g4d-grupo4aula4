@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace Monar.Models
 {
@@ -13,28 +14,26 @@ namespace Monar.Models
         public bool ValidarLogin(LoginRequest login)
         {
 
-            
 
+ 
             SqlConnection cx = new SqlConnection(StrConexion);
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "SELECT correo, contraseña FROM Usuario WHERE @Correo=correo AND @Contraseña=contraseña";
+            cm.CommandText = "SELECT correo, contraseña FROM Usuario WHERE correo=@Correo";
             cm.Parameters.Add(new SqlParameter("@Correo", login.Correo));
-            cm.Parameters.Add(new SqlParameter("@Contraseña", login.Contraseña));
+           
 
             SqlDataReader dr = cm.ExecuteReader();
 
-            if (dr.HasRows) 
+            if (dr.Read())
             {
-                return true;
+                return BCrypt.Net.BCrypt.Verify(login.Contraseña, dr.GetString(1));
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
 
- 
+       
     }
 }

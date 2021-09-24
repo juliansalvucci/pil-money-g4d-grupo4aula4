@@ -27,13 +27,13 @@ export class LoginComponent {
      this.loginForm= this.formBuilder.group(
        {
         'correo': ['', Validators.required],
-        'contraseña': ['', [Validators.required, Validators.minLength(8)]]
+        'pass': ['', Validators.required]
        }
      )
     }
-   get Contraseña()
+   get Pass()
    {
-     return this.loginForm.get("contraseña");
+     return this.loginForm.get("pass");
    }
    get Correo()
    {
@@ -49,16 +49,16 @@ export class LoginComponent {
      return this.Mail?.touched && !this.Mail?.valid;
    }   
 
- 
+   */
    ngOnInit(): void {
      this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
    }
-   */
+   
    
    onEnviar(event: Event, usuario:Usuario): void {
-     
-     event.preventDefault;
-     this.authService.login(this.usuario)
+     console.log(usuario)
+     event.preventDefault();
+     this.authService.login(usuario)
        .subscribe(
          data => {
          console.log("DATA"+ JSON.stringify( data));   
