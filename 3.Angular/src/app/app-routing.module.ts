@@ -10,11 +10,12 @@ import { HomeComponent } from './src/app/home/home.component';
 
 
 const routes: Routes = [
+  /*
   {path: 'home', component: HomeComponent},
   {path: 'registro', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  /*
+  
   {path:'escritorio', component: SidebarComponent, canActivate: [AuthGuard],   //Para acceder al home el usuario debe estar logueado.
   children:[
     {path:'cuenta', component: cuentaComponent},

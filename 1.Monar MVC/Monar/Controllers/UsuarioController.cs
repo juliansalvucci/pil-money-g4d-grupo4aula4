@@ -6,11 +6,12 @@ using System.Net.Http;
 using System.Web.Http;
 using Monar.Models;
 using System.Web.Routing;
-using Microsoft.AspNetCore.Cors;
+using System.Web.Http.Cors;
 
 namespace Monar.Controllers
 {
     [RoutePrefix("api/Usuario")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UsuarioController : ApiController
     {
         
