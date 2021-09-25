@@ -20,7 +20,7 @@ namespace Monar.Models
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "SELECT correo, contraseña FROM Usuario WHERE correo=@Correo";
+            cm.CommandText = "SELECT correo, password FROM Usuario WHERE correo=@Correo";
             cm.Parameters.Add(new SqlParameter("@Correo", login.Correo));
            
 
@@ -28,7 +28,7 @@ namespace Monar.Models
 
             if (dr.Read())
             {
-                return BCrypt.Net.BCrypt.Verify(login.Contraseña, dr.GetString(1));
+                return BCrypt.Net.BCrypt.Verify(login.Password, dr.GetString(1));
             }
 
             return false;

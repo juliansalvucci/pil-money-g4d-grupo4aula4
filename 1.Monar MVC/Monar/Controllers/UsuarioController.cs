@@ -19,7 +19,7 @@ namespace Monar.Controllers
         public HttpResponseMessage Post([FromBody]Usuario value)
         {
             if(ModelState.IsValid)
-            {
+            { 
                 GestorUsuario gUsuario = new GestorUsuario();
                 gUsuario.RegistrarUsuario(value);
                 return new HttpResponseMessage(HttpStatusCode.OK);
@@ -27,7 +27,7 @@ namespace Monar.Controllers
             else
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-            }
+            }    
         }
 
         // PUT: api/Usuario/5

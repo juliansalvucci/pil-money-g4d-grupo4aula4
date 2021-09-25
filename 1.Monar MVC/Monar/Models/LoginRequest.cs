@@ -9,7 +9,7 @@ namespace Monar.Models
     public class LoginRequest
     {
         private string correo;
-        private string contraseña;
+        private string password;
         
 
         public LoginRequest() 
@@ -24,10 +24,10 @@ namespace Monar.Models
         }
 
         [Required]
-        public string Contraseña
+        public string Password
         {
-            get { return contraseña; }
-            set { contraseña = value; }
+            get { return password; }
+            set { password = value; }
         }
     }
 }

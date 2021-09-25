@@ -11,11 +11,9 @@ export class Usuario{
   id: number=0;
   apellido: string="";
   nombre: string="";
-  pass: string="";
+  password: string="";
   correo: string="";
   dni: number=0;
-  fotoFrenteDni: string="";
-  fotoDorsoDni: string="";
   token?: string;
 }
 
@@ -26,7 +24,7 @@ export class UsuarioService {
 
   constructor(private http:HttpClient) {
     console.log("Servicio Usuarios está corriendo");
-   }
+  }
 
   registrarUsuario(usuario:Usuario):Observable<Usuario>{
     return this.http.post<Usuario>(url, usuario, httpOptions);
