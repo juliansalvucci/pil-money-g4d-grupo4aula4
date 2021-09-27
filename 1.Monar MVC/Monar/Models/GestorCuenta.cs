@@ -49,7 +49,7 @@ namespace Monar.Models
             SqlDataReader dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                long cvu = dr.GetInt64(1);
+                int cvu = dr.GetInt16(1);
                 string alias = dr.GetString(2);
                 double saldo = dr.GetDouble(3);
                 int usuarioDni = dr.GetInt32(4);
@@ -79,7 +79,7 @@ namespace Monar.Models
             SqlDataReader dr = cm.ExecuteReader();
             if (dr.Read())
             {
-                long cvu = dr.GetInt64(1);
+                int cvu = dr.GetInt16(1);
                 string alias = dr.GetString(2);
                 double saldo = dr.GetDouble(3);
                 int usuarioDni = dr.GetInt32(4);

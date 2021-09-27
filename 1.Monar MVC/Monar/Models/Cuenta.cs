@@ -9,7 +9,7 @@ namespace Monar.Models
 {
   public class Cuenta
   {
-    private long cvu;
+    private int cvu;
     private string alias;
     private double saldo;
     private int usuarioDni;
@@ -19,7 +19,7 @@ namespace Monar.Models
     {
     }
 
-    public Cuenta(long cvu, string alias, double saldo, int usuarioDni, int tipoMoneda)
+    public Cuenta(int cvu, string alias, double saldo, int usuarioDni, int tipoMoneda)
     {
       this.cvu = cvu;
       this.alias = alias;
@@ -28,7 +28,7 @@ namespace Monar.Models
       this.tipoMoneda = tipoMoneda;
     }
 
-    public long Cvu
+    public int Cvu
     {
       get { return cvu; }
       set { cvu = value;}

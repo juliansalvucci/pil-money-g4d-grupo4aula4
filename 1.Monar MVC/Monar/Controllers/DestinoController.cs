@@ -5,15 +5,18 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Monar.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class DestinoController : ApiController
     {
         // GET: api/Destino
-        public IEnumerable<string> Get()
+        public IEnumerable<Destino> Get()
         {
-            return new string[] { "value1", "value2" };
+            GestorDestino gDestino = new GestorDestino();
+            return gDestino.ListarDestinos();
         }
 
         // GET: api/Destino/5

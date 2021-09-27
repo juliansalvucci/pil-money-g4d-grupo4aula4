@@ -95,7 +95,7 @@ namespace Monar.Models
                 string aliasCvu = dr.GetString(1);
                 string propietario = dr.GetString(2);
                 string correo = dr.GetString(3);
-                int dni = dr.GetInt32(0);
+                int dni = dr.GetInt32(4);
 
                 Destino d = new Destino(aliasCvu, propietario, correo, dni);
                 listadoDestinos.Add(d);

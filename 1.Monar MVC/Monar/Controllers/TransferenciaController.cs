@@ -5,15 +5,18 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Monar.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class TransferenciaController : ApiController
     {
         // GET: api/Transferencia
-        public IEnumerable<string> Get()
+        public IEnumerable<Transferencia> Get()
         {
-            return new string[] { "value1", "value2" };
+            GestorTransferencia gTransferencia = new GestorTransferencia();
+            return gTransferencia.ListarTransferencias();
         }
 
         // GET: api/Transferencia/5

@@ -1,22 +1,24 @@
 ﻿using Monar.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Monar.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class CuentaController : ApiController
     {
         // GET: api/Cuenta
         [HttpGet]
-        public IHttpActionResult Get()
+        public IEnumerable<Cuenta> Get()
         {
             GestorCuenta gCuenta = new GestorCuenta();
-            List <Cuenta> cuentas = gCuenta.ListarCuenta();
-            return Ok(cuentas);
+            return gCuenta.ListarCuenta();
         }
 
         // GET: api/Cuenta/5
@@ -26,8 +28,10 @@ namespace Monar.Controllers
         }
 
         // POST: api/Cuenta
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Cuenta nueva)
         {
+            GestorCuenta gCuenta = new GestorCuenta();
+            gCuenta.RegistrarCuenta(nueva);
         }
 
         // PUT: api/Cuenta/5

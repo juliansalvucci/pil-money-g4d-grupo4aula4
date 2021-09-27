@@ -43,12 +43,5 @@ namespace Monar.Controllers
             GestorUsuario gUsuario= new GestorUsuario();
             gUsuario.EliminarUsuario(id);
         }
-
-        //AUTENTICACIÓN
-
-       
-
-
-
     }
 }

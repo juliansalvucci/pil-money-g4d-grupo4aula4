@@ -5,15 +5,18 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Monar.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class TipoMonedaController : ApiController
     {
         // GET: api/TipoMoneda
-        public IEnumerable<string> Get()
+        public IEnumerable<TipoMoneda> Get()
         {
-            return new string[] { "value1", "value2" };
+            GestorTipoMoneda gTipoMoneda = new GestorTipoMoneda();
+            return gTipoMoneda.ListarTiposDeMonedas();
         }
 
         // GET: api/TipoMoneda/5

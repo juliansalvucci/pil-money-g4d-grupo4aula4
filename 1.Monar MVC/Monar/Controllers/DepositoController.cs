@@ -1,18 +1,22 @@
-﻿using System;
+﻿using Monar.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Monar.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class DepositoController : ApiController
     {
         // GET: api/Deposito
-        public IEnumerable<string> Get()
+        public IEnumerable<Deposito> Get()
         {
-            return new string[] { "value1", "value2" };
+            GestorDeposito gDeposito = new GestorDeposito();
+            return gDeposito.ListarDepositos();
         }
 
         // GET: api/Deposito/5
@@ -22,8 +26,10 @@ namespace Monar.Controllers
         }
 
         // POST: api/Deposito
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Deposito nuevo)
         {
+            GestorDeposito gDeposito = new GestorDeposito();
+            gDeposito.RegistrarDeposito(nuevo);
         }
 
         // PUT: api/Deposito/5
