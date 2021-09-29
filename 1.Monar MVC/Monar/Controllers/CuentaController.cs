@@ -22,9 +22,10 @@ namespace Monar.Controllers
         }
 
         // GET: api/Cuenta/5
-        public string Get(int id)
+        public Cuenta Get(int id)
         {
-            return "value";
+            GestorCuenta gCuenta = new GestorCuenta();
+            return gCuenta.ObtenerCuentaPorId(id);
         }
 
         // POST: api/Cuenta

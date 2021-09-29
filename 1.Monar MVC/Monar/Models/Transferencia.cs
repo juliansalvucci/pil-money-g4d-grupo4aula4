@@ -11,23 +11,23 @@ namespace Monar.Models
     private int id;
     private System.DateTime fecha;
     private System.TimeSpan hora;  //VER
-    private float monto;
-    private string nota;
     private int cvu;
+    private string nota;
+    private double monto;
     private int destino;
 
     public Transferencia()
     {
     }
 
-    public Transferencia(int id, System.DateTime fecha, System.TimeSpan hora, float monto, string nota, int cvu, int destino)
+    public Transferencia(int id, System.DateTime fecha, System.TimeSpan hora, int cvu, string nota, double monto , int destino)
     {
       this.id = id;
       this.fecha = fecha;
       this.hora = hora;
-      this.monto = monto;
-      this.nota = nota;
       this.cvu = cvu;
+      this.nota = nota;
+      this.monto = monto;
       this.destino = destino;
     }
 
@@ -49,10 +49,11 @@ namespace Monar.Models
       set {; }
     }
 
-    public float Monto
+    [Required]
+    public int Cvu
     {
-      get {return monto;}
-      set {monto = value;}
+      get { return cvu; }
+      set { cvu = value; }
     }
 
     public string Nota
@@ -61,13 +62,13 @@ namespace Monar.Models
       set { nota = value; }
     }
 
-    [Required]
-    public int Cvu
+    public double Monto
     {
-      get { return cvu; }
-      set { cvu = value; }
+      get {return monto;}
+      set {monto = value;}
     }
-    
+
+   
     [Required]
     public int Destino
     {
