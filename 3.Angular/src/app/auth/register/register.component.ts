@@ -1,55 +1,62 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
-import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
+import { Router } from '@angular/router';
+import { Usuario, UsuarioService } from 'src/app/src/app/servicios/usuario.service';
+
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
-  providers: [{
-    provide: STEPPER_GLOBAL_OPTIONS, useValue: {showError: true}
-  }]
 })
 export class RegisterComponent implements OnInit {
+  [x: string]: any;
 
   hide = true;
-  hide1 = true;
+  
+  usuario = new Usuario(); 
+  registerForm!: FormGroup;
+ 
 
-  firstFormGroup!: FormGroup;
-  secondFormGroup!: FormGroup;
-
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder,
+    private usuarioService: UsuarioService,
+    private router: Router) { }
 
   email = new FormControl('', [Validators.required, Validators.email]);
 
   ngOnInit(){ 
-    this.firstFormGroup = this._formBuilder.group({
+    this.registerForm = this._formBuilder.group({
       apellido: ['', Validators.required],
       nombre: ['', Validators.required],
-      dni: ['', Validators.required],
+      password: ['', Validators.required],
       correo: ['', Validators.required],
+      dni: ['', Validators.required],
     });
-    this.secondFormGroup = this._formBuilder.group({
-      contraseña: ['', Validators.required],
-      validador: ['', Validators.required],
-    });
+  
   }
 
- validarContraseña(){
-    //TO DO
-  }
+ 
 
   getErrorMessage() {
     return this.email.hasError('email') ? 'Formato de correo inválido' : '';
   }
 
-  enviarPaso1(firstFormGroup:any){
-    console.log(firstFormGroup.value)
+  onEnviar(event: Event, usuario:Usuario): void {
+    console.log(usuario)
+    event.preventDefault();
+    this.usuarioService.registrarUsuario(usuario)
+      .subscribe(
+        (data: any) => {
+        console.log("DATA"+ JSON.stringify( data));   
+        this.router.navigate(['ruta']);
+      },
+        (error: any) => {
+         this.error = error;
+        }
+      );
   }
 
-  enviarPaso2(secondFormGroup:any){
-    console.log(secondFormGroup.value)
-  }
+ 
 
 
 

@@ -1,28 +1,40 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Deposito } from '../Interfaces/interfaces.interfaces';
+import { Time } from '@angular/common';
+
+const url ="https://localhost:44339/api/Cuenta";
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
+export class Deposito{
+  id: number=0;
+  //fecha: Date;
+  //hora: Time;  
+  cvu: number=0;
+  tarjeta: number=0;
+  monto: number=0;
+}
 
 
-const apiUrl = 'http://localhost:numero/api/nombreApi';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DepositoService {
-  /*
-  constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Deposito> {
-    return this.http.get(apiUrl);
+  constructor(private http:HttpClient) {
+    console.log("Servicio Cuentas está corriendo");
   }
 
-  get(id: number): Observable<Deposito> {
-    return this.http.get(`${apiUrl}/${id}`);
+  Depositar(deposito: Deposito):Observable<Deposito>{
+    return this.http.post<Deposito>(url, deposito, httpOptions);
   }
 
-  create(data: any): Observable<Deposito> {  //en lugar de any, va una interface
-    return this.http.post(apiUrl, data);
+  ListarDepositos():Observable<any>{
+    return this.http.get<any>(url,httpOptions);
   }
-  */
+  
 }

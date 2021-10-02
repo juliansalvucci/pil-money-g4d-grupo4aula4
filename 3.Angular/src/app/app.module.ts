@@ -17,7 +17,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './src/app/home/home.component';
@@ -38,7 +37,6 @@ import { AuthService } from './src/app/servicios/auth.service';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    SidebarComponent,
     HomeComponent,
   ],
   imports: [

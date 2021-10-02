@@ -27,13 +27,13 @@ export class LoginComponent {
      this.loginForm= this.formBuilder.group(
        {
         'correo': ['', Validators.required],
-        'pass': ['', Validators.required]
+        'password': ['', Validators.required]
        }
      )
     }
    get Pass()
    {
-     return this.loginForm.get("pass");
+     return this.loginForm.get("password");
    }
    get Correo()
    {
