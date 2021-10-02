@@ -1,0 +1,1 @@
+﻿"SELECT correo, contraseña FROM Usuario WHERE @Correo=correo"
