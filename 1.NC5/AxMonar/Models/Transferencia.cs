@@ -9,18 +9,24 @@ namespace AxMonar.Models
 {
     public class Transferencia
     {
-        public int Id { get; set; }
+        [Key]
+        public int IdTransferencia { get; set; }
+
         public System.DateTime Fecha { get; set; }
+
         public System.TimeSpan Hora { get; set; }
 
         [Required]
         [ForeignKey("Cvu")]
         public Cuenta Cuenta { get; set; }
+
         public string Nota { get; set; }
+
+        [Required]
         public double Monto { get; set; }
 
         [Required]
-        [ForeignKey("Destino")]
+        [ForeignKey("CvuAlias")]
         public Destino Destino { get; set; }
     }
 }

@@ -9,13 +9,18 @@ namespace AxMonar.Models
 {
     public class Deposito
     {
-        public int Id { get; set; }
+        [Key]
+        public int IdDeposito { get; set; }
+
         public System.DateTime Fecha { get; set; }
+
         public System.TimeSpan Hora { get; set; }
 
         [Required]
         [ForeignKey("Cvu")]
         public Cuenta Cuenta { get; set; }
+
+        [Required]
         public float Monto { get; set; }
     }
 }
