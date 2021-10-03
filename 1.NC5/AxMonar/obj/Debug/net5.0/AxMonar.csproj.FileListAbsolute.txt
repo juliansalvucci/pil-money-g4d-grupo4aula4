@@ -138,3 +138,4 @@ C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\
 C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.NC5\AxMonar\obj\Debug\net5.0\ref\AxMonar.dll
 C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.NC5\AxMonar\obj\Debug\net5.0\AxMonar.pdb
 C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.NC5\AxMonar\obj\Debug\net5.0\AxMonar.genruntimeconfig.cache
+C:\Users\julia\Documents\Proyectos VSCode\ANGULAR\PIL\pil-money-g4d-grupo4aula4\1.NC5\AxMonar\bin\Debug\net5.0\BCrypt.Net-Next.dll

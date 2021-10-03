@@ -1,9 +1,12 @@
 ﻿using AxMonar.Helpers;
 using AxMonar.Models;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -26,24 +29,37 @@ namespace AxMonar.Services
         };
 
         private readonly AppSettings _appSettings;
-      
+        private readonly AplicacionDBContext _context;
 
-        public UserService(IOptions<AppSettings> appSettings)
+        public UserService(IOptions<AppSettings> appSettings, AplicacionDBContext context)
         {
             _appSettings = appSettings.Value;
+            _context = context;
         }
 
+   
         public AuthenticateResponse Authenticate(AuthenticateRequest model)
         {
-            var usuario = _usuarios.SingleOrDefault(x => x.Correo == model.Correo && x.Password == model.Password);
+            using (_context)
+            {
+                var usuario = _context.Usuario.Where(d => d.Correo == model.Correo && d.Password == model.Password).FirstOrDefault();
+
+                if (usuario == null) return null;
+
+                var token = generateJwtToken(usuario);
+
+                return new AuthenticateResponse(usuario, token);
+            }
+
+                //var usuario = _usuarios.SingleOrDefault(x => x.Correo == model.Correo && x.Password == model.Password);
 
             // return null if user not found
-            if (usuario == null) return null;
+            // if (usuario == null) return null;
 
             // authentication successful so generate jwt token
-            var token = generateJwtToken(usuario);
+            //var token = generateJwtToken(usuario);
 
-            return new AuthenticateResponse(usuario, token);
+            //return new AuthenticateResponse(usuario, token);
         }
 
         
