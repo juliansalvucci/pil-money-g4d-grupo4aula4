@@ -9,14 +9,13 @@ namespace AxMonar.Models
 {
     public class Usuario
     {
+        public int IdUsuario { get; set; }
+
         [Required]
         public string Apellido { get; set; }
 
         [Required]
         public string Nombre { get; set; }
-
-        [Required]
-        public string Password { get; set; }
 
         [Required]
         public string Correo { get; set; }
@@ -25,6 +24,9 @@ namespace AxMonar.Models
         [Key]
         public int Dni { get; set; }
 
-       
+        [Required]
+        public string Password { get; set; }
+
+
     }
 }

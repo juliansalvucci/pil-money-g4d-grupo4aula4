@@ -8809,11 +8809,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\julia\\source\\repos\\AxMonar\\AxMonar\\AxMonar.csproj",
+      "projectUniqueName": "C:\\Users\\julia\\Documents\\Proyectos VSCode\\ANGULAR\\PIL\\pil-money-g4d-grupo4aula4\\1.NC5\\AxMonar\\AxMonar.csproj",
       "projectName": "AxMonar",
-      "projectPath": "C:\\Users\\julia\\source\\repos\\AxMonar\\AxMonar\\AxMonar.csproj",
+      "projectPath": "C:\\Users\\julia\\Documents\\Proyectos VSCode\\ANGULAR\\PIL\\pil-money-g4d-grupo4aula4\\1.NC5\\AxMonar\\AxMonar.csproj",
       "packagesPath": "C:\\Users\\julia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\julia\\source\\repos\\AxMonar\\AxMonar\\obj\\",
+      "outputPath": "C:\\Users\\julia\\Documents\\Proyectos VSCode\\ANGULAR\\PIL\\pil-money-g4d-grupo4aula4\\1.NC5\\AxMonar\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\julia\\AppData\\Roaming\\NuGet\\NuGet.Config",

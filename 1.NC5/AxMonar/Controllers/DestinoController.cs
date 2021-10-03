@@ -1,6 +1,5 @@
-﻿using AxMonar.Models;
-using AxMonar.Services;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,54 +11,55 @@ namespace AxMonar.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioController : ControllerBase
+    public class DestinoController : ControllerBase
     {
         private readonly AplicacionDBContext _context;
 
-        public UsuarioController(AplicacionDBContext context)
+        public DestinoController(AplicacionDBContext context)
         {
             _context = context;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Usuario usuario)
+        // GET: api/<DestinoController>
+        [HttpGet]
+        public async Task<IActionResult> Get()
         {
             try
             {
-                _context.Add(usuario);
-                await _context.SaveChangesAsync();
+                var destinos = await _context.Destino.ToListAsync();
 
-                return Ok(usuario);
+                return Ok(destinos);
 
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
-        }
 
+
+        }
         /*
-        // GET: api/<UsuarioController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
-        // GET api/<UsuarioController>/5
+        // GET api/<DestinoController>/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // PUT api/<UsuarioController>/5
+        // POST api/<DestinoController>
+        [HttpPost]
+        public void Post([FromBody] string value)
+        {
+        }
+
+        // PUT api/<DestinoController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/<UsuarioController>/5
+        // DELETE api/<DestinoController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

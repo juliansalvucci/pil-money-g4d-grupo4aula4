@@ -13,8 +13,18 @@ namespace AxMonar
         {
 
         }
-        DbSet<Cuenta> Cuenta { get; set; } //Mapeo de modelo a base de datos
-        DbSet<Usuario> Usuario { get; set; }
 
+        //Mapeo de modelos a base de datos
+        public DbSet<Cuenta> Cuenta { get; set; }
+
+        public DbSet<Deposito> Deposito { get; set; }
+
+        public DbSet<Destino> Destino { get; set; }
+
+        public DbSet<TipoMoneda> TipoMoneda { get; set; }
+
+        public DbSet<Transferencia> Transferencia { get; set; }
+
+        public DbSet<Usuario> Usuario { get; set; }
     }
 }
