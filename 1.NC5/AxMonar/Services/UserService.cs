@@ -22,11 +22,12 @@ namespace AxMonar.Services
     }
     public class UserService : IUserService
     {
-
+        /*
         private List<Usuario> _usuarios = new List<Usuario>
         {
             new Usuario { Apellido = "apellido", Nombre = "Test", Password = "User", Correo = "test", Dni = 12345678 }
         };
+        */
 
         private readonly AppSettings _appSettings;
         private readonly AplicacionDBContext _context;
@@ -51,7 +52,7 @@ namespace AxMonar.Services
                 return new AuthenticateResponse(usuario, token);
             }
 
-                //var usuario = _usuarios.SingleOrDefault(x => x.Correo == model.Correo && x.Password == model.Password);
+            //var usuario = _usuarios.SingleOrDefault(x => x.Correo == model.Correo && x.Password == model.Password);
 
             // return null if user not found
             // if (usuario == null) return null;

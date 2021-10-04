@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 .imagenfondo{
     margin: 0;
     padding: 0;
@@ -24,7 +27,11 @@
   margin: 10px;
   ;
 }
-h1 {font-family: 'Merriweather Sans', sans-serif; font-weight: bold;  font-size: 50% ; color: white; float: right; margin: 10px;
+h1 {
+    font-family:  'Yellowtail', cursive; 
+    font-weight: bold;  
+    font-size: 50% ; color: white; 
+    float: right; margin: 10px;
 } 
 .centrado{
     position: absolute;
@@ -38,19 +45,50 @@ h1 {font-family: 'Merriweather Sans', sans-serif; font-weight: bold;  font-size:
     display: flex;
 }
 .otroestilo{ 
-    color: rgb(216, 123, 10) ;
+    color: #ffffff ;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+    text-shadow:
+		0 0 5px #FF6F00,
+		0 0 10px #FF6F00,
+		0 0 20px #FF6F00,
+		0 0 40px #FF6F00,
+		0 0 80px #FF6F00,
+		0 0 90px #FF6F00,
+		0 0 100px #FF6F00,
+		0 0 140px #FF6F00,
+		0 0 180px #b6b6b6; 
 }
 p { 
-    font-size: 15px; 
+    font-size: 20px; 
     font-weight:normal; 
     font-family: 'Arial', sans-serif; 
     float: left;
+    align-content: center;
+    justify-content: center;
+    text-align: justify;
+    font-style: oblique;
 } 
-h2 { font-size: 15%; font-family: 'Merriweather Sans', sans-serif; font-weight: bold; 
+h2 { font-size: 15%; 
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold; 
 }
-a { color: white; 
-    border-color: rgb(216, 123, 10);  
-    background-color: rgb(216, 123, 10); 
+
+a { 
     position: absolute; top: 100%;
     left: 40%; width: 30%;
+}
+
+a:hover{ 
+    background-color: #ff9c50;
+    box-shadow:0 0 5px #FF6F00,
+    0 0 10px #FF6F00,
+    0 0 20px #FF6F00,
+    0 0 40px #FF6F00,
+    0 0 80px #FF6F00,
+    0 0 90px #FF6F00,
+    0 0 100px #FF6F00,
+    0 0 140px #FF6F00,
+    0 0 180px #b6b6b6;  
+
 }
