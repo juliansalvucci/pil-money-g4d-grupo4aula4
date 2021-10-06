@@ -22,11 +22,12 @@ namespace AxMonar.Services
     }
     public class UserService : IUserService
     {
-
+        /*
         private List<Usuario> _usuarios = new List<Usuario>
         {
             new Usuario { Apellido = "apellido", Nombre = "Test", Password = "User", Correo = "test", Dni = 12345678 }
         };
+        */
 
         private readonly AppSettings _appSettings;
         private readonly AplicacionDBContext _context;
@@ -42,16 +43,19 @@ namespace AxMonar.Services
         {
             using (_context)
             {
-                var usuario = _context.Usuario.Where(d => d.Correo == model.Correo && d.Password == model.Password).FirstOrDefault();
+                var usuario = _context.Usuario.Where(d => d.Correo == model.Correo).FirstOrDefault();
 
-                if (usuario == null) return null;
+                Console.WriteLine(BCrypt.Net.BCrypt.Verify(model.Password, usuario.Password));
+                if (usuario == null || !BCrypt.Net.BCrypt.Verify(model.Password,usuario.Password)) return null;
+                
+
 
                 var token = generateJwtToken(usuario);
 
                 return new AuthenticateResponse(usuario, token);
             }
 
-                //var usuario = _usuarios.SingleOrDefault(x => x.Correo == model.Correo && x.Password == model.Password);
+            //var usuario = _usuarios.SingleOrDefault(x => x.Correo == model.Correo && x.Password == model.Password);
 
             // return null if user not found
             // if (usuario == null) return null;

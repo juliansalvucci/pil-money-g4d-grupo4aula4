@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AxMonar.Migrations
 {
     [DbContext(typeof(AplicacionDBContext))]
-    [Migration("20211002233148_MonaTest")]
-    partial class MonaTest
+    [Migration("20211005230840_V1")]
+    partial class V1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -82,12 +82,14 @@ namespace AxMonar.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Correo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Dni")
                         .HasColumnType("int");
 
                     b.Property<string>("Propietario")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CvuAlias");
@@ -148,9 +150,7 @@ namespace AxMonar.Migrations
             modelBuilder.Entity("AxMonar.Models.Usuario", b =>
                 {
                     b.Property<int>("Dni")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<string>("Apellido")
                         .IsRequired()
@@ -159,9 +159,6 @@ namespace AxMonar.Migrations
                     b.Property<string>("Correo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdUsuario")
-                        .HasColumnType("int");
 
                     b.Property<string>("Nombre")
                         .IsRequired()

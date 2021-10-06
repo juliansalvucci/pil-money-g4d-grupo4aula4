@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,8 +9,7 @@ namespace AxMonar.Models
 {
     public class Usuario
     {
-        public int IdUsuario { get; set; }
-
+        
         [Required]
         public string Apellido { get; set; }
 
@@ -23,16 +21,12 @@ namespace AxMonar.Models
 
         [Required]
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Dni { get; set; }
 
+ 
         [Required]
         public string Password { get; set; }
-
-
-    }
-
-    public class SampleContext : DbContext
-    {
-        public DbSet<Usuario> Usuarios { get; set; }
+        
     }
 }
