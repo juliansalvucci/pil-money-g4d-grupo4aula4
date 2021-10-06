@@ -27,7 +27,12 @@ namespace AxMonar.Controllers
         {
             try
             {
+                var EncryptedPassword = BCrypt.Net.BCrypt.HashPassword(usuario.Password);
+
+                usuario.Password = EncryptedPassword;
+
                 _context.Add(usuario);
+                
                 await _context.SaveChangesAsync();
 
                 return Ok(usuario);
@@ -35,7 +40,7 @@ namespace AxMonar.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(ex.InnerException);
             }
         }
 

@@ -43,9 +43,12 @@ namespace AxMonar.Services
         {
             using (_context)
             {
-                var usuario = _context.Usuario.Where(d => d.Correo == model.Correo && d.Password == model.Password).FirstOrDefault();
+                var usuario = _context.Usuario.Where(d => d.Correo == model.Correo).FirstOrDefault();
 
-                if (usuario == null) return null;
+                Console.WriteLine(BCrypt.Net.BCrypt.Verify(model.Password, usuario.Password));
+                if (usuario == null || !BCrypt.Net.BCrypt.Verify(model.Password,usuario.Password)) return null;
+                
+
 
                 var token = generateJwtToken(usuario);
 
