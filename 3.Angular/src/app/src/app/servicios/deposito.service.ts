@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Time } from '@angular/common';
-import { Deposito } from '../Interfaces/Deposito';
+import { Deposito } from 'src/app/Servicios/deposito.service';
+
 
 const url ="https://localhost:44339/api/Cuenta";
 const httpOptions = {

@@ -1,15 +1,12 @@
 <div class="deposito">
   <div class="card">
     <div class="card-body">
-      <form [formGroup]="depositoForm">
+      <form [formGroup]="depositoForm" (ngSubmit)="onEnviar($event)">
         <div>
           <mat-form-field appearance="legacy">
             <mat-label>Cuenta</mat-label>
             <mat-select formControlname="cuenta" required>
-              <mat-option>--</mat-option>
-              <mat-option>
-                
-              </mat-option>
+              <mat-option>test</mat-option>
             </mat-select>
             <mat-error *ngIf="depositoControl.hasError('required')">Seleccione cuenta de depósito</mat-error>
             <mat-hint></mat-hint>
@@ -26,10 +23,7 @@
           <mat-form-field appearance="legacy">
             <mat-label>Tarjeta</mat-label>
             <mat-select formControlname="tarjeta" required>
-              <mat-option>--</mat-option>
-              <mat-option>
-                
-              </mat-option>
+              <mat-option>test</mat-option>
             </mat-select>
             <mat-error *ngIf="depositoControl.hasError('required')">Seleccione cuenta de depósito</mat-error>
             <mat-hint></mat-hint>

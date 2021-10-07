@@ -38,7 +38,9 @@ export class PagoTarjetaDebitoComponent {
 
   depositoControl = new FormControl('', Validators.required);
   
-  
+  onEnviar(value: any){
+    console.log(value);
+  }
 }
   
 
