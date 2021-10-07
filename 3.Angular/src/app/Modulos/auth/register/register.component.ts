@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
-import { Usuario, UsuarioService } from 'src/app/src/app/servicios/usuario.service';
+import { Usuario, UsuarioService } from 'src/app/Servicios/usuario.service';
+
 
 
 @Component({
@@ -28,9 +29,10 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this._formBuilder.group({
       apellido: ['', Validators.required],
       nombre: ['', Validators.required],
-      password: ['', Validators.required],
       correo: ['', Validators.required],
       dni: ['', Validators.required],
+      password: ['', Validators.required],
+      
     });
   
   }

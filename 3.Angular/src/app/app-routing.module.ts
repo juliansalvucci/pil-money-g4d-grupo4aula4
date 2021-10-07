@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
+import { HomeComponent } from './layout/home/home.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
-import { CuentaComponent } from './src/app/cuenta/cuenta/cuenta.component';
-import { PagoTarjetaDebitoComponent } from './src/app/deposito/pago-tarjeta-debito/pago-tarjeta-debito.component';
-import { HomeComponent } from './src/app/home/home.component';
-import { AuthguardService } from './src/app/servicios/authguard.service';
-import { OpcionTransferenciaComponent } from './src/app/transferencia/opcion-transferencia/opcion-transferencia.component';
+import { LoginComponent } from './Modulos/auth/login/login.component';
+import { RegisterComponent } from './Modulos/auth/register/register.component';
+import { CuentaComponent } from './Modulos/cuenta/cuenta/cuenta.component';
+import { PagoTarjetaDebitoComponent } from './Modulos/deposito/pago-tarjeta-debito/pago-tarjeta-debito.component';
+import { OpcionTransferenciaComponent } from './Modulos/transferencia/opcion-transferencia/opcion-transferencia.component';
+import { AuthguardService } from './Servicios/authguard.service';
+
 
 
 const routes: Routes = [

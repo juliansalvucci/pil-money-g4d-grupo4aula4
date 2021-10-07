@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
+import { TarjetaComponent } from './tarjeta/tarjeta.component';
 import { MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-//import { Deposito, Cuenta, Tarjeta } from '../../servicios/deposito.service';
+import { Deposito } from 'src/app/Servicios/deposito.service';
 
 
 
@@ -16,17 +17,16 @@ interface Animal {
   styleUrls: ['./pago-tarjeta-debito.component.css']
 })
 
-
-
-
+/*
+listaCuentas: cuentas[];
+listaTarjetas: tarjetas[]
+*/
 
 
 export class PagoTarjetaDebitoComponent {
 
-  /*
-  listaCuentas = Cuenta;
-  listaTarjetas = Tarjeta;  
-  */
+  deposito = new Deposito()
+  
 
   depositoForm: FormGroup = this.fb.group({
     cuenta: [,[Validators.required]],

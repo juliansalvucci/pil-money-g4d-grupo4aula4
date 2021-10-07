@@ -1,0 +1,49 @@
+<div class="deposito">
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="depositoForm">
+        <div>
+          <mat-form-field appearance="legacy">
+            <mat-label>Cuenta</mat-label>
+            <mat-select formControlname="cuenta" required>
+              <mat-option>--</mat-option>
+              <mat-option>
+                
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="depositoControl.hasError('required')">Seleccione cuenta de depósito</mat-error>
+            <mat-hint></mat-hint>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="legacy" floatLabel="always">
+            <mat-label>Monto</mat-label>
+            <input matInput formControlname="monto" type="number" class="example-right-align" placeholder="0">
+            <span matPrefix>$&nbsp;</span>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="legacy">
+            <mat-label>Tarjeta</mat-label>
+            <mat-select formControlname="tarjeta" required>
+              <mat-option>--</mat-option>
+              <mat-option>
+                
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="depositoControl.hasError('required')">Seleccione cuenta de depósito</mat-error>
+            <mat-hint></mat-hint>
+          </mat-form-field>
+        </div>
+        <div class="example-container">
+          <button  type="submit" mat-raised-button color="primary">Iniciar</button><!--submit-->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+

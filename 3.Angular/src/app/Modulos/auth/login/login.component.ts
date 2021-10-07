@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/src/app/servicios/auth.service';
 import { observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { Usuario, UsuarioService } from 'src/app/src/app/servicios/usuario.service';
+import { Usuario } from 'src/app/Servicios/usuario.service';
+import { AuthService } from 'src/app/Servicios/auth.service';
 
 
 

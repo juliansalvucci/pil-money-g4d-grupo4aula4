@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CuentaComponent } from './cuenta/cuenta.component';
-import { SidebarComponent } from 'src/app/layout/sidebar/sidebar.component';
-import { MaterialModule } from 'src/app/material/material.module';
+import { MaterialModule } from 'src/app/Material/material.module';
+import { CuentaCreateComponent } from './cuenta-create/cuenta-create.component';
 
 
 
@@ -10,7 +10,7 @@ import { MaterialModule } from 'src/app/material/material.module';
 @NgModule({
   declarations: [
     CuentaComponent,
-    SidebarComponent
+    CuentaCreateComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +18,6 @@ import { MaterialModule } from 'src/app/material/material.module';
   ],
   exports: [
     CuentaComponent,
-    SidebarComponent
   ]
 })
 export class CuentaModule { }
