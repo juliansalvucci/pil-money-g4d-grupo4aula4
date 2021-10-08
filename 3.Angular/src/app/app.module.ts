@@ -23,6 +23,8 @@ import { HomeComponent } from './src/app/home/home.component';
 
 //SERVICIOS
 import { AuthService } from './src/app/servicios/auth.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NotFoundComponent } from './layout/not-found/not-found.component';
 
 
 
@@ -38,6 +40,7 @@ import { AuthService } from './src/app/servicios/auth.service';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import { AuthService } from './src/app/servicios/auth.service';
     TransferenciaModule, 
     AuthModule,
     HttpClientModule,
-    CuentaModule
+    CuentaModule,
+    BrowserAnimationsModule
   ],
   
   exports: [

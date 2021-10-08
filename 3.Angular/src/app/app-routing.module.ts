@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { NotFoundComponent } from './layout/not-found/not-found.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { CuentaComponent } from './src/app/cuenta/cuenta/cuenta.component';
 import { PagoTarjetaDebitoComponent } from './src/app/deposito/pago-tarjeta-debito/pago-tarjeta-debito.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
     {path:'transferencia', component: OpcionTransferenciaComponent}, 
   ]},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: "**", component: NotFoundComponent}
 ];
 
 @NgModule({
