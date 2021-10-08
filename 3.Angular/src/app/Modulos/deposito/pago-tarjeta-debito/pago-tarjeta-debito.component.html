@@ -1,25 +1,27 @@
 <div class="deposito">
   <div class="card">
     <div class="card-body">
-      <form [formGroup]="depositoForm" (ngSubmit)="onEnviar($event)">
+      <form [formGroup]="depositoForm">
         <div>
           <mat-form-field appearance="legacy">
             <mat-label>Cuenta</mat-label>
-            <mat-select formControlname="cuenta" required>
-              <mat-option>test</mat-option>
+            <mat-select formControlName="cuenta">
+              <mat-option *ngFor= "let i of listaCuentas" [value]="i.cvu">
+                {{i.alias}}
+              </mat-option>
             </mat-select>
-            <mat-error *ngIf="depositoControl.hasError('required')">Seleccione cuenta de depósito</mat-error>
-            <mat-hint></mat-hint>
           </mat-form-field>
         </div>
+
+      
         <div>
-          <mat-form-field appearance="legacy" floatLabel="always">
+          <mat-form-field appearance="legacy">
             <mat-label>Monto</mat-label>
-            <input matInput formControlname="monto" type="number" class="example-right-align" placeholder="0">
-            <span matPrefix>$&nbsp;</span>
+            <input matInput formControlName="monto" />
           </mat-form-field>
         </div>
-        <div>
+        <!--
+          <div>
           <mat-form-field appearance="legacy">
             <mat-label>Tarjeta</mat-label>
             <mat-select formControlname="tarjeta" required>
@@ -29,8 +31,11 @@
             <mat-hint></mat-hint>
           </mat-form-field>
         </div>
+
+        -->
+        
         <div class="example-container">
-          <button  type="submit" mat-raised-button color="primary">Iniciar</button><!--submit-->
+          <button mat-raised-button (click)="depositar()" color="primary">Crear</button>
         </div>
       </form>
     </div>

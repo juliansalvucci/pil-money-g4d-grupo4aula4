@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Time } from '@angular/common';
 import { Deposito } from 'src/app/Servicios/deposito.service';
 
 
-const url ="https://localhost:44339/api/Cuenta";
+const url ="https://localhost:44354/api/Cuenta";
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };

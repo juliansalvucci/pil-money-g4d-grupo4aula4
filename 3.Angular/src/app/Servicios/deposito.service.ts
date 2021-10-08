@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Time } from '@angular/common';
+import { Deposito } from '../Interfaces/Deposito';
 
-const url ="https://localhost:44339/api/Cuenta";
+const url ="https://localhost:44354/api/Deposito";
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+/*
 export class Deposito{
   id: number=0;
   //fecha: Date;
@@ -16,7 +18,7 @@ export class Deposito{
   tarjeta: number=0;
   monto: number=0;
 }
-
+*/
 
 
 

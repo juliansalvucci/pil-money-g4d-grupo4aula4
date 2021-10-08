@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Cuenta } from '../Interfaces/Cuenta';
 
-const url ="https://localhost:44339/api/Cuenta";
+const url ="https://localhost:44354/api/Cuenta";
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+/*
 export class Cuenta{
    cvu: number=0;
    alias: string="";
@@ -14,6 +16,7 @@ export class Cuenta{
    usuarioDni: number=0;
    tipoMoneda: number=0;
 }
+*/
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +31,7 @@ export class CuentaService {
     return this.http.post<Cuenta>(url, cuenta, httpOptions);
   }
 
-  obtenerCuentas():Observable<any>{
+  obtenerCuentas():Observable<Cuenta[]>{
     return this.http.get<any>(url,httpOptions);
   }
 
