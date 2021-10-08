@@ -11,19 +11,16 @@ import { OpcionTransferenciaComponent } from './src/app/transferencia/opcion-tra
 
 
 const routes: Routes = [
-  
   {path: 'home', component: HomeComponent},
   {path: 'registro', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  
-  {path:'escritorio', component: SidebarComponent, canActivate: [AuthguardService],   //Para acceder al home el usuario debe estar logueado.
+  {path:'escritorio', component: SidebarComponent, canActivate: [AuthguardService],  //Para acceder al home el usuario debe estar logueado.
   children:[
     {path:'cuenta', component: CuentaComponent},
-    {path:'transacciones', component: OpcionTransferenciaComponent},
     {path:'deposito', component: PagoTarjetaDebitoComponent},
+    {path:'transferencia', component: OpcionTransferenciaComponent}, 
   ]},
-  
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
 ];
 
 @NgModule({
