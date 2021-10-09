@@ -2,20 +2,21 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const url ="https://localhost:44339/api/Usuario";
+const url ="https://localhost:44354/api/Usuario";
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+
 export class Usuario{
-  id: number=0;
   apellido: string="";
-  nombre: string="";
+  nombre:   string="";
+  correo:   string="";
+  dni:      number=0;
   password: string="";
-  correo: string="";
-  dni: number=0;
   token?: string;
 }
+
 
 @Injectable({
   providedIn: 'root'

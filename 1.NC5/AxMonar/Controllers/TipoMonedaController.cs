@@ -35,8 +35,6 @@ namespace AxMonar.Controllers
             {
                 return BadRequest(ex.InnerException.Message);
             }
-
-
         }
 
         // POST api/<TipoMonedaController>
@@ -49,11 +47,9 @@ namespace AxMonar.Controllers
                 await _context.SaveChangesAsync();
 
                 return Ok(tm);
-
             }
             catch (Exception ex)
             {
-
                 return BadRequest(ex.Message);
             }
         }

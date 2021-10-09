@@ -1,30 +1,33 @@
 //MÓDULOS
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { MaterialModule } from './material/material.module';
-import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
-import { DepositoModule } from './src/app/deposito/deposito.module';
-import { FormsModule } from '@angular/forms';
-import { TransferenciaModule } from './src/app/transferencia/transferencia.module';
-import { AuthModule } from './auth/auth.module';
-import { HttpClientModule } from '@angular/common/http';
-import { ExtraccionModule } from './src/app/extraccion/extraccion.module';
-import { CuentaModule } from './src/app/cuenta/cuenta.module';
+import { NgModule } from "@angular/core";
+import { MaterialModule } from "./Material/material.module";
+import { AuthModule } from "./Modulos/auth/auth.module";
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppRoutingModule } from "./app-routing.module";
+import { CuentaModule } from "./Modulos/cuenta/cuenta.module";
+import { DepositoModule } from "./Modulos/deposito/deposito.module";
+import { ExtraccionModule } from "./Modulos/extraccion/extraccion.module";
+import { TransferenciaModule } from "./Modulos/transferencia/transferencia.module";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 
 //COMPONENTES
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './layout/navbar/navbar.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { FooterComponent } from './layout/footer/footer.component';
-import { HomeComponent } from './src/app/home/home.component';
+import { AppComponent } from "./app.component";
+import { FooterComponent } from "./layout/footer/footer.component";
+import { HeaderComponent } from "./layout/header/header.component";
+import { HomeComponent } from "./layout/home/home.component";
+import { NavbarComponent } from "./layout/navbar/navbar.component";
+import { SidebarComponent } from "./layout/sidebar/sidebar.component";
+import { LoginComponent } from "./Modulos/auth/login/login.component";
+import { RegisterComponent } from "./Modulos/auth/register/register.component";
+import { NotFoundComponent } from "./layout/not-found/not-found.component";
 
 //SERVICIOS
-import { AuthService } from './src/app/servicios/auth.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NotFoundComponent } from './layout/not-found/not-found.component';
+import { AuthService } from "./Servicios/auth.service";
+
+
 
 
 
@@ -34,9 +37,11 @@ import { NotFoundComponent } from './layout/not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    HomeComponent,
     FooterComponent,
+    SidebarComponent,
     NavbarComponent,
+    HeaderComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,

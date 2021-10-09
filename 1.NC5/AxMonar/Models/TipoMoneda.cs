@@ -10,7 +10,9 @@ namespace AxMonar.Models
     {
         [Key]
         public int IdTipoMoneda { get; set; }
-        public string Nombre { get; set; }
+
+        [Required]
+        public string NombreTipoMoneda { get; set; }
 
     }
 }

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { TarjetaComponent } from './tarjeta/tarjeta.component';
 import { MatDialog } from '@angular/material/dialog';
-import { FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+//import { Deposito, Cuenta, Tarjeta } from '../../servicios/deposito.service';
+
 
 
 interface Animal {
@@ -16,15 +17,28 @@ interface Animal {
 })
 
 
+
+
+
+
 export class PagoTarjetaDebitoComponent {
-  animalControl = new FormControl('', Validators.required);
-  selectFormControl = new FormControl('', Validators.required);
-  animals: Animal[] = [
-    {name: 'Dog', sound: 'Woof!'},
-    {name: 'Cat', sound: 'Meow!'},
-    {name: 'Cow', sound: 'Moo!'},
-    {name: 'Fox', sound: 'Wa-pa-pa-pa-pa-pa-pow!'},
-  ];
+
+  /*
+  listaCuentas = Cuenta;
+  listaTarjetas = Tarjeta;  
+  */
+
+  depositoForm: FormGroup = this.fb.group({
+    cuenta: [,[Validators.required]],
+    monto: [,[Validators.required]],
+    tarjeta: [,[Validators.required]],
+  });
+
+  constructor(private fb: FormBuilder){}
+
+  depositoControl = new FormControl('', Validators.required);
+  
+  
 }
   
 

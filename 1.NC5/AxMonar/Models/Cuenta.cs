@@ -11,7 +11,7 @@ namespace AxMonar.Models
     {
         [Key]
         [Required]
-        public int Cvu { get; set; }
+        public long Cvu { get; set; }
 
         [Required]
         public string Alias { get; set; }
@@ -19,14 +19,11 @@ namespace AxMonar.Models
         [Required]
         public double Saldo { get; set; }
 
-        
         [Required]
-        [ForeignKey("Dni")]
-        public Usuario Usuario { get; set; }
-        
+        public int Dni { get; set; }
 
         [Required]
-        [ForeignKey("IdTipoMoneda")]
-        public TipoMoneda TipoMoneda { get; set; }
+        public int IdTipoMoneda { get; set; }
+
     }
 }

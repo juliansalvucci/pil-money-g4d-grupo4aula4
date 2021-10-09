@@ -4,6 +4,7 @@ import { Observable, of, BehaviorSubject, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { catchError, map } from 'rxjs/operators';
 import {Usuario, UsuarioService } from './usuario.service';
+import { Login } from '../Interfaces/Login';
 
 const url ="https://localhost:44354/api/Login/authenticate";
 const httpOptions = {
@@ -15,16 +16,16 @@ const httpOptions = {
 })
 export class AuthService {
   loggedIn= new BehaviorSubject<boolean>(false);
-  currentUserSubject: BehaviorSubject<Usuario>;
-  currentUser: Observable<Usuario>;
+  currentUserSubject: BehaviorSubject<Login>;
+  currentUser: Observable<Login>;
   constructor(private http:HttpClient) {
     console.log("Servicio de Atuenticación está corriendo");
-    this.currentUserSubject = new BehaviorSubject<Usuario>(JSON.parse(localStorage.getItem('currentUser') || '{}'));
+    this.currentUserSubject = new BehaviorSubject<Login>(JSON.parse(localStorage.getItem('currentUser') || '{}'));
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  login(usuario: Usuario): Observable<any> {  
-    return this.http.post<any>(url, usuario, httpOptions)
+  login(login: Login): Observable<any> {  
+    return this.http.post<any>(url,login , httpOptions)
       .pipe(map(data => {
         localStorage.setItem('currentUser', JSON.stringify(data ));
         this.currentUserSubject.next(data);
@@ -41,7 +42,7 @@ export class AuthService {
     
   }
 
-  get usuarioAutenticado(): Usuario {
+  get usuarioAutenticado(): Login {
     return this.currentUserSubject.value;
   }
 
