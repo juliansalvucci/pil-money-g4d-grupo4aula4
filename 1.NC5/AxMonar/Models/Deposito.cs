@@ -14,13 +14,10 @@ namespace AxMonar.Models
 
         public System.DateTime Fecha { get; set; }
 
-        public System.TimeSpan Hora { get; set; }
-
-        [Required]
-        [ForeignKey("Cvu")]
-        public Cuenta Cuenta { get; set; }
-
         [Required]
         public float Monto { get; set; }
+
+        [Required]
+        public long Cvu { get; set; }
     }
 }

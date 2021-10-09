@@ -11,12 +11,15 @@ namespace AxMonar.Models
     {
 
         [Key]
-        public string CvuAlias { get; set; }
+        public string AliasDestino { get; set; }
+
         [Required]
         public string Propietario { get; set; }
+
         [Required]
         public string Correo { get; set; }
+
         [Required]
-        public int Dni { get; set; }
+        public int DniDestino { get; set; }
     }
 }

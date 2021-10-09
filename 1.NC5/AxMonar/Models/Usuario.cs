@@ -9,7 +9,6 @@ namespace AxMonar.Models
 {
     public class Usuario
     {
-        
         [Required]
         public string Apellido { get; set; }
 
@@ -24,9 +23,7 @@ namespace AxMonar.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Dni { get; set; }
 
- 
         [Required]
-        public string Password { get; set; }
-        
+        public string Password { get; set; }   
     }
 }

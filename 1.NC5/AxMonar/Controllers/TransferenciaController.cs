@@ -30,8 +30,6 @@ namespace AxMonar.Controllers
                 var transferencias = await _context.Transferencia.ToListAsync();
 
                 return Ok(transferencias);
-
-
             }
             catch (Exception ex)
             {
@@ -44,7 +42,6 @@ namespace AxMonar.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Transferencia transferencia)
         {
-
             try
             {
                 _context.Add(transferencia);
@@ -55,7 +52,6 @@ namespace AxMonar.Controllers
             }
             catch (Exception ex)
             {
-
                 return BadRequest(ex.Message);
             }
         }

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AxMonar.Migrations
 {
     [DbContext(typeof(AplicacionDBContext))]
-    [Migration("20211005230840_V1")]
-    partial class V1
+    [Migration("20211009050352_AXMONAR")]
+    partial class AXMONAR
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,9 +23,9 @@ namespace AxMonar.Migrations
 
             modelBuilder.Entity("AxMonar.Models.Cuenta", b =>
                 {
-                    b.Property<int>("Cvu")
+                    b.Property<long>("Cvu")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Alias")
@@ -43,10 +43,6 @@ namespace AxMonar.Migrations
 
                     b.HasKey("Cvu");
 
-                    b.HasIndex("Dni");
-
-                    b.HasIndex("IdTipoMoneda");
-
                     b.ToTable("Cuenta");
                 });
 
@@ -57,42 +53,37 @@ namespace AxMonar.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Cvu")
-                        .HasColumnType("int");
+                    b.Property<long>("Cvu")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
-
-                    b.Property<TimeSpan>("Hora")
-                        .HasColumnType("time");
 
                     b.Property<float>("Monto")
                         .HasColumnType("real");
 
                     b.HasKey("IdDeposito");
 
-                    b.HasIndex("Cvu");
-
                     b.ToTable("Deposito");
                 });
 
             modelBuilder.Entity("AxMonar.Models.Destino", b =>
                 {
-                    b.Property<string>("CvuAlias")
+                    b.Property<string>("AliasDestino")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Correo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Dni")
+                    b.Property<int>("DniDestino")
                         .HasColumnType("int");
 
                     b.Property<string>("Propietario")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CvuAlias");
+                    b.HasKey("AliasDestino");
 
                     b.ToTable("Destino");
                 });
@@ -104,7 +95,8 @@ namespace AxMonar.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Nombre")
+                    b.Property<string>("NombreTipoMoneda")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdTipoMoneda");
@@ -119,18 +111,15 @@ namespace AxMonar.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Cvu")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CvuAlias")
+                    b.Property<string>("AliasDestino")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("Cvu")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
-
-                    b.Property<TimeSpan>("Hora")
-                        .HasColumnType("time");
 
                     b.Property<double>("Monto")
                         .HasColumnType("float");
@@ -139,10 +128,6 @@ namespace AxMonar.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdTransferencia");
-
-                    b.HasIndex("Cvu");
-
-                    b.HasIndex("CvuAlias");
 
                     b.ToTable("Transferencia");
                 });
@@ -171,55 +156,6 @@ namespace AxMonar.Migrations
                     b.HasKey("Dni");
 
                     b.ToTable("Usuario");
-                });
-
-            modelBuilder.Entity("AxMonar.Models.Cuenta", b =>
-                {
-                    b.HasOne("AxMonar.Models.Usuario", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("Dni")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AxMonar.Models.TipoMoneda", "TipoMoneda")
-                        .WithMany()
-                        .HasForeignKey("IdTipoMoneda")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("TipoMoneda");
-
-                    b.Navigation("Usuario");
-                });
-
-            modelBuilder.Entity("AxMonar.Models.Deposito", b =>
-                {
-                    b.HasOne("AxMonar.Models.Cuenta", "Cuenta")
-                        .WithMany()
-                        .HasForeignKey("Cvu")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cuenta");
-                });
-
-            modelBuilder.Entity("AxMonar.Models.Transferencia", b =>
-                {
-                    b.HasOne("AxMonar.Models.Cuenta", "Cuenta")
-                        .WithMany()
-                        .HasForeignKey("Cvu")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AxMonar.Models.Destino", "Destino")
-                        .WithMany()
-                        .HasForeignKey("CvuAlias")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cuenta");
-
-                    b.Navigation("Destino");
                 });
 #pragma warning restore 612, 618
         }
