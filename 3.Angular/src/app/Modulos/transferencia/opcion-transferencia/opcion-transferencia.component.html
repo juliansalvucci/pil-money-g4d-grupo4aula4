@@ -1,45 +1,50 @@
 <div class="transferencia">
   <div class="card">
     <div class="card-body">
-      <div>
-        <mat-form-field appearance="legacy">
-          <mat-label>Cuenta</mat-label>
-          <mat-select [formControl]="animalControl" required>
-            <mat-option>--</mat-option>
-            <mat-option *ngFor="let animal of animals" [value]="animal">
-              {{animal.name}}
-            </mat-option>
-          </mat-select>
-          <mat-error *ngIf="animalControl.hasError('required')">Seleccione cuenta de depósito</mat-error>
-          <mat-hint>{{animalControl.value?.sound}}</mat-hint>
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field appearance="legacy" floatLabel="always">
-          <mat-label>Monto</mat-label>
-          <input matInput type="number" class="example-right-align" placeholder="0">
-          <span matPrefix>$&nbsp;</span>
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field appearance="legacy">
-          <mat-label>Destino</mat-label>
-          <mat-select [formControl]="animalControl" required>
-            <mat-option>--</mat-option>
-            <mat-option *ngFor="let animal of animals" [value]="animal">
-              {{animal.name}}
-            </mat-option>
-          </mat-select>
-          <mat-error *ngIf="animalControl.hasError('required')">Seleccione cuenta de depósito</mat-error>
-          <mat-hint>{{animalControl.value?.sound}}</mat-hint>
-        </mat-form-field>
-       </div>
-      <div>
-        <mat-form-field appearance="fill">
-          <mat-label>Nota</mat-label>
-          <textarea matInput></textarea>
-        </mat-form-field>
-      </div>
+      <form [formGroup]="transferenciaForm">
+        <div>
+          <mat-form-field appearance="legacy">
+            <mat-label>Cuenta</mat-label>
+            <mat-select formControlName="cvu">
+              <mat-option *ngFor= "let i of listaCuentas" [value]="i.cvu">
+                {{i.alias}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+      
+        <div>
+          <mat-form-field appearance="legacy">
+            <mat-label>Monto</mat-label>
+            <input matInput formControlName="monto" />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Nota</mat-label>
+            <textarea matInput formControlName="nota"></textarea>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="legacy">
+            <mat-label>Destino</mat-label>
+            <mat-select formControlName="aliasDestino">
+              <mat-option *ngFor= "let i of listaDestinos" [value]="i.aliasDestino">
+                {{i.aliasDestino}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        
+
+
+        <div class="example-container">
+          <button mat-raised-button (click)="transferir()" color="primary">Transferir</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

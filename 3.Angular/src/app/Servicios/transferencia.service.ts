@@ -1,21 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Transferencia } from '../Interfaces/Transferencia';
 
-const url ="https://localhost:44339/api/Cuenta";
+const url ="https://localhost:44354/api/Transferencia";
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-export class Transferencia{
-  id: number=0;
-  //fecha: Date;
-  //hora: Time;  
-  monto: number=0;
-  nota: string=""
-  cvu: number=0;
-  destino: number=0;
-}
 
 @Injectable({
   providedIn: 'root'
