@@ -20,9 +20,11 @@ namespace AxMonar.Models
         public double Saldo { get; set; }
 
         [Required]
+        [ForeignKey("Dni")] 
         public int Dni { get; set; }
 
         [Required]
+        [ForeignKey("IdTipoMoneda")]
         public int IdTipoMoneda { get; set; }
 
     }

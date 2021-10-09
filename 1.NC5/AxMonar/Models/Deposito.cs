@@ -15,9 +15,10 @@ namespace AxMonar.Models
         public System.DateTime Fecha { get; set; }
 
         [Required]
-        public float Monto { get; set; }
+        [ForeignKey("Cvu")]
+        public long Cvu { get; set; }
 
         [Required]
-        public long Cvu { get; set; }
+        public float Monto { get; set; }
     }
 }

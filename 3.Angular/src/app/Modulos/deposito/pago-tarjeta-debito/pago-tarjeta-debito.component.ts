@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { TarjetaComponent } from './tarjeta/tarjeta.component';
 import { MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Cuenta, Deposito } from 'src/app/Interfaces/Deposito';
+import { Deposito } from 'src/app/Interfaces/Deposito';
 import { CuentaService } from 'src/app/Servicios/cuenta.service';
 import { DepositoService } from 'src/app/Servicios/deposito.service';
+import { Cuenta } from 'src/app/Interfaces/Cuenta';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class PagoTarjetaDebitoComponent {
 
   depositoForm: FormGroup = this.fb.group({
     idDeposito: [0],
-    cuenta: [,[Validators.required]],
+    cvu: [,[Validators.required]],
     monto: [,[Validators.required]],
   });
 

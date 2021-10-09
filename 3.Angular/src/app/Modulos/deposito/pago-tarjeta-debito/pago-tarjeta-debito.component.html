@@ -5,7 +5,7 @@
         <div>
           <mat-form-field appearance="legacy">
             <mat-label>Cuenta</mat-label>
-            <mat-select formControlName="cuenta">
+            <mat-select formControlName="cvu">
               <mat-option *ngFor= "let i of listaCuentas" [value]="i.cvu">
                 {{i.alias}}
               </mat-option>

@@ -5,3 +5,4 @@ export interface Usuario {
     dni:      number;
     password: string;
 }
+

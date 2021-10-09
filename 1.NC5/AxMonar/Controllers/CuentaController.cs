@@ -47,7 +47,6 @@ namespace AxMonar.Controllers
         {
             try
             {
-
                 _context.Add(cuenta);
                 await _context.SaveChangesAsync();
 

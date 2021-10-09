@@ -24,6 +24,7 @@ namespace AxMonar.Models
         public int Dni { get; set; }
 
         [Required]
+        [MinLength(8, ErrorMessage = "La contraseña debe contener un mínimo de 8 caracteres")]
         public string Password { get; set; }   
     }
 }

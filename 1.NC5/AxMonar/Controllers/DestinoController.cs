@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AxMonar.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,26 @@ namespace AxMonar.Controllers
 
 
         }
+
+        // POST api/<DestinoController>
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] Destino destino)
+        {
+            try
+            {
+                _context.Add(destino);
+                await _context.SaveChangesAsync();
+
+                return Ok(destino);
+
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+        }
+
         /*
 
         // GET api/<DestinoController>/5
@@ -47,11 +68,7 @@ namespace AxMonar.Controllers
             return "value";
         }
 
-        // POST api/<DestinoController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
+        
 
         // PUT api/<DestinoController>/5
         [HttpPut("{id}")]
