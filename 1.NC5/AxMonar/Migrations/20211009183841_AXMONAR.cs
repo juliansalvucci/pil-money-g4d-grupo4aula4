@@ -30,8 +30,8 @@ namespace AxMonar.Migrations
                     IdDeposito = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Monto = table.Column<float>(type: "real", nullable: false),
-                    Cvu = table.Column<long>(type: "bigint", nullable: false)
+                    Cvu = table.Column<long>(type: "bigint", nullable: false),
+                    Monto = table.Column<float>(type: "real", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -72,9 +72,9 @@ namespace AxMonar.Migrations
                     IdTransferencia = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Nota = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Monto = table.Column<double>(type: "float", nullable: false),
                     Cvu = table.Column<long>(type: "bigint", nullable: false),
+                    Monto = table.Column<double>(type: "float", nullable: false),
+                    Nota = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AliasDestino = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>

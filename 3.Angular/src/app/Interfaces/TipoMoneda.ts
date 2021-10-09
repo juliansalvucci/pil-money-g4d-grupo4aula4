@@ -1,4 +1,4 @@
 export interface TipoMoneda {
-    idTipoMoneda: number;
-    nombre:       string;
+    idTipoMoneda:     number;
+    nombreTipoMoneda: string;
 }

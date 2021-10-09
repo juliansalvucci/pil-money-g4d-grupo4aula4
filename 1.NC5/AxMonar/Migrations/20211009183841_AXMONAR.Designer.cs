@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AxMonar.Migrations
 {
     [DbContext(typeof(AplicacionDBContext))]
-    [Migration("20211009050352_AXMONAR")]
+    [Migration("20211009183841_AXMONAR")]
     partial class AXMONAR
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
