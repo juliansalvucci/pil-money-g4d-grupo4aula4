@@ -22,7 +22,9 @@ const routes: Routes = [
     {path:'deposito', component: PagoTarjetaDebitoComponent},
     {path:'transferencia', component: OpcionTransferenciaComponent}, 
   ]},
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  
+
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: "**", component: NotFoundComponent}
 ];
 

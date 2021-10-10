@@ -15,13 +15,13 @@ export class CuentaComponent {
 
   listaCuentas!: Cuenta[];
   listaTiposMoneda!: TipoMoneda[];
-  dni : Usuario = JSON.parse(localStorage.getItem('dni') || '{}');
+  usuario : Usuario = JSON.parse(localStorage.getItem('currentUser') || '{}');
 
   cuentaForm: FormGroup = this.fb.group({
     cvu: [0],
     alias: [,[Validators.required]],
     saldo:[0],
-    dni: [this.dni],
+    dni: [this.usuario.dni],
     idTipoMoneda:[,[Validators.required]]
   });
 

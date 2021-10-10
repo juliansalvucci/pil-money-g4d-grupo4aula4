@@ -23,17 +23,17 @@
 
         <mat-divider></mat-divider>
 
-        <button mat-button class="menu-button">
+        <button mat-button class="menu-button" routerLink="/escritorio/cuenta">
             <mat-icon>all_inclusive</mat-icon>
-            <span>Depósito</span>
+            <span >Escritorio</span>
         </button>
-        <button mat-button class="menu-button">
+        <button mat-button class="menu-button" routerLink="/escritorio/deposito">
+            <mat-icon>all_inclusive</mat-icon>
+            <span>Deposito</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="/escritorio/transferencia">
             <mat-icon>all_inclusive</mat-icon>
             <span>Transferencia</span>
-        </button>
-        <button mat-button class="menu-button">
-            <mat-icon>all_inclusive</mat-icon>
-            <span>Extracción</span>
         </button>
 
         <mat-divider></mat-divider>
@@ -44,9 +44,15 @@
         </button>
 
     </mat-sidenav>
-    <mat-sidenav-content>
+    
+        <mat-sidenav-content>
         <div class="content mat-elevation-z8">
-            
+            <router-outlet></router-outlet>
         </div>
-    </mat-sidenav-content>
+        </mat-sidenav-content>
+
+    
+
+    
+    
 </mat-sidenav-container>
