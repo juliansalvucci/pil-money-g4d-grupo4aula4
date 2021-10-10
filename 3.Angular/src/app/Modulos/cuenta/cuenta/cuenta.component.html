@@ -2,23 +2,25 @@
 
     <div class="cuenta">
         <div class="row">
-            <div class="card">
+            <div class="card" *ngFor="let cuenta of listaCuentas">
                 <div class="card-body">
                     <div>
-                        N° Cuenta:
+                        N° Cuenta: {{cuenta.cvu}}
                     </div>
                     <div>
-                        Alias:
+                        Alias: {{cuenta.alias}}
                     </div>
                     <div>
-                        Saldo:
+                        Saldo: {{cuenta.saldo}}
                     </div>
                    <div>
-                        Tipo de moneda:
+                        Tipo de moneda: {{cuenta.idTipoMoneda}}
                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+  
 
 
