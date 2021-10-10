@@ -50,7 +50,7 @@ export class RegisterComponent implements OnInit {
       .subscribe(
         (data: any) => {
         console.log("DATA"+ JSON.stringify( data));   
-        this.router.navigate(['ruta']);
+        this.router.navigate(['/login']);
       },
         (error: any) => {
          this.error = error;

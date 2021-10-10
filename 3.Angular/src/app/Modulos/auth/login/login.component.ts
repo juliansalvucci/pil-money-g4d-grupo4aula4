@@ -62,7 +62,7 @@ export class LoginComponent {
        .subscribe(
          data => {
          console.log("DATA"+ JSON.stringify( data));   
-         this.router.navigate(['ruta']);
+         this.router.navigate(['/escritorio']);
        },
          error => {
           this.error = error;
