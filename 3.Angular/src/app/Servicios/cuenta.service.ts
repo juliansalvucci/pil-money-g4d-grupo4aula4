@@ -8,15 +8,7 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-/*
-export class Cuenta{
-   cvu: number=0;
-   alias: string="";
-   saldo: number=0;
-   usuarioDni: number=0;
-   tipoMoneda: number=0;
-}
-*/
+
 
 @Injectable({
   providedIn: 'root'

@@ -4,5 +4,6 @@ export interface Usuario {
     correo:   string;
     dni:      number;
     password: string;
+    token?:     string;
 }
 

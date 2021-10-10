@@ -45,7 +45,6 @@ namespace AxMonar.Services
             {
                 var usuario = _context.Usuario.Where(d => d.Correo == model.Correo).FirstOrDefault();
 
-                Console.WriteLine(BCrypt.Net.BCrypt.Verify(model.Password, usuario.Password));
                 if (usuario == null || !BCrypt.Net.BCrypt.Verify(model.Password,usuario.Password)) return null;
                 
 
