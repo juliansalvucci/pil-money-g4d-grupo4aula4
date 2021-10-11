@@ -22,4 +22,22 @@ h1{
   font-stretch: condensed;
   font-weight: 500;
   color:#FF6F00;
+  color:#ffffff;
+  text-shadow: 2px 2px 4px #000000;
+    text-shadow:
+		0 0 5px #FF6F00,
+		0 0 10px #FF6F00,
+		0 0 20px #FF6F00,
+		0 0 40px #FF6F00,
+		0 0 80px #FF6F00,
+		0 0 90px #FF6F00,
+		0 0 100px #FF6F00,
+		0 0 140px #FF6F00,
+		0 0 180px #b6b6b6; 
+}
+
+.card{
+  align-items: center;
+  align-content: center;
+  background-color: #942f00;
 }
