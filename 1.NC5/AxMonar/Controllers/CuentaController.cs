@@ -29,6 +29,11 @@ namespace AxMonar.Controllers
             {
                 var cuentas = await _context.Cuenta.ToListAsync();
 
+                if (cuentas == null)
+                {
+                    return NotFound();
+                }
+
                 return Ok(cuentas);
 
 

@@ -7,10 +7,12 @@ namespace AxMonar.Models
 {
     public class AuthenticateResponse
     {
+        public int Dni { get; set; }
         public string Token { get; set; }
 
         public AuthenticateResponse(Usuario usuario, string token)
-        { 
+        {
+            Dni = usuario.Dni;
             Token = token;
         }
     }

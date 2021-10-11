@@ -1,7 +1,12 @@
+    
+    
+
     <div class="cuenta">
+
+
         <div class="row">
             <div class="card" *ngFor="let cuenta of listaCuentas">
-                <div class="card-body">
+                <div class="card-body" *ngIf="currentUser.dni == cuenta.dni">
                     <div>
                         N° Cuenta: {{cuenta.cvu}}
                     </div>
@@ -19,7 +24,7 @@
         </div>
     </div>
 
-<button mat-raised-button color="primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"> + </button>
+<button mat-raised-button color="primary" data-bs-toggle="modal" data-bs-target="exampleModal" data-bs-whatever="@mdo"> + </button>
 
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

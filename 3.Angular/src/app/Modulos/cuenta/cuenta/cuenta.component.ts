@@ -6,6 +6,7 @@ import { CuentaService } from 'src/app/Servicios/cuenta.service';
 import { TipoMonedaService } from 'src/app/Servicios/tipo-moneda.service';
 import { Usuario } from 'src/app/Servicios/usuario.service';
 
+
 @Component({
   selector: 'app-cuenta',
   templateUrl: './cuenta.component.html',
@@ -15,19 +16,23 @@ export class CuentaComponent {
 
   listaCuentas!: Cuenta[];
   listaTiposMoneda!: TipoMoneda[];
-  usuario : Usuario = JSON.parse(localStorage.getItem('currentUser') || '{}');
+  
+  currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+  
+  
 
   cuentaForm: FormGroup = this.fb.group({
     cvu: [0],
     alias: [,[Validators.required]],
     saldo:[0],
-    dni: [this.usuario.dni],
+    dni: [this.currentUser.dni],
     idTipoMoneda:[,[Validators.required]]
   });
 
   constructor(private fb: FormBuilder ,private cuentaService: CuentaService, private tipoMonedaService: TipoMonedaService){
       this.getCuentas();
       this.getTipoMoneda();
+      this.currentUser
   }
 
   getCuentas(){
