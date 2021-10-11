@@ -5,7 +5,7 @@
       <form form [formGroup]="registerForm" (ngSubmit)="onEnviar($event, usuario)">
         
           <div>
-            <mat-form-field appearance="legacy">
+            <mat-form-field appearance="outline">
               <mat-label>Apellido</mat-label>
               <input matInput class="form-control" formControlName="apellido" [(ngModel)]="usuario.apellido">
             </mat-form-field>

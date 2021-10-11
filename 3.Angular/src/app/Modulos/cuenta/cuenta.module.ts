@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CuentaComponent } from './cuenta/cuenta.component';
 import { MaterialModule } from 'src/app/Material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CuentaCreateComponent } from './cuenta-create/cuenta-create.component';
 
 
 
@@ -10,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     CuentaComponent,
+    CuentaCreateComponent,
   ],
   imports: [
     CommonModule,
@@ -19,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   exports: [
     CuentaComponent,
+    CuentaCreateComponent
   ]
 })
 export class CuentaModule { }

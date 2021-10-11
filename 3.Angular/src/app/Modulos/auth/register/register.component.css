@@ -1,5 +1,8 @@
 .mat-form-field {
   margin-top: 16px;
+  color: #FF6F00;
+  color-scheme:#FF6F00 ;
+  border-color: #FF6F00;
 }
 
 .registro{
@@ -39,5 +42,14 @@ h1{
 .card{
   align-items: center;
   align-content: center;
-  background-color: #942f00;
+  background-color: #000000;
+}
+
+.form-control{
+  color-scheme: #FF6F00 ;
+  border-color: #FF6F00;
+  color: #FF6F00;
+  outline-color: #FF6F00;
+  lighting-color: #FF6F00;
+  border-bottom-color: #FF6F00;
 }
