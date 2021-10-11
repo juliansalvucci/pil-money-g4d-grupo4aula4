@@ -1,0 +1,48 @@
+<div class="deposito">
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="depositoForm">
+        <div>
+          <mat-form-field appearance="legacy">
+            <mat-label>Cuenta</mat-label>
+            <mat-select formControlName="cvu">
+              <mat-option *ngFor= "let i of listaCuentas" [value]="i.cvu">
+                {{i.alias}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+      
+        <div>
+          <mat-form-field appearance="legacy">
+            <mat-label>Monto</mat-label>
+            <input matInput formControlName="monto" />
+          </mat-form-field>
+        </div>
+        <!--
+          <div>
+          <mat-form-field appearance="legacy">
+            <mat-label>Tarjeta</mat-label>
+            <mat-select formControlname="tarjeta" required>
+              <mat-option>test</mat-option>
+            </mat-select>
+            <mat-error *ngIf="depositoControl.hasError('required')">Seleccione cuenta de depósito</mat-error>
+            <mat-hint></mat-hint>
+          </mat-form-field>
+        </div>
+
+        -->
+        
+        <div class="example-container">
+          <button mat-raised-button (click)="depositar()" color="primary">Crear</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
