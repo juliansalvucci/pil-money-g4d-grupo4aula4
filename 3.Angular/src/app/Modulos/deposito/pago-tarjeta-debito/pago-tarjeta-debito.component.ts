@@ -22,6 +22,8 @@ import { Cuenta } from 'src/app/Interfaces/Cuenta';
 export class PagoTarjetaDebitoComponent {
 
   listaCuentas!: Cuenta[];
+
+  currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
  
 
   depositoForm: FormGroup = this.fb.group({
@@ -32,6 +34,7 @@ export class PagoTarjetaDebitoComponent {
 
   constructor(private fb: FormBuilder, private cuentaService: CuentaService, private depositoService: DepositoService){ 
     this.getCuentas();
+    this.currentUser;
   }
 
   getCuentas(){

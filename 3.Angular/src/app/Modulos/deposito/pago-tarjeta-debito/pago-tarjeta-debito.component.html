@@ -6,9 +6,15 @@
           <mat-form-field appearance="legacy">
             <mat-label>Cuenta</mat-label>
             <mat-select formControlName="cvu">
-              <mat-option *ngFor= "let i of listaCuentas" [value]="i.cvu">
-                {{i.alias}}
-              </mat-option>
+            
+                <mat-option *ngFor= "let i of listaCuentas" [value]="i.cvu">
+                  <span *ngIf="currentUser.dni == i.dni">
+                    {{i.alias}}
+
+                  </span>
+                  
+                </mat-option>
+              
             </mat-select>
           </mat-form-field>
         </div>
