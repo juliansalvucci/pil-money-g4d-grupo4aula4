@@ -13,6 +13,7 @@ import { Usuario } from 'src/app/Servicios/usuario.service';
   styleUrls: ['./cuenta.component.css']
 })
 export class CuentaComponent {
+  panelOpenState = false;
 
   listaCuentas!: Cuenta[];
   listaTiposMoneda!: TipoMoneda[];

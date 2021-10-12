@@ -1,13 +1,5 @@
-    
-    
-
-    <div class="cuenta">
-
-
-        <div class="row">
-            <div class="card" *ngFor="let cuenta of listaCuentas">
-                <div class="card-body" *ngIf="currentUser.dni == cuenta.dni">
-                    <div>
+   <!--
+     <div>
                         N° Cuenta: {{cuenta.cvu}}
                     </div>
                     <div>
@@ -19,46 +11,34 @@
                    <div>
                         Tipo de moneda: {{cuenta.idTipoMoneda}}
                    </div>
+
+   -->
+    <div class="cuenta">
+        <div class="row">
+            <div *ngFor="let cuenta of listaCuentas">
+                <div *ngIf="currentUser.dni == cuenta.dni">
+                  <mat-accordion>
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                                         (closed)="panelOpenState = false" color="primary">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          N° Cuenta: {{cuenta.cvu}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                          <p>Alias: {{cuenta.alias}}</p>
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                      <p>Saldo: {{cuenta.saldo}}</p>
+                      <p>Tipo de moneda: {{cuenta.idTipoMoneda}}</p>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+                  
                 </div>
             </div>
         </div>
     </div>
 
-<button mat-raised-button color="primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"> + </button>
 
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Crear cuenta</h5>
-      </div>
-      <div class="modal-body">
-        <form [formGroup]="cuentaForm">
-          <div>
-            <mat-form-field appearance="legacy">
-                <mat-label>Alias</mat-label>
-                <input matInput formControlName="alias">
-            </mat-form-field>
-          </div>
-          <div>
-            <mat-form-field appearance="legacy">
-              <mat-label>Tipo Moneda</mat-label>
-              <mat-select formControlName="cvu">
-                <mat-option *ngFor= "let i of listaTiposMoneda" [value]="i.idTipoMoneda">
-                  {{i.nombreTipoMoneda}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button mat-raised-button (click)="crearCuenta()" color="primary">Crear</button>
-      </div>
-    </div>
-  </div>
-</div>
 
   
 

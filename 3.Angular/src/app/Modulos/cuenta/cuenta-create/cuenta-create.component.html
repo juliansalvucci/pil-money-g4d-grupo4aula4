@@ -1,23 +1,29 @@
-<form [formGroup]="cuentaForm">
-    <div>
-      <mat-form-field appearance="legacy">
-          <mat-label>Alias</mat-label>
-          <input matInput formControlName="alias">
-      </mat-form-field>
+<div class="cuenta-create">
+  <div class="card-container">
+    <div class="card-body">
+      <form [formGroup]="cuentaForm">
+        <div>
+          <mat-form-field appearance="legacy">
+              <mat-label>Alias</mat-label>
+              <input matInput formControlName="alias">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="legacy">
+            <mat-label>Tipo Moneda</mat-label>
+            <mat-select formControlName="idTipoMoneda">
+              <mat-option *ngFor= "let i of listaTiposMoneda" [value]="i.idTipoMoneda">
+                {{i.nombreTipoMoneda}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+            <button mat-raised-button (click)="crearCuenta()" color="primary">Crear</button>
+        </div>
+      </form>
+
     </div>
-    <div>
-      <mat-form-field appearance="legacy">
-        <mat-label>Tipo Moneda</mat-label>
-        <mat-select formControlName="idTipoMoneda">
-          <mat-option *ngFor= "let i of listaTiposMoneda" [value]="i.idTipoMoneda">
-            {{i.nombreTipoMoneda}}
-            {{i.idTipoMoneda}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div>
-        <button mat-raised-button (click)="crearCuenta()" color="primary">Crear</button>
-    </div>
-    {{currentUser.dni}}
-</form>
+  </div>
+</div>
+
