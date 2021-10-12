@@ -6,6 +6,7 @@ import { CuentaService } from 'src/app/Servicios/cuenta.service';
 import { DepositoService } from 'src/app/Servicios/deposito.service';
 import { DestinoService } from 'src/app/Servicios/destino.service';
 import { TransferenciaService } from 'src/app/Servicios/transferencia.service';
+import Swal from 'sweetalert2';
 
 
 
@@ -51,12 +52,38 @@ export class OpcionTransferenciaComponent {
   }
 
   transferir(){
+
+    const Toast = Swal.mixin({
+      //Declaro el mixin de sweet alert 2
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer);
+        toast.addEventListener('mouseleave', Swal.resumeTimer);
+      },
+    });
+    
     if(this.transferenciaForm.valid){
       console.log(this.transferenciaForm.value);
       this.transferenciaService.Transferir(this.transferenciaForm.value).subscribe(
         (data) => {
+          Toast.fire({
+            icon: 'success',
+            title: 'Transferencia exitosa',
+          });
           console.log(data);
+        },
+        (error) => {
+          console.log(error);
+          Toast.fire({
+              icon: 'error',
+              title: `Error de servidor`,
+          });
         }
+
       )
     }
   }

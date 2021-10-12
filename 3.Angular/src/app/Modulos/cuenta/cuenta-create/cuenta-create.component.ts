@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TipoMoneda } from 'src/app/Interfaces/TipoMoneda';
 import { CuentaService } from 'src/app/Servicios/cuenta.service';
 import { TipoMonedaService } from 'src/app/Servicios/tipo-moneda.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cuenta-create',
@@ -39,12 +40,37 @@ export class CuentaCreateComponent  {
   }
 
   crearCuenta(){
+
+    const Toast = Swal.mixin({
+      //Declaro el mixin de sweet alert 2
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer);
+        toast.addEventListener('mouseleave', Swal.resumeTimer);
+      },
+    });
+
     console.log(this.cuentaForm)
     if(this.cuentaForm.valid){
       console.log(this.cuentaForm.value);
       this.cuentaService.crearCuenta(this.cuentaForm.value).subscribe(
         (data) => {
+          Toast.fire({
+            icon: 'success',
+            title: 'Cuenta creada con éxito',
+          });
           console.log(data);
+        },
+        (error) => {
+          console.log(error);
+          Toast.fire({
+              icon: 'error',
+              title: `Error de servidor`,
+          });
         }
       )
     }

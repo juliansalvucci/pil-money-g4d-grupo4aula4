@@ -6,6 +6,7 @@ import { Deposito } from 'src/app/Interfaces/Deposito';
 import { CuentaService } from 'src/app/Servicios/cuenta.service';
 import { DepositoService } from 'src/app/Servicios/deposito.service';
 import { Cuenta } from 'src/app/Interfaces/Cuenta';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -46,12 +47,37 @@ export class PagoTarjetaDebitoComponent {
   }
   
   depositar(){
+
+    const Toast = Swal.mixin({
+      //Declaro el mixin de sweet alert 2
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer);
+        toast.addEventListener('mouseleave', Swal.resumeTimer);
+      },
+    });
+    
     if(this.depositoForm.valid){
       console.log(this.depositoForm.value);
       this.depositoService.Depositar(this.depositoForm.value).subscribe(
         (data) => {
+          Toast.fire({
+            icon: 'success',
+            title: 'Depósito exitoso',
+          });
           console.log(data);
         },
+        (error) => {
+          console.log(error);
+          Toast.fire({
+              icon: 'error',
+              title: `Error de servidor`,
+          });
+        }
       )
     }
   }

@@ -10,19 +10,16 @@ import { AuthService } from 'src/app/Servicios/auth.service';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
 
   estaAutenticado:boolean=false;
 
   constructor(private observer: BreakpointObserver, private route: ActivatedRoute, private authService: AuthService, private router: Router) {
-    this.cerrarSesion();
+    
   }
 
-  ngOnInit(): void {
-    this.authService.estaAutenticado.subscribe(res=>( this.estaAutenticado=res));     
-  }
 
   ngAfterViewInit() {
     this.observer.observe(['(max-width: 1500px)']).subscribe((res) => {

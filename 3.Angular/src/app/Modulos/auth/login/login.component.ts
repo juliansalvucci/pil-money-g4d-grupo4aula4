@@ -15,7 +15,26 @@ import { AuthService } from 'src/app/Servicios/auth.service';
 export class LoginComponent {
   hide = true;
 
-   
+  /*
+  correo = new FormControl('', [Validators.required, Validators.email]);
+  password = new FormControl('', [Validators.required]);
+
+  getErrorMessage() {
+    if (this.correo.hasError('required')) {
+      return 'Formato de correo inválido';
+    }
+
+    return this.email.hasError('email') ? 'Not a valid email' : '';
+  }
+
+  getErrorPass() {
+    if (this.password.hasError('required')) {
+      return 'La contraseña debe tener mínimamente 8 caracteres';
+    }
+
+    return this.password.hasError('email') ? 'Not a valid email' : '';
+  }
+  */
   
   usuario = new Usuario(); 
   [x: string]: any;
@@ -26,8 +45,8 @@ export class LoginComponent {
      private router: Router) {
      this.loginForm= this.formBuilder.group(
        {
-        'correo': ['', Validators.required],
-        'password': ['', Validators.required]
+        'correo': ['', [Validators.required, Validators.email]] ,
+        'password': ['',[Validators.required, Validators.minLength(8)]]
        }
      )
     }
