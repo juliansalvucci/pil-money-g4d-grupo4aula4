@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/Servicios/auth.service';
 
  
@@ -10,13 +10,18 @@ import { AuthService } from 'src/app/Servicios/auth.service';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
 
-  constructor(private observer: BreakpointObserver, private route: ActivatedRoute, private authService: AuthService) {
-    this.cerrarSesion();
+  estaAutenticado:boolean=false;
 
+  constructor(private observer: BreakpointObserver, private route: ActivatedRoute, private authService: AuthService, private router: Router) {
+    this.cerrarSesion();
+  }
+
+  ngOnInit(): void {
+    this.authService.estaAutenticado.subscribe(res=>( this.estaAutenticado=res));     
   }
 
   ngAfterViewInit() {
@@ -33,5 +38,7 @@ export class SidebarComponent {
 
   cerrarSesion(){
     this.authService.logout();
+    this.estaAutenticado=false;
+    this.router.navigate(['/home']);
   }
 }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 .example-container .mat-form-field + .mat-form-field {
   margin-left: 20px;
 }
@@ -87,6 +89,7 @@ input.example-right-align {
 }
 
 h1{
+  font-family: 'Orbitron', sans-serif;
   font-style: oblique;
   font-stretch: condensed;
   font-weight: 500;

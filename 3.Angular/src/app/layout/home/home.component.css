@@ -20,6 +20,7 @@
     font-family: 'Merriweather Sans', sans-serif;
     font-size: 250%;
     color: white; 
+    margin-top: 12px;
 }
 .texto-encima img{
   width: 30px;
@@ -43,6 +44,7 @@ h1 {
     color: white;
     align-items: center;
     display: flex;
+    margin-bottom: 1px;
 }
 .otroestilo{ 
     color: #ffffff ;
@@ -91,4 +93,43 @@ a:hover{
     0 0 140px #FF6F00,
     0 0 180px #b6b6b6;  
 
+}
+
+.navbar{
+    align-content:flex-end;
+    
+    background-color: #000000;
+}
+
+.is:hover{
+    background-color: #ff9c50;
+    box-shadow:0 0 5px #FF6F00,
+    0 0 10px #FF6F00,
+    0 0 20px #FF6F00,
+    0 0 40px #FF6F00,
+    0 0 80px #FF6F00,
+    0 0 90px #FF6F00,
+    0 0 100px #FF6F00,
+    0 0 140px #FF6F00,
+    0 0 180px #b6b6b6;  
+}
+
+.is{
+    margin-left: 1200px;
+    background-color: #FF6F00;
+}
+
+.foot{
+    background-color: #000000;
+    color: #000000;
+    text-align: center;
+    justify-content: center;
+    height: 100px;
+}
+
+#footer{
+    margin-top: 10px;
+    color: #FF6F00;
+    text-align: center;
+    margin-left: 40%;
 }
